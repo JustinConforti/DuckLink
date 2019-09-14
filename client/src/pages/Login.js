@@ -1,13 +1,6 @@
 import React, { Component } from "react";
 import "./style.css";
-import {
-  Container,
-  Col,
-  Card,
-  CardBody,
-  CardHeader,
-  Row
-} from "react-bootstrap/";
+import { Container,Col,Card,CardBody,CardHeader,Row } from "react-bootstrap/";
 import FormGroup from "react-bootstrap/FormGroup";
 import FormLabel from "react-bootstrap/FormLabel";
 import FormControl from "react-bootstrap/FormControl";
@@ -26,7 +19,7 @@ class Login extends Component {
       [name]: value
     });
   };
-
+  
   render() {
     return (
       <Container>
@@ -34,7 +27,7 @@ class Login extends Component {
           <Col md="auto">
             <Card style={{ width: '25rem'}}>
               <Card.Header as="h5">LogIn</Card.Header>
-              <Card.Img variant="top" src="holder.js/100px180" /> 
+              <Card.Img variant="top" src="https://www.fillmurray.com/360/200(16 kB)" alt="..." fluid />
               <Card.Body>
                 <form>
                   <div className="Register">
@@ -46,7 +39,7 @@ class Login extends Component {
                           type="email"
                           value={this.state.email}
                           onChange={this.handleChange}
-                        />{" "}
+                          />{" "}
                       </FormGroup>{" "}
                       <FormGroup controlId="password" bsSize="large">
                         <FormLabel> Password </FormLabel>{" "}
@@ -56,8 +49,8 @@ class Login extends Component {
                           type="password"
                         />
                       </FormGroup>{" "}
-                      <Button block bsSize="large" type="submit">
-                        register{" "}
+                      <Button block bsSize="small" type="submit">
+                        Go{" "}
                       </Button>{" "}
                     </form>{" "}
                   </div>
