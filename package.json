@@ -1,0 +1,24 @@
+{
+  "name": "ducklink",
+  "version": "1.0.0",
+  "description": "Project 3",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JustinConforti/DuckLink.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JustinConforti/DuckLink/issues"
+  },
+  "homepage": "https://github.com/JustinConforti/DuckLink#readme",
+  "dependencies": {
+    "axios": "^0.19.0",
+    "express": "^4.17.1",
+    "if-env": "^1.0.4"
+  }
+}
