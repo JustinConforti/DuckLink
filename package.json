@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/JustinConforti/DuckLink/issues"
   },
-  "homepage": "https://github.com/JustinConforti/DuckLink#readme"
+  "homepage": "https://github.com/JustinConforti/DuckLink#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
