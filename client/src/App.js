@@ -25,35 +25,6 @@ function App() {
 
     </div>
   );
-}
+  }
 
-//register form
-// <div className="Register">
-//   <form onSubmit={this.handleSubmit}>
-//   <FormGroup controlId="email" bsSize="large">
-//   <FormLabel> Email </FormLabel>{" "}
-// <FormControl
-// autoFocus
-//type="email"
-//value={this.state.email}
-//onChange={this.handleChange}
-// />{" "}
-// </FormGroup>{" "}
-//<FormGroup controlId="password" bsSize="large">
-// <FormLabel> Password </FormLabel>{" "}
-// <FormControl
-//  value={this.state.password}
-//   onChange={this.handleChange}
-//   type="password"
-//  />
-//  </FormGroup>{" "}
-//  <Button
-//   block
-//   bsSize="large"
-//   disabled={!this.validateForm()}
-//   type="submit"
-//  >
-//   register{" "}
-//  </Button>{" "}
-//</form>{" "}
-//  </div>
+  export default App;
