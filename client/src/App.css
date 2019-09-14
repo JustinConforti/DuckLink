@@ -31,3 +31,8 @@
     transform: rotate(360deg);
   }
 }
+
+body {
+  padding: 0;
+  background: url(duckbg.jpg);
+}
