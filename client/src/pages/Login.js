@@ -26,6 +26,7 @@ render() {
     return (
 <div className="Register">
         <form onSubmit={this.handleSubmit}>
+          
           <FormGroup controlId="email" bsSize="large">
             <FormLabel> Email </FormLabel>{" "}
             <FormControl
@@ -35,6 +36,7 @@ render() {
               onChange={this.handleChange}
             />{" "}
           </FormGroup>{" "}
+
           <FormGroup controlId="password" bsSize="large">
             <FormLabel> Password </FormLabel>{" "}
             <FormControl
@@ -43,6 +45,7 @@ render() {
               type="password"
             />
           </FormGroup>{" "}
+
           <Button
             block
             bsSize="large"
@@ -50,7 +53,9 @@ render() {
           >
             register{" "}
           </Button>{" "}
+
         </form>{" "}
+
       </div>
 
     )}

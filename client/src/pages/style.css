@@ -2,6 +2,7 @@
     height: 1000px;
     width: 50%;
 }
+
 .screen {
     background-color: white;
     width: 50%;
@@ -9,6 +10,7 @@
     padding: 24%;
     margin: 0 auto;
   }
+
 .Register {
     background-color:white;
 }
@@ -16,6 +18,7 @@
 .backgroundWhite{
     background-color: white;
 }
+
 /* Wrapper for the form buttons */
 /* ------------------------- */
 .wrapper {
