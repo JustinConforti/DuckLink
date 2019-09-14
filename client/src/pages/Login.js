@@ -30,9 +30,9 @@ class Login extends Component {
   render() {
     return (
       <Container>
-        <Row>
-          <Col md="6">
-            <Card style={{ width: '20rem'}}>
+        <Row className="justify-content-md-center" >
+          <Col md="auto">
+            <Card style={{ width: '25rem'}}>
               <Card.Header as="h5">LogIn</Card.Header>
               <Card.Img variant="top" src="holder.js/100px180" /> 
               <Card.Body>
