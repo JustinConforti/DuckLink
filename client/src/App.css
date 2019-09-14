@@ -8,3 +8,8 @@
     max-width: 320px;
   }
 }
+
+body {
+  padding: 0;
+  background: url(duckbg.jpg);
+}

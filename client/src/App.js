@@ -1,71 +1,30 @@
-import React, { Component } from "react";
-import { Button, FormGroup, FormControl, FormLabel } from "react-bootstrap";
-//import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Nav from "./components/Nav";
+import Homepage from "./pages/Homepage";
+import Login from "./pages/Login"
+import Register from "./pages/Register"
 import "./App.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-export default class Login extends Component {
-  constructor(props) {
-    super(props);
 
-    this.state = {
-      email: "",
-      password: ""
-    };
-  }
+function App() {
+  return (
+    <div className="App">
+      <Nav />
+          <Router>
+      <div>
+        <Switch>
+          <Route exact path="/home" component={Homepage} />
+         <Route exact path="/registration" component={Register} />
+        <Route exact path="/login" component={Login} /> }
+          {/* <Route component={NoMatch} /> } */}
+        </Switch>
+      </div>
+          </Router>
 
-  validateForm() {
-    return this.state.email.length > 0 && this.state.password.length > 0;
-  }
-
-  handleChange = event => {
-    this.setState({
-      [event.target.id]: event.target.value
-    });
-  };
-
-  handleSubmit = event => {
-    event.preventDefault();
-  };
-
-  render() {
-    return (
-      <Card>
-        <card.body>
-          <row>
-            <div className="Login">
-              <form onSubmit={this.handleSubmit}>
-                <FormGroup controlId="email" bsSize="large">
-                  <FormLabel> Email </FormLabel>{" "}
-                  <FormControl
-                    autoFocus
-                    type="email"
-                    value={this.state.email}
-                    onChange={this.handleChange}
-                  />{" "}
-                </FormGroup>{" "}
-                <FormGroup controlId="password" bsSize="large">
-                  <FormLabel> Password </FormLabel>{" "}
-                  <FormControl
-                    value={this.state.password}
-                    onChange={this.handleChange}
-                    type="password"
-                  />
-                </FormGroup>{" "}
-                <Button
-                  block
-                  bsSize="large"
-                  disabled={!this.validateForm()}
-                  type="submit"
-                >
-                  Login{" "}
-                </Button>{" "}
-              </form>{" "}
-            </div>{" "}
-          </row>{" "}
-        </card.body>{" "}
-      </Card>
-    );
-  }
+    </div>
+  );
 }
 
 //register form
