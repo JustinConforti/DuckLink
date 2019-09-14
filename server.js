@@ -1,21 +1,21 @@
 const express = require("express");
 const path = require("path");
 const mongoose = require("mongoose")
-const PORT = process.env.PORT || 3001;
 const app = express();
 const session = require("express-session")
 const passport = require("passport");
-const routes = require("./routes");
+const routes = require("./routes")(passport);
+const PORT = process.env.PORT || 3001;
 
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/Ducks", { useNewUrlParser: true });
 
-// Define middleware here
-app.use(session({
-  secret:"theSecret",
-  saveUninitialized:false,
-  resave:false
-}))
+// Used to keep track of our user's login status
+app.use(session({secret:"theSecret", saveUninitialized:false, resave:false}))
+app.use(passport.initialize());
+app.use(passport.session());
 
+
+// MiddlewareF
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 // Serve up static assets (usually on heroku)
@@ -23,6 +23,7 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
+// Routes
 app.use(routes)
 
 app.get("*", function(req, res) {

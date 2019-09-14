@@ -27,11 +27,11 @@ render() {
 <div className="Register">
         <form onSubmit={this.handleSubmit}>
           
-          <FormGroup controlId="email" bsSize="large">
-            <FormLabel> Email </FormLabel>{" "}
+          <FormGroup controlId="username" bsSize="large">
+            <FormLabel> Username </FormLabel>{" "}
             <FormControl
               autoFocus
-              type="email"
+              type="username"
               value={this.state.email}
               onChange={this.handleChange}
             />{" "}
@@ -50,6 +50,7 @@ render() {
             block
             bsSize="large"
             type="submit"
+            href="/registration"
           >
             register{" "}
           </Button>{" "}

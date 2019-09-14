@@ -1,3 +1,3 @@
-module.exports = function (passport) {
+// module.exports = function (passport) {
     
-}
+// }

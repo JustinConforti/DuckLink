@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const usersControllers = require("../../controllers/usersControllers")
+const bcrypt = require("bcryptjs")
 
 // match with api/users
 module.exports = function(passport) {
@@ -14,11 +14,11 @@ module.exports = function(passport) {
           if(doc) {
             res.status(500).send(`Username already exists`)
           } else {
-            let record = new User()
-            record.email = email;
-            record.username = username;
-            record.password = record.hashPassword(password)
-            record.save(function(err, user) {
+            let newUser = new User()
+            email = email;
+            username = username;
+            password = record.hashPassword(password)
+            save(function(err, user) {
               if(err) {
                 res.status(500).send(`db error`)
               } else {
@@ -30,3 +30,16 @@ module.exports = function(passport) {
       })
     })
   }
+
+  // bcrypt.genSalt(10, (err, salt) =>
+  //   bcrypt.hash(newUser.password, salt, (err, hash) =>
+  //     if(err) throw err;
+  //     // Set password to hashed
+  //     newUser.password = has;
+  //     // Save user
+  //     newUser.save()
+  //       .then()
+  //       catch(err => console.log(err));
+
+  //   )
+  // )
