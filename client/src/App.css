@@ -1,7 +1,3 @@
-.App {
-  text-align: center;
-}
-
 @media all and (min-width: 480px) {
   .Login {
     padding: 60px 0;
@@ -11,4 +7,9 @@
     margin: 0 auto;
     max-width: 320px;
   }
+}
+
+body {
+  padding: 0;
+  background: url(duckbg.jpg);
 }

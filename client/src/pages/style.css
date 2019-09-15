@@ -1,0 +1,33 @@
+.home-page {
+    height: 1000px;
+    width: 50%;
+}
+.screen {
+    background-color: white;
+    width: 50%;
+    border: 11px solid #ff497c;
+    padding: 24%;
+    margin: 0 auto;
+  }
+.Register {
+    background-color:white;
+}
+
+.backgroundWhite{
+    background-color: white;
+}
+/* Wrapper for the form buttons */
+/* ------------------------- */
+.wrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: column; 
+    justify-content: center;
+    width: 100%;
+    min-height: 100%;
+    padding: 20px;
+  }
+
+
+  
+  
