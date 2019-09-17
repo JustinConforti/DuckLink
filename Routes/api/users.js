@@ -1,5 +1,5 @@
-const router = require("express").Router();
-const bcrypt = require("bcryptjs")
+const router = require("./node_modules/express").Router();
+const bcrypt = require("./node_modules/bcryptjs")
 
 // match with api/users
 module.exports = function(passport) {
@@ -43,3 +43,5 @@ module.exports = function(passport) {
 
   //   )
   // )
+
+  // Define routes.
