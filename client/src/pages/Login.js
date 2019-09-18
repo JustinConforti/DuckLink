@@ -28,7 +28,7 @@ class Login extends Component {
             <Card style={{ width: '50rem'}}>
               <Card.Img variant="top" src="https://www.fillmurray.com/360/200(16 kB)" alt="..." fluid />
               <Card.Body>
-                <form>
+                <form classname="mx auto">
                   <div className="Register">
                     <form onSubmit={this.handleSubmit}>
                       <FormGroup controlId="email" bsSize="large">
@@ -47,14 +47,16 @@ class Login extends Component {
                           onChange={this.handleChange}
                           type="password"
                         />
-                      </FormGroup>{" "}
-                      <Button variant="primary" size="lg" type="submit" >
+                         </FormGroup>{" "}
+
+                        <div >
+                      <Button variant="primary" size="lg" type="submit" id="button1" >
                         Duck Duck GO!{" "}
                       </Button>{" "}
-                        
-                      <Button variant="secondary" size="sm" type="submit">
+                      <Button variant="secondary" size="sm" type="submit" id="button2" >
                         QUACK?{" "}
                       </Button>{" "}
+                      </div>
 
                     </form>{" "}
                   </div>
