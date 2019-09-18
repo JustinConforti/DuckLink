@@ -20,6 +20,12 @@ class Homepage extends Component {
 
 render() {
     return (
+ <div className ="screen">
+    <div className="duck-loadout">
+
+    </div>
+ </div>
+
 <div>
     <Card className ="wrapping-card" style={{ width: '55rem', height: '48em' }}>
    <Row>   

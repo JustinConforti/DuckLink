@@ -24,7 +24,7 @@ class Login extends Component {
 
 render() {
     return (
-<div className="Register">
+    <div className="Register">
         <form onSubmit={this.handleSubmit}>
           <FormGroup controlId="email" bsSize="large">
             <FormLabel> Email </FormLabel>{" "}
@@ -51,7 +51,14 @@ render() {
             register{" "}
           </Button>{" "}
         </form>{" "}
-      </div>
+    </div> 
+
+    // <div className ="screen">
+    //   <div className="duck-loadout">
+  
+    //   </div>
+
+    // </div>
 
     )}
 }

@@ -12,16 +12,16 @@ function App() {
   return (
     <div className="App">
       <Nav />
-          <Router>
-      <div>
-        <Switch>
-          <Route exact path="/home" component={Homepage} />
-         <Route exact path="/registration" component={Register} />
-        <Route exact path="/login" component={Login} /> }
-          {/* <Route component={NoMatch} /> } */}
-        </Switch>
-      </div>
-          </Router>
+      <Router>
+        <div>
+          <Switch>
+            <Route exact path="/home" component={Homepage} />
+          <Route exact path="/registration" component={Register} />
+          <Route exact path="/login" component={Login} /> }
+    
+          </Switch>
+        </div>
+      </Router>
 
     </div>
   );
