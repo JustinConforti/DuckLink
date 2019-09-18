@@ -25,7 +25,7 @@ handleChange = event => {
 };
 
 onClickSaveUser = (email, username, password) => {
-	API.saveUser({
+	API.registerUser({
 		email,
 		username,
 		password,

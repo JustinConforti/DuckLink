@@ -4,7 +4,7 @@ const mongoose = require("mongoose")
 const app = express();
 const session = require("express-session")
 const passport = require("passport");
-const routes = require("./routes")(passport);
+const routes = require("./routes");
 const PORT = process.env.PORT || 3001;
 
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/Ducks", { useNewUrlParser: true });

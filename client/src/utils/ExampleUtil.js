@@ -6,12 +6,12 @@ export default {
         return axios.get("/api/users");
     },
 
-    getBook: id => { 
+    getUserid: id => { 
         return axios.get(`/api/users/${id}`); 
     },
 
-    saveUser: userData => { 
-        return axios.post(`/api/users`, userData);
+    registerUser: userData => { 
+        return axios.post(`/api/register`, userData);
     }
 
 }

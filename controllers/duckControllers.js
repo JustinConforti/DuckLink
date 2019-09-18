@@ -1,4 +1,5 @@
-const db = require("../models");
+const db = require("../models")
+
 module.exports = {
 
 	findById: function(req, res) {
