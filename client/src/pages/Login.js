@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./style.css";
-import { Container,Col,Card,CardBody,CardHeader,Row } from "react-bootstrap/";
+import { Container,Col,Card,CardBody,Row } from "react-bootstrap/";
 import FormGroup from "react-bootstrap/FormGroup";
 import FormLabel from "react-bootstrap/FormLabel";
 import FormControl from "react-bootstrap/FormControl";
@@ -26,7 +26,6 @@ class Login extends Component {
         <Row className="justify-content-md-center" >
           <Col md ="auto" >
             <Card style={{ width: '50rem'}}>
-              <Card.Header as="h5">LogIn</Card.Header>
               <Card.Img variant="top" src="https://www.fillmurray.com/360/200(16 kB)" alt="..." fluid />
               <Card.Body>
                 <form>
@@ -49,7 +48,7 @@ class Login extends Component {
                           type="password"
                         />
                       </FormGroup>{" "}
-                      <Button variant="primary" size="lg" type="submit">
+                      <Button variant="primary" size="lg" type="submit" >
                         Duck Duck GO!{" "}
                       </Button>{" "}
                         
@@ -65,7 +64,6 @@ class Login extends Component {
           </Col>
         </Row>
       </Container>
-      // create button to register page 
     );
   }
 }
