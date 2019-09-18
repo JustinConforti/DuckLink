@@ -25,7 +25,6 @@ render() {
     <div className="duck-loadout">
 
     </div>
-
  </div>
 
     );
