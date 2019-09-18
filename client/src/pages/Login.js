@@ -24,8 +24,8 @@ class Login extends Component {
     return (
       <Container>
         <Row className="justify-content-md-center" >
-          <Col md="auto">
-            <Card style={{ width: '25rem'}}>
+          <Col md ="auto" >
+            <Card style={{ width: '50rem'}}>
               <Card.Header as="h5">LogIn</Card.Header>
               <Card.Img variant="top" src="https://www.fillmurray.com/360/200(16 kB)" alt="..." fluid />
               <Card.Body>
@@ -49,9 +49,14 @@ class Login extends Component {
                           type="password"
                         />
                       </FormGroup>{" "}
-                      <Button block bsSize="small" type="submit">
-                        Go{" "}
+                      <Button variant="primary" size="lg" type="submit">
+                        Duck Duck GO!{" "}
                       </Button>{" "}
+                        
+                      <Button variant="secondary" size="sm" type="submit">
+                        QUACK?{" "}
+                      </Button>{" "}
+
                     </form>{" "}
                   </div>
                 </form>
