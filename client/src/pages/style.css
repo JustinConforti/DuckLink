@@ -36,8 +36,8 @@
     width: 720px } */
 
 .home-page {
-    height: 1000px;
-    width: 50%;
+  height: 1000px;
+  width: 50%;
 }
 .screen {
     background-color: #ffb3ba;
@@ -87,14 +87,19 @@ src: local('Pixel-Art Regular'), url('../assets/fonts/pixelart.woff') format('wo
      padding: 20%;
   }
 .home-cards {
-    width: 150%;
-    margin-bottom: 5%;
-    margin-left: -21%;
-    margin-top: 9%;
+  width: 150%;
+  margin-bottom: 5%;
+  margin-left: -21%;
+  margin-top: 9%;
 }
 .thumbnail {
-    margin-top:-500%;
-    margin-left: -30%;
+  margin-top: -500%;
+  margin-left: -30%;
 }
+
+/* login page css*/
+/* ------------------------- */
+
+#button1{
   
-  
+}
