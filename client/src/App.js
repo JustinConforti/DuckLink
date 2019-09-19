@@ -15,12 +15,13 @@ function App() {
         <div>
           <Switch>
             <Route exact path="/home" component={Homepage} />
-            <Route exact path="/registration" component={Register} />
-            <Route exact path="/login" component={Login} />
-            {/* <Route component={NoMatch} /> } */}
+          <Route exact path="/registration" component={Register} />
+          <Route exact path="/login" component={Login} /> }
+    
           </Switch>
         </div>
       </Router>
+
     </div>
   )
 }

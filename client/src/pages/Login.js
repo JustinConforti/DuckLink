@@ -22,41 +22,41 @@ class Login extends Component {
   
   render() {
     return (
-      <Container>
-        <Row className="justify-content-md-center" >
-          <Col md ="auto" >
-            <Card style={{ width: '50rem'}}>
-              <Card.Img variant="top" src="https://www.fillmurray.com/360/200(16 kB)" alt="..." fluid />
-              <Card.Body>
-                <form classname="mx auto">
-                  <div className="Register">
-                    <form onSubmit={this.handleSubmit}>
-                      <FormGroup controlId="email" bsSize="large">
-                        <FormLabel> Email </FormLabel>{" "}
-                        <FormControl
-                          autoFocus
-                          type="email"
-                          value={this.state.email}
-                          onChange={this.handleChange}
-                          />{" "}
-                      </FormGroup>{" "}
-                      <FormGroup controlId="password" bsSize="large">
-                        <FormLabel> Password </FormLabel>{" "}
-                        <FormControl
-                          value={this.state.password}
-                          onChange={this.handleChange}
-                          type="password"
-                        />
-                         </FormGroup>{" "}
+    <div className="Register">
+        <form onSubmit={this.handleSubmit}>
+          <FormGroup controlId="email" bsSize="large">
+            <FormLabel> Email </FormLabel>{" "}
+            <FormControl
+              autoFocus
+              type="email"
+              value={this.state.email}
+              onChange={this.handleChange}
+            />{" "}
+          </FormGroup>{" "}
+          <FormGroup controlId="password" bsSize="large">
+            <FormLabel> Password </FormLabel>{" "}
+            <FormControl
+              value={this.state.password}
+              onChange={this.handleChange}
+              type="password"
+            />
+          </FormGroup>{" "}
+          <Button
+            block
+            bsSize="large"
+            type="submit"
+          >
+            register{" "}
+          </Button>{" "}
+        </form>{" "}
+    </div> 
 
-                        <div >
-                      <Button variant="primary" size="lg" type="submit" id="button1" >
-                        Duck Duck GO!{" "}
-                      </Button>{" "}
-                      <Button variant="secondary" size="sm" type="submit" id="button2" >
-                        QUACK?{" "}
-                      </Button>{" "}
-                      </div>
+    // <div className ="screen">
+    //   <div className="duck-loadout">
+  
+    //   </div>
+
+    // </div>
 
                     </form>{" "}
                   </div>

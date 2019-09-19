@@ -1,37 +1,91 @@
+/* canvas window. fixed but resizeable */
+
+.card-body-window{
+    height:720px;
+    width: 720px;
+    background-color: #ffb3ba; 
+    border-width: 10px;
+    border-style: solid;
+    border-color:  #ff899f
+    
+}
+
+#logoImg {
+    border-radius: 6%;
+    padding: 0px
+}
+/* media queries for canvas */
+/* // Extra small devices (portrait phones, less than 576px)
+// No media query for `xs` since this is the default in Bootstrap
+
+// Small devices (landscape phones, 576px and up) */
+/* @media (min-width: 576px) {
+    height:400px;
+    width: 400px}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {height:720px;
+    width: 720px}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {height:720px;
+    width: 720px}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {height:720px;
+    width: 720px } */
+
 .home-page {
   height: 1000px;
   width: 50%;
 }
 .screen {
-  background-color: white;
-  width: 50%;
-  border: 11px solid;
-  padding: 24%;
-  margin: 0 auto;
-}
+    background-color: #ffb3ba;
+    width: 50%;
+    border: 11px solid #ffb3ba;
+    padding: 24%;
+    margin: 0 auto;
+  }
 .Register {
-  background-color: white;
+    background-color: #ffb3ba;
 }
 
-.backgroundWhite {
-  background-color: white;
+.backgroundWhite{
+    background-color: #ffb3ba;
 }
 /* Wrapper for the form buttons */
 /* ------------------------- */
 .wrapper {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-  width: 100%;
-  min-height: 100%;
-  padding: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column; 
+    justify-content: center;
+    width: 100%;
+    min-height: 100%;
+    padding: 20px;
+  }
+
+
+@font-face {
+font-family: 'Pixel-Art Regular';
+font-style: normal;
+font-weight: normal;
+src: local('Pixel-Art Regular'), url('../assets/fonts/pixelart.woff') format('woff');
 }
-.wrapping-card {
-  margin: 0 auto;
-  border: 5px solid red;
-  padding: 20%;
+    
+#titleTextStyling {
+    font-size:3vw;
+    font-family: "Pixel-Art Regular"    
 }
+
+
+
+  .wrapping-card {
+    
+     margin: 0 auto; 
+     border: 5px solid red;
+     padding: 20%;
+  }
 .home-cards {
   width: 150%;
   margin-bottom: 5%;
