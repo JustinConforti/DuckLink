@@ -2,7 +2,7 @@
   "name": "ducklink",
   "version": "1.0.0",
   "description": "Project 3",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
     "start:prod": "node server.js",
@@ -28,10 +28,11 @@
     "bcrypt": "^3.0.6",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
+    "concurrently": "^4.1.2",
     "connect-flash": "^0.1.1",
     "cookie-parser": "^1.4.4",
+    "dotenv": "^8.1.0",
     "express": "^4.17.1",
-<<<<<<< HEAD
     "express-ejs-layouts": "^2.5.0",
     "express-session": "^1.16.2",
     "if-env": "^1.0.4",
@@ -39,9 +40,5 @@
     "morgan": "^1.9.1",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0"
-=======
-    "if-env": "^1.0.4",
-    "mongoose": "^5.7.1"
->>>>>>> 5ab093c3463ef3e86ba7fa7df167e97167109448
   }
 }

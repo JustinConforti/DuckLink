@@ -20,6 +20,7 @@ class Homepage extends Component {
 
 render() {
     return (
+<div>
  <div className ="screen">
     <div className="duck-loadout">
 
@@ -40,6 +41,7 @@ render() {
 
 
     </Card>
+   </div>
 </div>
     );
 }

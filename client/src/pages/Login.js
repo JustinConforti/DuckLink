@@ -22,44 +22,6 @@ class Login extends Component {
 
   render() {
     return (
-<<<<<<< HEAD
-<div className="Register">
-        <form onSubmit={this.handleSubmit}>
-          
-          <FormGroup controlId="username" bsSize="large">
-            <FormLabel> Username </FormLabel>{" "}
-            <FormControl
-              autoFocus
-              type="username"
-              value={this.state.email}
-              onChange={this.handleChange}
-            />{" "}
-          </FormGroup>{" "}
-
-          <FormGroup controlId="password" bsSize="large">
-            <FormLabel> Password </FormLabel>{" "}
-            <FormControl
-              value={this.state.password}
-              onChange={this.handleChange}
-              type="password"
-            />
-          </FormGroup>{" "}
-
-          <Button
-            block
-            bsSize="large"
-            type="submit"
-            href="/registration"
-          >
-            register{" "}
-          </Button>{" "}
-
-        </form>{" "}
-
-      </div>
-
-    )}
-=======
       <div className = "container">
             <div className = "row">
 
@@ -105,7 +67,6 @@ class Login extends Component {
     
     );
   }
->>>>>>> 5ab093c3463ef3e86ba7fa7df167e97167109448
 }
 
 export default Login;
