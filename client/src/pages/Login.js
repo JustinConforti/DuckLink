@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./style.css";
-import { Container,Col,Card,CardBody,Row } from "react-bootstrap/";
+import { Container, Col, Card, CardBody, Row } from "react-bootstrap/";
 import FormGroup from "react-bootstrap/FormGroup";
 import FormLabel from "react-bootstrap/FormLabel";
 import FormControl from "react-bootstrap/FormControl";
@@ -19,53 +19,40 @@ class Login extends Component {
       [name]: value
     });
   };
-  
+
   render() {
     return (
-    <div className="Register">
-        <form onSubmit={this.handleSubmit}>
-          <FormGroup controlId="email" bsSize="large">
-            <FormLabel> Email </FormLabel>{" "}
-            <FormControl
-              autoFocus
-              type="email"
-              value={this.state.email}
-              onChange={this.handleChange}
-            />{" "}
-          </FormGroup>{" "}
-          <FormGroup controlId="password" bsSize="large">
-            <FormLabel> Password </FormLabel>{" "}
-            <FormControl
-              value={this.state.password}
-              onChange={this.handleChange}
-              type="password"
-            />
-          </FormGroup>{" "}
-          <Button
-            block
-            bsSize="large"
-            type="submit"
-          >
-            register{" "}
-          </Button>{" "}
-        </form>{" "}
-    </div> 
-
-    // <div className ="screen">
-    //   <div className="duck-loadout">
-  
-    //   </div>
-
-    // </div>
-
-                   // </form>{" "}
-                 // </div>
-               // </form>
-              //</Card.Body>
-            //</Card>
-          //</Col>
-        //</Row>
-      //</Container>
+      <Container>
+          <Card>
+            <Card.Body>
+              <div className="Login">
+              <img id = "logoImg" src="assets/images/duck.png" alt="..." height= "400 px" width= "400 px"></img>
+                <form onSubmit={this.handleSubmit}>
+                  <FormGroup controlId="userName" bsSize="large">
+                    <FormLabel> Username </FormLabel>{" "}
+                    <FormControl
+                      autoFocus
+                      type="username"
+                      value={this.state.username}
+                      onChange={this.handleChange}
+                    />{" "}
+                  </FormGroup>{" "}
+                  <FormGroup controlId="password" bsSize="large">
+                    <FormLabel> Password </FormLabel>{" "}
+                    <FormControl
+                      value={this.state.password}
+                      onChange={this.handleChange}
+                      type="password"
+                    />
+                  </FormGroup>{" "}
+                  <Button block bsSize="large" type="submit">
+                    Duck Duck GO{" "}
+                  </Button>{" "}
+                </form>{" "}
+              </div>
+            </Card.Body>
+          </Card>
+      </Container>
     );
   }
 }

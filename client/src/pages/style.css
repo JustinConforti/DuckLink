@@ -100,15 +100,7 @@ src: local('Pixel-Art Regular'), url('../assets/fonts/pixelart.woff') format('wo
 /* login page css*/
 /* ------------------------- */
 .Card-Body {
-  margin-top: 9%;
-  margin-bottom: 5%;
+  
 }
 
-/*buttons*/
-#button1{
-   
-}
 
-#button2{
-   
-}
