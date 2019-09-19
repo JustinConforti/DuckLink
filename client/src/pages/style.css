@@ -39,6 +39,7 @@
   height: 1000px;
   width: 50%;
 }
+
 .screen {
     background-color: #ffb3ba;
     width: 50%;
@@ -46,6 +47,7 @@
     padding: 24%;
     margin: 0 auto;
   }
+
 .Register {
     background-color: #ffb3ba;
 }
@@ -53,6 +55,7 @@
 .backgroundWhite{
     background-color: #ffb3ba;
 }
+
 /* Wrapper for the form buttons */
 /* ------------------------- */
 .wrapper {
