@@ -58,14 +58,14 @@ class Login extends Component {
 
     // </div>
 
-                    </form>{" "}
-                  </div>
-                </form>
-              </Card.Body>
-            </Card>
-          </Col>
-        </Row>
-      </Container>
+                   // </form>{" "}
+                 // </div>
+               // </form>
+              //</Card.Body>
+            //</Card>
+          //</Col>
+        //</Row>
+      //</Container>
     );
   }
 }
