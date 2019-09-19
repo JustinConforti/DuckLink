@@ -1,13 +1,15 @@
-import React from 'react';
+import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Nav from "./components/Nav";
 import Homepage from "./pages/Homepage";
 import Login from "./pages/Login"
 import Register from "./pages/Register"
 import Store from "./pages/register";
-import "./App.css";
-import 'bootstrap/dist/css/bootstrap.min.css';
 
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   return (
@@ -26,7 +28,7 @@ function App() {
       </Router>
 
     </div>
-  );
+  )
 }
 
 export default App;
