@@ -100,9 +100,11 @@ src: local('Pixel-Art Regular'), url('../assets/fonts/pixelart.woff') format('wo
 
 /* login page css*/
 /* ------------------------- */
-#titleTextStyling2 {
+#titleTextStyling.display-4{
   font-size:3vw;
-  font-family: "Pixel-Art Regular"    
+  font-family: "Pixel-Art Regular";  
+   position: "center";
+   
 }
 
 /*login button*/
@@ -124,7 +126,8 @@ src: local('Pixel-Art Regular'), url('../assets/fonts/pixelart.woff') format('wo
   flex-direction: column; 
   justify-content: center;
   width: 30%;
-  min-height: 50%;
+  min-height: 20%;
   padding: 10px;
   margin-left: 35%
 }
+
