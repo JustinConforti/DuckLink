@@ -2,6 +2,10 @@ import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Nav from "./components/Nav";
 import Homepage from "./pages/Homepage";
+import Login from "./pages/Login"
+import Register from "./pages/Register"
+import Store from "./pages/register";
+
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import "./App.css";
@@ -15,8 +19,9 @@ function App() {
         <div>
           <Switch>
             <Route exact path="/home" component={Homepage} />
-          <Route exact path="/registration" component={Register} />
-          <Route exact path="/login" component={Login} /> }
+            <Route exact path="/registration" component={Register} />
+            <Route exact path="/login" component={Login} /> 
+            <Route exact path="/store" component={Store}/>
     
           </Switch>
         </div>
