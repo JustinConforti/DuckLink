@@ -32,7 +32,17 @@
   }
 }
 
+@font-face {
+  font-family: 'Pixel-Art Regular';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Pixel-Art Regular'), url('assets/fonts/pixelart.woff') format('woff');
+  }
+      
+
+
 body {
   padding: 0;
-  background: url(assets/images/bluebg.png)
+  background: url(assets/images/bluebg.png);
+  font-family: "Pixel-Art Regular"    
 }

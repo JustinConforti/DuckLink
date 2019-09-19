@@ -1,24 +1,23 @@
 import React, { Component } from "react";
-import Nav from "../components/Nav";
+// import Jumbotron from "../components/Jumbotron"
+// import Button from "../components/Button"
+// import { Col, Row, Container } from "../components/Grid";
+// import { Input, TextArea, FormBtn } from "../components/Form";
+// import { List, ListItem } from "../components/List";
+// import { Link } from "react-router-dom";
 import "./style.css";
+// import API from "../utils/API";
+// import { throws } from "assert";
 
-
-
-class Register extends Component {
+class Store extends Component {
     state = {
-    
+
     };
 
 
  componentDidMount() {
     
  }
- handleChange = event => {
-    const { name, value } = event.target;
-    this.setState({
-      [name]: value
-    });
-  };
 
 render() {
     return (
@@ -61,8 +60,8 @@ render() {
 
     
 
-    )}
+    );
+    }
 }
 
-
-    export default Register;
+export default Store;
