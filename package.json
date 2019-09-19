@@ -4,7 +4,14 @@
   "description": "Project 3",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start:prod": "node server.js",
+    "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
+    "client": "cd client && npm run start",
+    "seed": "node scripts/seedDB.js",
+    "install": "cd client && npm install",
+    "build": "cd client && npm run build",
+    "heroku-postbuild": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -24,6 +31,7 @@
     "connect-flash": "^0.1.1",
     "cookie-parser": "^1.4.4",
     "express": "^4.17.1",
+<<<<<<< HEAD
     "express-ejs-layouts": "^2.5.0",
     "express-session": "^1.16.2",
     "if-env": "^1.0.4",
@@ -31,5 +39,9 @@
     "morgan": "^1.9.1",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0"
+=======
+    "if-env": "^1.0.4",
+    "mongoose": "^5.7.1"
+>>>>>>> 5ab093c3463ef3e86ba7fa7df167e97167109448
   }
 }
