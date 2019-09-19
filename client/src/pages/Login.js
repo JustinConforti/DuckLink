@@ -41,7 +41,10 @@ class Login extends Component {
                                                 <input type="password" className="form-control" id="InputPassword" placeholder="Password" />
                                             </div>
                                             <div className="form-group">
-                                                <button type="button" className="btn btn-outline-primary">Duck Duck Go</button>
+                                                <button type="button" className="btn btn-outline-primary" id="button1" >Duck Duck Go</button>
+                                            </div>
+                                            <div className="form-group">
+                                                <button type="button" className="btn btn-outline-primary" id="button2" >Quake?</button>
                                             </div>
                                         </form>
                                   
