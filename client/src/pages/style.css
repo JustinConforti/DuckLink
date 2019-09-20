@@ -40,6 +40,7 @@
   height: 1000px;
   width: 50%;
 }
+
 .screen {
     background-color: #ffb3ba;
     width: 50%;
@@ -47,6 +48,7 @@
     padding: 24%;
     margin: 0 auto;
   }
+
 .Register {
     background-color: #ffb3ba;
 }
@@ -54,6 +56,7 @@
 .backgroundWhite{
     background-color: #ffb3ba;
 }
+
 /* Wrapper for the form buttons */
 /* ------------------------- */
 .wrapper {
@@ -67,17 +70,26 @@
   }
 
 
-@font-face {
-font-family: 'Pixel-Art Regular';
-font-style: normal;
-font-weight: normal;
-src: local('Pixel-Art Regular'), url('../assets/fonts/pixelart.woff') format('woff');
-}
-    
+
 #titleTextStyling {
     font-size:3vw;
-    font-family: "Pixel-Art Regular"    
+    font-family: "Pixel-Art Regular";
+    color: white;
+    text-shadow: 3px 2px grey; 
 }
+
+.fontPusher {
+    font-family: "Pixel-Art Regular" 
+}
+
+#buttonStyle {
+    background-color: #ff899f; /* Green */
+    border: none;
+    color: #ffffba;
+    text-shadow: #cdb635; 
+}
+
+
 
 
 
