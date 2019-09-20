@@ -38,7 +38,7 @@ class Login extends Component {
                                                 <input type="username" className="form-control" id="exampleInputuserName" aria-describedby="usernameHelp" placeholder="Enter username" />
                                             </div>
                                             <div className="form-group">
-                                                <input type="password" className="form-control" id="InputPassword" placeholder="Password" />
+                                                <input type="password" className="form-control" id="InputPassword" placeholder=" Enter Password" />
                                             </div>
                                             <div className="form-group">
                                                 <button type="button" className="btn btn-outline-primary" id="button1" >Duck Duck Go</button>
