@@ -64,18 +64,7 @@ class Login extends Component {
      // </div>
     
 
-<<<<<<< Updated upstream
     
-=======
-                   // </form>{" "}
-                 // </div>
-               // </form>
-              //</Card.Body>
-            //</Card>
-          //</Col>
-        //</Row>
-      //</Container>
->>>>>>> Stashed changes
     );
   }
 }
