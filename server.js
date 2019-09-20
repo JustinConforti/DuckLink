@@ -93,10 +93,6 @@ app.get('/myData', (req, res) => {
 })
 
 
-app.get('/showSession', (req, res) => {
-  res.json(req.session)
-})
-
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
