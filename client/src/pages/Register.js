@@ -103,16 +103,15 @@ render() {
 																								>QUACK!!!</button>
                                             </div>
 
-
-                                        </form>
-                                  
-                            </div>
-                        </div>                               
-                    </div>
-								</div>
-							</div>
-    			)}
-	}
+                              					</form>
+                            					</div>
+                        						</div>                               
+                    							</div>
+																</div>
+															</div>
+															
+    												)}
+													}
 
 
 	export default Register;
