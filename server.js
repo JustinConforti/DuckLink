@@ -93,7 +93,7 @@ app.get('/myData', (req, res) => {
 })
 
 
-// Define middleware here
+// MiddlewareF
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 // Serve up static assets (usually on heroku)
@@ -101,8 +101,8 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
-// Use apiRoutes
-// app.use("/api", apiRoutes);
+// Routes
+app.use(routes)
 
 // Send every request to the React app
 // Define any API routes before this runs
