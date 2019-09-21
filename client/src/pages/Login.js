@@ -44,7 +44,7 @@ class Login extends Component {
                                                 <button type="button" className="btn btn-outline-primary" id="button1" >Duck Duck Go</button>
                                             </div>
                                             <div className="form-group">
-                                                <button type="button" className="btn btn-outline-primary" id="button2" >Quake?</button>
+                                                <button type="button" className="btn btn-outline-primary" id="button2" >Quack?</button>
                                             </div>
                                         </form>
                                   
