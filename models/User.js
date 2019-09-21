@@ -25,6 +25,36 @@ const userSchema = new schema({
 	date: {
 		type: Date,
 		default: Date.now
+	},
+
+	headgear: {
+		type: String,
+		default: "default"
+	},
+
+	eyes: {
+		type: String,
+		default: "default"
+	},
+
+	eyegear: {
+		type: String,
+		default: "default"
+	},
+
+	wing: {
+		type: String,
+		default: "default"
+	},
+
+	item: {
+		type: String,
+		default: "default"
+	},
+
+	beak: {
+		type: String,
+		default: "default"
 	}
 })
 
