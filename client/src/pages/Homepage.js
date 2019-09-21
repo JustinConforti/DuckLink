@@ -21,27 +21,27 @@ class Homepage extends Component {
 render() {
     return (
 <div>
- <div className ="screen">
-    <div className="duck-loadout">
 
-    </div>
- </div>
+	{/* We will have the duck loudout on the top of the duck information, and the Placeholder
+	whill go away when site is deployed. */}
+	{/* <div className ="screen my-2">
+			<div className="duck-loadout">
 
-<div>
-    <Card className ="wrapping-card" style={{ width: '55rem', height: '48em' }}>
-   <Row>   
-      <Col xs={6} md={4}>
-        <Image className ="thumbnail" src="https://i7.pngguru.com/preview/719/829/196/duck-cartoon-small-yellow-duck-cartoon-vector-thumbnail.jpg" roundedCircle />
-      </Col>
+			</div>
+	</div> */}
+	
+  <Card className ="wrapping-card mt-2" id="loudOut">
+   <Row className="d-flex justify-content-center">   
+				{/* Placeholder image */}
+        <Image className ="thumbnail my-3" src="assets/images/duck.png" alt="duckLogo" roundedCircle />
    </Row>
+      
       <Card border="warning" body className ="home-cards">Username</Card>
       <Card border="warning" body className ="home-cards">Ranking: 00</Card>
       <Card border="warning" body className ="home-cards">DuckCoin: 00</Card>
       <Button className ="home-cards">View Shop</Button>
+  </Card>
 
-
-    </Card>
-   </div>
 </div>
     );
 }
