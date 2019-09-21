@@ -1,7 +1,7 @@
 /* canvas window. fixed but resizeable */
 
 .card-body-window{
-    height:720px;
+    height:750px;
     width: 720px;
     background-color: #ffb3ba; 
     border-width: 10px;
@@ -12,9 +12,11 @@
 
 #logoImg {
     border-radius: 6%;
-    padding: 0px
-
+    padding: 0px;
+    display: inline-flex;
+    margin-left: 20%;
 }
+
 /* media queries for canvas */
 /* // Extra small devices (portrait phones, less than 576px)
 // No media query for `xs` since this is the default in Bootstrap
@@ -69,6 +71,7 @@
     padding: 20px;
   }
 
+
 #loudOut {
   background-color: #ffb3ba;
   border: 11px solid #ffb3ba;
@@ -76,11 +79,13 @@
   /* height: 100%; */
 }
 
+
 #titleTextStyling {
     font-size:3vw;
     font-family: "Pixel-Art Regular";
     color: white;
     text-shadow: 3px 2px grey; 
+    margin-left: 40%;
 }
 
 .fontPusher {
@@ -119,13 +124,6 @@
 
 /* login page css*/
 /* ------------------------- */
-#titleTextStyling.display-4{
-  font-size:3vw;
-  font-family: "Pixel-Art Regular";  
-   position: "center";
-   
-}
-
 /*login button*/
 #button1{
   display: flex;
@@ -146,10 +144,11 @@
   justify-content: center;
   width: 30%;
   min-height: 20%;
-  padding: 5px;
+  padding: 10px;
   margin-left: 35%
 }
 
 .row{
   margin-left: 50%;
 }
+
