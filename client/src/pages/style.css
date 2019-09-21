@@ -16,6 +16,7 @@
     display: inline-flex;
     margin-left: 20%;
 }
+
 /* media queries for canvas */
 /* // Extra small devices (portrait phones, less than 576px)
 // No media query for `xs` since this is the default in Bootstrap
@@ -70,15 +71,16 @@
     padding: 20px;
   }
 
-@font-face{
+/*@font-face{
 
-}
+}*/
 
 #titleTextStyling {
     font-size:3vw;
     font-family: "Pixel-Art Regular";
     color: white;
     text-shadow: 3px 2px grey; 
+    margin-left: 40%;
 }
 
 .fontPusher {
