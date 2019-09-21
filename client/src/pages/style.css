@@ -68,7 +68,12 @@
     padding: 20px;
   }
 
-
+#loudOut {
+  background-color: #ffb3ba;
+  border: 11px solid #ffb3ba;
+  width: 50%;
+  /* height: 100%; */
+}
 
 #titleTextStyling {
     font-size:3vw;
@@ -92,26 +97,29 @@
 
 
 
-  .wrapping-card {
-    
-     margin: 0 auto; 
-     border: 5px solid red;
-     padding: 20%;
-  }
-.home-cards {
-  width: 150%;
-  margin-bottom: 5%;
-  margin-left: -21%;
-  margin-top: 9%;
+.wrapping-card {
+  display: flex;
+  align-items: center;
+  flex-direction: column; 
+  justify-content: center;
+  margin: 0 auto; 
 }
+
+.home-cards {
+  /* width: 150%; */
+  text-align: center;
+  width: 250px;
+  margin-bottom: 3%;
+  /* margin-left: -21%; */
+  /* margin-top: 9%; */
+}
+
 .thumbnail {
-  margin-top: -500%;
-  margin-left: -30%;
+  width: 30%
+  /* margin-top: -500%; */
+  /* margin-left: -30%; */
 }
 
 /* login page css*/
 /* ------------------------- */
 
-#button1{
-  
-}
