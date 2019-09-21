@@ -1,11 +1,10 @@
 import React, { Component } from "react";
 import Nav from "../components/Nav";
 import "./style.css";
-import API from "../utils/ExampleUtil"
-
-
+import API from "../utils/ExampleUtil";
 
 class Register extends Component {
+
 	state = {
 			email: "",
 			username: "",

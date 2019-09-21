@@ -35,6 +35,7 @@ render() {
 				{/* Placeholder image */}
         <Image className ="thumbnail my-3" src="assets/images/duck.png" alt="duckLogo" roundedCircle />
    </Row>
+      
       <Card border="warning" body className ="home-cards">Username</Card>
       <Card border="warning" body className ="home-cards">Ranking: 00</Card>
       <Card border="warning" body className ="home-cards">DuckCoin: 00</Card>
