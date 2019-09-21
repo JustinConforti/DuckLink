@@ -19,6 +19,7 @@ function Nav() {
             <li><a href="#">Your Quackfile</a></li>
             <li><a href="/home">Home</a></li>
             <li><a href="#">Mini-Games</a></li>
+            <li><a href="dungeon">Duck Dungeon</a></li>
         </ul>
     </div>
     </label>
