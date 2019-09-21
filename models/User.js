@@ -58,10 +58,8 @@ const userSchema = new schema({
 	}
 })
 
-// Creating a custom method for our User model. This will check if an unhashed password entered by the user can be compared to the hashed password stored in our database
-// userSchema.prototype.validPassword = function(password) {
-// 	return bcrypt.compareSync(password, this.password);
-// };
+// Creating a custom method for our User model. 
+// This will check if an unhashed password entered by the user can be compared to the hashed password stored in our database
 
 userSchema.methods.comparePassword = function(passw, cb) {
 	bcrypt.compare(passw, this.password, function(err, isMatch) {
