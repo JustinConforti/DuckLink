@@ -4,7 +4,7 @@ import Nav from "./components/Nav";
 import Homepage from "./pages/Homepage";
 import Register from "./pages/Register"
 import Login from "./pages/Login";
-import Store from "./pages/Register";
+import Store from "./pages/Store";
 import DuckDungeon from "./pages/DuckDungeon";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
