@@ -26,7 +26,7 @@ render() {
 
     </div>
  </div>
-
+  
 <div>
     <Card className ="wrapping-card" style={{ width: '55rem', height: '48em' }}>
    <Row>   
