@@ -68,17 +68,23 @@
     padding: 20px;
   }
 
+  @font-face {
+    font-family: 'Pixel Berry 08/84 Ltd.Edition';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Pixel Berry 08/84 Ltd.Edition'), url('../assets/fonts/Pixel_Berry_08_84_Ltd.Edition.woff') format('woff');
+    }
 
 
 #titleTextStyling {
     font-size:3vw;
-    font-family: "Pixel-Art Regular";
+    font-family: 'Pixel Berry 08/84 Ltd.Edition';
     color: white;
     text-shadow: 3px 2px grey; 
 }
 
 .fontPusher {
-    font-family: "Pixel-Art Regular" 
+    font-family: 'Pixel Berry 08/84 Ltd.Edition'; 
 }
 
 #buttonStyle {
