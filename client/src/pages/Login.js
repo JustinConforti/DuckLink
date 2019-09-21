@@ -42,7 +42,7 @@ class Login extends Component {
 
                     <div classNames="col-10">
                         <div className="card">
-                            <div className="card-body card-body-window">
+                            <div className="card-body card-body-window" style={{borderColor: " #ff899f"}}>
                                     <img id = "logoImg" src="assets/images/duck.png" alt="..." height= "400 px" width= "400 px"></img>
                                     <h1 className="display-4" id = "titleTextStyling">LogIn</h1>
                                         <form className = "mx-auto">
@@ -76,7 +76,7 @@ class Login extends Component {
 													                      </button>
 											                      </div>
                                             <div className="form-group">
-                                                <button type="button" className="btn btn-outline-primary" id="button2" >Quake?</button>
+                                                <button type="button" className="btn btn-outline-primary" id="button2" >Quack?</button>
                                             </div>
                                         </form>
                                   
