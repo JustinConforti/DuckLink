@@ -6,13 +6,14 @@
     background-color: #ffb3ba; 
     border-width: 10px;
     border-style: solid;
-    border-color:  #ff899f
+    border-color:  #ff899f;
+    text-align: center
     
 }
 
 #logoImg {
     border-radius: 6%;
-    padding: 0px
+    padding: 0px;
 }
 /* media queries for canvas */
 /* // Extra small devices (portrait phones, less than 576px)
@@ -81,10 +82,12 @@
     font-family: 'Pixel Berry 08/84 Ltd.Edition';
     color: white;
     text-shadow: 3px 2px grey; 
+    text-align: center;
 }
 
 .fontPusher {
     font-family: 'Pixel Berry 08/84 Ltd.Edition'; 
+    text-align: center;
 }
 
 #buttonStyle {
