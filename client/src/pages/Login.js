@@ -1,23 +1,35 @@
 import React, { Component } from "react";
 import "./style.css";
-//import { Container, Col, Card, CardBody, Row } from "react-bootstrap/";
-//import FormGroup from "react-bootstrap/FormGroup";
-//import FormLabel from "react-bootstrap/FormLabel";
-//import FormControl from "react-bootstrap/FormControl";
-//import Button from "react-bootstrap/Button";
+import API from "../utils/API"
+
 
 class Login extends Component {
   state = {
-    email: "",
+    username: "",
     password: ""
   };
 
-  componentDidMount() {}
+  componentDidMount() {
+
+  }
+
+
   handleChange = event => {
     const { name, value } = event.target;
     this.setState({
       [name]: value
     });
+  };
+
+  onClickLogin = (username, password) => {
+    API.loginUser({
+      username,
+      password,
+    })
+      .then(res => {
+      alert("Login Completed!")
+      console.log(res)
+    })
   };
 
   render() {
@@ -34,15 +46,35 @@ class Login extends Component {
                                     <img id = "logoImg" src="assets/images/duck.png" alt="..." height= "400 px" width= "400 px"></img>
                                     <h1 className="display-4" id = "titleTextStyling">LogIn</h1>
                                         <form className = "mx-auto">
-                                            <div className="form-group">
-                                                <input type="username" className="form-control" id="exampleInputuserName" aria-describedby="usernameHelp" placeholder="Enter username" />
-                                            </div>
-                                            <div className="form-group">
-                                                <input type="password" className="form-control" id="InputPassword" placeholder="Password" />
-                                            </div>
-                                            <div className="form-group">
-                                                <button type="button" className="btn btn-outline-primary" id="button1" >Duck Duck Go</button>
-                                            </div>
+                    
+                                            <div class="form-group">
+													                    <input type="username" 
+													                     name="username" 
+													                     className="form-control" 
+													                     id="exampleInputEmail1" 
+													                     aria-describedby="usernameHelp" 
+													                     placeholder="Enter username"
+													                     onChange={this.handleChange}
+													                     value={this.state.username}
+													                       />
+											                      </div>
+                                            <div class="form-group">
+													                     <input type="password"
+													                      name="password" 
+													                      className="form-control" 
+													                      id="exampleInputPassword1" 
+													                      placeholder="Password"
+													                      onChange={this.handleChange}
+													                      value={this.state.password} />
+											                      </div>
+                                            <div class="form-group">
+													                      <button
+													                      type="button" 
+													                      className="btn btn-outline-primary"
+													                      onClick={() => this.onClickLogin()}
+													                      >Login
+													                      </button>
+											                      </div>
                                             <div className="form-group">
                                                 <button type="button" className="btn btn-outline-primary" id="button2" >Quake?</button>
                                             </div>
@@ -52,18 +84,8 @@ class Login extends Component {
                         </div>                               
                     </div>
 
-                <div className="col">
-                </div>
-
              </div>
         </div>
-
-       ///<div className ="screen">
-      
-
-     // </div>
-    
-
     
     );
   }

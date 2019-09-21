@@ -5,8 +5,10 @@ import Col from 'react-bootstrap/Col';
 import Image from 'react-bootstrap/Image';
 import "./style.css";
 import Row from 'react-bootstrap/Row';
+import axios from 'axios';
 // import API from "../utils/API";
 // import { throws } from "assert";
+import API from "../utils/API";
 
 class Homepage extends Component {
     state = {
@@ -15,8 +17,14 @@ class Homepage extends Component {
 
 
  componentDidMount() {
+    console.log("loading component")
+   axios.get(API.myData)
+   .then(res => {
+     console.log(res)
+   })
+}
     
- }
+
 
 render() {
     return (

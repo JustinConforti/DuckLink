@@ -1,7 +1,7 @@
 // Requiring our models and passport as we've configured it
 var db = require("../models");
 var passport = require("../config/passport");
-
+const bcrypt = require('bcrypt')
 
 
 module.exports = function(app) {
@@ -49,6 +49,12 @@ module.exports = function(app) {
       });
     }
   });
+
+
+  
+  
+
+
 };
 
 
