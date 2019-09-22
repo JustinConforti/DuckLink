@@ -59,7 +59,7 @@ render() {
                     <div classNames="col-10">
                         <div className="card">
                             <div className="card-body card-body-window">
-                                    <img id = "logoImg" src="assets/images/duck.png" alt="..." height= "400 px" width= "400 px"></img>
+                                    <img id = "logoImg" src="assets/images/duck.png" alt="..." height= "375 px" width= "375 px"></img>
                                     <h1 className="display-4 mx-auto" id = "titleTextStyling">REGISTER</h1>
                                         <form className = "mx-auto fontPusher">
 
@@ -113,7 +113,9 @@ render() {
                                   
                             </div>
                         </div>                               
-                    </div>                               
+                    </div>
+                    <div className="col">
+                </div>                               
 				</div>
 		</div>                               
     )}
