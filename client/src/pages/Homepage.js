@@ -31,23 +31,28 @@ class Homepage extends Component {
                        <div className="card">
                            <div className="card-body card-body-window mx-auto">
                                     <h1 className="display-4 mx-auto" id = "titleTextStyling">DuckLink!</h1>
-                                   <img id = "logoImg" src="assets/images/duck.png" alt="..." height= "250 px" width= "250 px"></img>
+                                   <img id = "logoImg" src="assets/images/duck.png" alt="..." height= "300 px" width= "300 px"></img>
                                    <br/>
                                    <br/>
                                    <form className = "mx-auto fontPusher">
                                        <div className="form-group">
-                                          <button id = "buttonStyleHome" type="button" class="btn btn-secondary btn-lg btn-block">Username: </button>
+                                          <button id = "buttonStyleHome" type="button" class="btn btn-secondary btn-lg btn-block">USERNAME</button>
                                        </div>
                                        <div className="form-group">
-                                          <button id = "buttonStyleHome" type="button" class="btn btn-secondary btn-lg btn-block">DuckCoin: 
-                                             <span id = "duckCoin" className = "animated infinite pulse"> 00</span> 
+                                          <button id = "buttonStyleHome" type="button" class="btn btn-secondary btn-lg btn-block">
+                                             <span id = "duckRanking">Duck </span>
+                                             RANKING: 
+                                             <span id = "duckRanking" className = "animated infinite pulse"> 00</span> 
                                           </button>                                      
                                        </div>
                                        <div className="form-group">
-                                          <button id = "buttonStyleHome" type="button" class="btn btn-secondary btn-lg btn-block animated infinite pulse"><span className = "rainbow-text">Games</span></button>                                       
+                                          <button id = "buttonStyleHome" type="button" class="btn btn-secondary btn-lg btn-block animated infinite pulse">
+                                             <span id = "greyPlayButton">play </span>
+                                             <span className = "rainbow-text">GAMES</span></button>                                       
                                        </div>
                                        <div className="form-group">
-                                          <button id = "buttonStyleHome" type="button" class="btn btn-secondary btn-lg btn-block">Store</button>                                       
+                                          <button id = "buttonStyleHome" type="button" class="btn btn-secondary btn-lg btn-block">
+                                             <span id = "duckRanking">DuckLink! </span>STORE</button>                                       
                                        </div>
                                     </form>
                                    
@@ -55,6 +60,8 @@ class Homepage extends Component {
                            </div>
                        </div>                               
                    </div>                               
+               <div className="col">
+               </div>
            </div>
      </div>                               
    )}

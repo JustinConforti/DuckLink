@@ -127,7 +127,7 @@
   -webkit-text-fill-color: transparent;
 }
 
-#duckCoin {
+#duckRanking {
   font-size:2vw;
   color: yellow;
   text-shadow: 3px 2px #cdb635;
@@ -138,6 +138,13 @@
   color: #c24159;
   font-weight: 900;
 
+}
+
+#greyPlayButton {
+  font-size:2vw;
+  color: lightgray;
+  text-shadow: 3px 2px grey;
+  opacity: 0.5
 }
 
 .wrapping-card {
