@@ -3,7 +3,7 @@
 .card-body-window{
     height:800px;
     width: 720px;
-    background-color: #ffb3ba; 
+    background-color: rgba(255, 179, 186, 0.75); 
     border-width: 10px;
     border-style: solid;
 

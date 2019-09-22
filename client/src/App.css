@@ -20,6 +20,7 @@
 
 body {
   padding: 0;
-  background: url(assets/images/bluebg.png);
+  background: url(assets/images/water.gif);
+  /* background: url(assets/images/bluebg.png); */
   font-family: 'Pixel Berry 08/84 Ltd.Edition';  
 }
