@@ -6,7 +6,7 @@ const schema = mongoose.Schema;
 const userSchema = new schema({
 
 	email: {
-    type: String,
+    	type: String,
 		match: [/.+@.+\..+/, "Please enter a valid e-mail address"],
 		required: true,
   	},
