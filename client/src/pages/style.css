@@ -94,22 +94,27 @@
     background-color: #ff899f; /* Green */
     border: none;
     color: #ffffba;
-    text-shadow: #cdb635; 
+    text-shadow: 3px 2px #cdb635; 
 }
 
 #buttonStyleHome {
     background-color: white; /* Green */
     border: none;
     color: #ff899f;
-    text-shadow: #ffffba;
+    text-shadow:3px 2px #c55569;
     font-size:2vw; 
+}
+
+.rainbow-text {
+  background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 #duckCoin {
   font-size:2vw;
   color: yellow;
-  text-shadow: #cdb635;
-
+  text-shadow: 3px 2px #cdb635;
 }
 
 #duckIcon {

@@ -39,14 +39,14 @@ class Homepage extends Component {
                                        </div>
                                        <div className="form-group">
                                           <button id = "buttonStyleHome" type="button" class="btn btn-secondary btn-lg btn-block">DuckCoin: 
-                                             <span id = "duckCoin"> 10000</span> 
+                                             <span id = "duckCoin" className = "animated infinite pulse"> 00</span> 
                                           </button>                                      
                                        </div>
                                        <div className="form-group">
-                                          <button id = "buttonStyleHome" type="button" class="btn btn-secondary btn-lg btn-block">Games<span id = "duckIcon"> +</span></button>                                       
+                                          <button id = "buttonStyleHome" type="button" class="btn btn-secondary btn-lg btn-block animated infinite pulse"><span className = "rainbow-text">Games</span></button>                                       
                                        </div>
                                        <div className="form-group">
-                                          <button id = "buttonStyleHome" type="button" class="btn btn-secondary btn-lg btn-block">Store<span id = "duckIcon"> -</span> </button>                                       
+                                          <button id = "buttonStyleHome" type="button" class="btn btn-secondary btn-lg btn-block">Store</button>                                       
                                        </div>
                                     </form>
                                    
