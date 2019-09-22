@@ -6,6 +6,8 @@ import Register from "./pages/Register"
 import Login from "./pages/Login"
 import Store from "./pages/Store";
 import DuckDungeon from "./pages/DuckDungeon";
+import MiniGames from "./pages/MiniGames";
+import DuckPacman from "./pages/DuckPacman";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -21,6 +23,8 @@ function App() {
             <Route exact path="/login" component={Login} /> 
             <Route exact path="/store" component={Store}/>
             <Route exact path="/dungeon" component={DuckDungeon}/>
+            <Route exact path="/pacman" component={DuckPacman}/>
+            <Route exact path="/minigames" component={MiniGames}/>
     
           </Switch>
         </div>
