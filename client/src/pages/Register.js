@@ -54,6 +54,16 @@ render() {
                                     <img id = "logoImg" src="assets/images/duck.png" alt="..." height= "400 px" width= "400 px"></img>
                                     <h1 className="display-4 mx-auto" id = "titleTextStyling">REGISTER</h1>
                                         <form className = "mx-auto fontPusher">
+                                            <div className = "form-group">
+                                            <input type="username"
+                                                name="username" 
+                                                className="form-control" 
+                                                id="exampleInputUsername1" 
+                                                aria-describedby="emailHelp" 
+                                                placeholder="Enter username"
+                                                onChange={this.handleChange}
+                                                value={this.state.username} />
+                                            </div>
 									
                                             <div className="form-group">
                                                 <input type="email" 
