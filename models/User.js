@@ -28,9 +28,9 @@ const userSchema = new schema({
 		default: Date.now
 	},
 
-	coins: {
+	level: {
 		type: Number,
-		default: 10
+		default: 1
 	},
 
 	headgear: {
