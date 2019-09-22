@@ -6,15 +6,18 @@
     background-color: #ffb3ba; 
     border-width: 10px;
     border-style: solid;
-    border-color:  #ff899f
-    padding 
+
+    border-color:  #ff899f;
+    text-align: center
 }
 
 #logoImg {
     border-radius: 6%;
     padding: 0px;
-    display: inline-flex;
-    margin-left: 20%;
+
+/*     display: inline-flex;
+    margin-left: 20%; */
+
 }
 
 /* media queries for canvas */
@@ -71,6 +74,12 @@
     padding: 20px;
   }
 
+  @font-face {
+    font-family: 'Pixel Berry 08/84 Ltd.Edition';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Pixel Berry 08/84 Ltd.Edition'), url('../assets/fonts/Pixel_Berry_08_84_Ltd.Edition.woff') format('woff');
+    }
 
 #loudOut {
   background-color: #ffb3ba;
@@ -82,21 +91,53 @@
 
 #titleTextStyling {
     font-size:3vw;
-    font-family: "Pixel-Art Regular";
+    font-family: 'Pixel Berry 08/84 Ltd.Edition';
     color: white;
     text-shadow: 3px 2px grey; 
-    margin-left: 40%;
+
+    text-align: center;
+
+/*     margin-left: 40%; */
+
 }
 
 .fontPusher {
-    font-family: "Pixel-Art Regular" 
+    font-family: 'Pixel Berry 08/84 Ltd.Edition'; 
+    text-align: center;
 }
 
 #buttonStyle {
     background-color: #ff899f; /* Green */
     border: none;
     color: #ffffba;
-    text-shadow: #cdb635; 
+    text-shadow: 3px 2px #cdb635; 
+}
+
+#buttonStyleHome {
+    background-color: white; /* Green */
+    border: none;
+    color: #ff899f;
+    text-shadow:3px 2px #c55569;
+    font-size:2vw; 
+}
+
+.rainbow-text {
+  background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#duckCoin {
+  font-size:2vw;
+  color: yellow;
+  text-shadow: 3px 2px #cdb635;
+}
+
+#duckIcon {
+  font-size:2vw;
+  color: #c24159;
+  font-weight: 900;
+
 }
 
 .wrapping-card {
