@@ -1,20 +1,25 @@
 /* canvas window. fixed but resizeable */
 
 .card-body-window{
-    height:720px;
+    height:750px;
     width: 720px;
     background-color: #ffb3ba; 
     border-width: 10px;
     border-style: solid;
+
     border-color:  #ff899f;
     text-align: center
-    
 }
 
 #logoImg {
     border-radius: 6%;
     padding: 0px;
+
+/*     display: inline-flex;
+    margin-left: 20%; */
+
 }
+
 /* media queries for canvas */
 /* // Extra small devices (portrait phones, less than 576px)
 // No media query for `xs` since this is the default in Bootstrap
@@ -76,13 +81,24 @@
     src: local('Pixel Berry 08/84 Ltd.Edition'), url('../assets/fonts/Pixel_Berry_08_84_Ltd.Edition.woff') format('woff');
     }
 
+#loudOut {
+  background-color: #ffb3ba;
+  border: 11px solid #ffb3ba;
+  width: 50%;
+  /* height: 100%; */
+}
+
 
 #titleTextStyling {
     font-size:3vw;
     font-family: 'Pixel Berry 08/84 Ltd.Edition';
     color: white;
     text-shadow: 3px 2px grey; 
+
     text-align: center;
+
+/*     margin-left: 40%; */
+
 }
 
 .fontPusher {
@@ -124,30 +140,56 @@
 
 }
 
-
-
-
-
-  .wrapping-card {
-    
-     margin: 0 auto; 
-     border: 5px solid red;
-     padding: 20%;
-  }
-.home-cards {
-  width: 150%;
-  margin-bottom: 5%;
-  margin-left: -21%;
-  margin-top: 9%;
+.wrapping-card {
+  display: flex;
+  align-items: center;
+  flex-direction: column; 
+  justify-content: center;
+  margin: 0 auto; 
 }
+
+.home-cards {
+  /* width: 150%; */
+  text-align: center;
+  width: 250px;
+  margin-bottom: 3%;
+  /* margin-left: -21%; */
+  /* margin-top: 9%; */
+}
+
 .thumbnail {
-  margin-top: -500%;
-  margin-left: -30%;
+  width: 30%
+  /* margin-top: -500%; */
+  /* margin-left: -30%; */
 }
 
 /* login page css*/
 /* ------------------------- */
-
+/*login button*/
 #button1{
-  
+  display: flex;
+  align-items:center;
+  flex-direction: column; 
+  justify-content: center;
+  width: 50%;
+  min-height: 50%;
+  padding: 15px;
+  margin-left: 25%
 }
+
+/*go to register page*/
+#button2{
+  display: flex;
+  align-items: center;
+  flex-direction: column; 
+  justify-content: center;
+  width: 30%;
+  min-height: 20%;
+  padding: 10px;
+  margin-left: 35%
+}
+
+.row{
+  margin-left: 50%;
+}
+
