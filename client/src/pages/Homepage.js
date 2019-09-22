@@ -18,46 +18,33 @@ class Homepage extends Component {
     
  }
 
+render() {
+    return (
+<div>
 
- render() {
-   return (
-       <div className = "container">
-           <div className = "row">
+	{/* We will have the duck loudout on the top of the duck information, and the Placeholder
+	whill go away when site is deployed. */}
+	{/* <div className ="screen my-2">
+			<div className="duck-loadout">
 
-               <div className="col">
-               </div>
+			</div>
+	</div> */}
+	
+  <Card className ="wrapping-card mt-2" id="loudOut">
+   <Row className="d-flex justify-content-center">   
+				{/* Placeholder image */}
+        <Image className ="thumbnail my-3" src="assets/images/duck.png" alt="duckLogo" roundedCircle />
+   </Row>
+      
+      <Card border="warning" body className ="home-cards">Username</Card>
+      <Card border="warning" body className ="home-cards">Ranking: 00</Card>
+      <Card border="warning" body className ="home-cards">DuckCoin: 00</Card>
+      <Button className ="home-cards">View Shop</Button>
+  </Card>
 
-                   <div classNames="col-10">
-                       <div className="card">
-                           <div className="card-body card-body-window mx-auto">
-                                    <h1 className="display-4 mx-auto" id = "titleTextStyling">DuckLink!</h1>
-                                   <img id = "logoImg" src="assets/images/duck.png" alt="..." height= "250 px" width= "250 px"></img>
-                                   <br/>
-                                   <br/>
-                                   <form className = "mx-auto fontPusher">
-                                       <div className="form-group">
-                                          <button id = "buttonStyleHome" type="button" class="btn btn-secondary btn-lg btn-block">Username: </button>
-                                       </div>
-                                       <div className="form-group">
-                                          <button id = "buttonStyleHome" type="button" class="btn btn-secondary btn-lg btn-block">DuckCoin: 
-                                             <span id = "duckCoin" className = "animated infinite pulse"> 00</span> 
-                                          </button>                                      
-                                       </div>
-                                       <div className="form-group">
-                                          <button id = "buttonStyleHome" type="button" class="btn btn-secondary btn-lg btn-block animated infinite pulse"><span className = "rainbow-text">Games</span></button>                                       
-                                       </div>
-                                       <div className="form-group">
-                                          <button id = "buttonStyleHome" type="button" class="btn btn-secondary btn-lg btn-block">Store</button>                                       
-                                       </div>
-                                    </form>
-                                   
-                                       
-                           </div>
-                       </div>                               
-                   </div>                               
-           </div>
-     </div>                               
-   )}
-  }
+</div>
+    );
+}
+}
 
 export default Homepage;
