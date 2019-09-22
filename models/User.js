@@ -7,24 +7,30 @@ const userSchema = new schema({
 
 	email: {
     type: String,
-    unique: true,
-	match: [/.+@.+\..+/, "Please enter a valid e-mail address"],
-	required: true,
+		match: [/.+@.+\..+/, "Please enter a valid e-mail address"],
+		required: true,
   	},
 
 	username:{
 		type:String,
+		unique:true,
 		required:true,
 	},
 
 	password: {
 		type: String,
 		required: true,
+		minlength: 6,
 	},
 
 	date: {
 		type: Date,
 		default: Date.now
+	},
+
+	coins: {
+		type: Number,
+		default: 10
 	},
 
 	headgear: {
