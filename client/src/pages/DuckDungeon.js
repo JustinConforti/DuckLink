@@ -6,20 +6,20 @@ class DuckDungeon extends Component {
     
     };
 
-    componentDidMount() {
-        //add user info to state plz
+    // componentDidMount() {
+    //     //add user info to state plz
         
-    };
+    // };
 
-    render() {
-        return (
-            <div id="dungeonContainer" className="container">
-                <div className="jumbotron">
-                    <h1 style={{color: "red"}}>Game starting in: <span className="duckCountdown"></span></h1>
-                </div>
-            </div>
-        )
-    }
+    // render() {
+    //     return (
+    //         <div id="dungeonContainer" className="container">
+    //             <div className="jumbotron">
+    //                 <h1 style={{color: "red"}}>Game starting in: <span className="duckCountdown"></span></h1>
+    //             </div>
+    //         </div>
+    //     )
+    // }
 }
 
 export default DuckDungeon;

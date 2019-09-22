@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./style.css";
+import { Link } from "react-router-dom";
 //import { Container, Col, Card, CardBody, Row } from "react-bootstrap/";
 //import FormGroup from "react-bootstrap/FormGroup";
 //import FormLabel from "react-bootstrap/FormLabel";
@@ -31,6 +32,7 @@ class Login extends Component {
                     <div classNames="col-10">
                         <div className="card">
                             <div className="card-body card-body-window" style={{borderColor: " #ff899f"}}>
+
                                     <img id = "logoImg" src="assets/images/duck.png" alt="..." height= "400 px" width= "400 px"></img>
                                     <h1 className="display-4 mx-auto" id = "titleTextStyling">LOG IN</h1>
                                         <form className = "mx-auto fontPusher">
@@ -69,7 +71,6 @@ class Login extends Component {
                                                   onClick={() => this.onClickSaveUser(this.state.email, this.state.username, this.state.password)}>REGISTER</button>
                                             </div>
                                         </form>
-                                  
                             </div>
                         </div>                               
                     </div>
