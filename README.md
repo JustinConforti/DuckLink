@@ -12,11 +12,11 @@ user's own created duck.
 
 ## Login:
 
-![Image of Login](https://github.com/JustinConforti/DuckLink/blob/database/client/public/assets/images/home.png?raw=true)
+![Image of Login](https://github.com/JustinConforti/DuckLink/blob/database/client/public/assets/images/login.png?raw=true)
 
 ## Registration:
 
-![Image of Registration](https://github.com/JustinConforti/DuckLink/blob/database/client/public/assets/images/home.png?raw=true)
+![Image of Registration](https://github.com/JustinConforti/DuckLink/blob/database/client/public/assets/images/registration.png?raw=true)
 
 ## Profile
 

@@ -1,7 +1,7 @@
 /* canvas window. fixed but resizeable */
 
 .card-body-window{
-    height:750px;
+    height:800px;
     width: 720px;
     background-color: #ffb3ba; 
     border-width: 10px;

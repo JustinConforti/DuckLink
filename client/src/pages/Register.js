@@ -8,7 +8,8 @@ class Register extends Component {
 	state = {
 			email: "",
 			username: "",
-			password: ""
+			password: "",
+			password2: "",
 	};
 
 
@@ -26,15 +27,19 @@ handleChange = event => {
 };
 
 onClickSaveUser = (email, username, password) => {
-	API.registerUser({
-		email,
-		username,
-		password,
-	})
-		.then(res => {
-		alert("Registration Completed!")
-		console.log(res)
-	})
+	if(this.state.password!=this.state.password2) {
+		alert("Passwords must match")
+	} else {
+		API.registerUser({
+			email,
+			username,
+			password,
+		})
+			.then(res => {
+			alert("Registration Completed!")
+			console.log(res)
+		})
+	}
 };
 
 render() {
@@ -85,22 +90,23 @@ render() {
 																							value={this.state.password} />
 																					</div>
 
-																					{/* <div class="form-group">
+																					<div class="form-group">
 																							<input type="password"
-																							name="password" 
+																							name="password2" 
 																							className="form-control" 
 																							id="exampleInputPassword2" 
 																							placeholder="Reconfirm Password"
-																							onChange={this.handleChange} />
-																					</div>  */}
+																							onChange={this.handleChange}
+																							value={this.state.password2} />
+																					</div> 
 
-                                            <div className="form-group">
-																								<button type="button" 
-																								className="btn btn-primary" 
-																								id="buttonStyle"
-																								onClick={() => this.onClickSaveUser(this.state.email, this.state.username, this.state.password)}
-																								>QUACK!!!</button>
-                                            </div>
+																					<div className="form-group">
+																							<button type="button" 
+																							className="btn btn-primary" 
+																							id="buttonStyle"
+																							onClick={() => this.onClickSaveUser(this.state.email, this.state.username, this.state.password)}
+																							>QUACK!!!</button>
+																					</div>
 
                               					</form>
                             					</div>
