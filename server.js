@@ -1,21 +1,21 @@
 const express = require("express");
 const path = require("path");
-const mongoose = require("mongoose")
-const app = express();
-const session = require("express-session")
-const passport = require("passport");
-const routes = require("./routes");
+const routes = require('./Routes')
 const PORT = process.env.PORT || 3001;
-
+const app = express();
+const mongoose = require('mongoose')
+const bcrypt = require('bcrypt')
+const session = require('express-session')
+const MongoStore = require('connect-mongo')(session)
+const MongoClient = require('mongodb').MongoClient
+// my mongo connection/database
+const client = new MongoClient("mongodb://localhost/Ducks", { 
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+})
+// const apiRoutes = require("./routes/apiRoutes");
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/Ducks", { useNewUrlParser: true });
 
-// Used to keep track of our user's login status
-app.use(session({secret:"theSecret", saveUninitialized:false, resave:false}))
-app.use(passport.initialize());
-app.use(passport.session());
-
-
-// Middleware
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 // Serve up static assets (usually on heroku)
@@ -23,13 +23,42 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
-// Routes
-app.use(routes)
 
-app.get("*", function(req, res) {
-  res.sendFile(path.join(__dirname, "./client/build/index.html"));
-});
+app.use(session({
+  secret: 'secret',
+  resave: false,
+  saveUninitialized: true,
+  cookie: { 
+    maxAge: 86400000
+  },
+  store: new MongoStore({ clientPromise: connectToMongo() })
+}))
+
+function connectToMongo() {
+  return new Promise((resolve, reject) => {
+    client.connect(err => {
+      console.log(err)
+      if (err) return reject(err)
+
+      db = client.db("Ducks")
+
+
+      
+      return resolve(client)
+    })
+  })
+}
 
 app.listen(PORT, function() {
   console.log(`🌎 ==> API server now on port ${PORT}!`);
 });
+
+
+// Routes
+ app.use(routes)
+
+// Send every request to the React app
+// Define any API routes before this runs
+ app.get("*", function(req, res) {
+   res.sendFile(path.join(__dirname, "./client/build/index.html"));
+ });

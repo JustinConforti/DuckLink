@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./style.css";
-import API from "../utils/ExampleUtil";
+import API from "../utils/API";
 import Swal from "sweetalert2";
 
 class Register extends Component {
@@ -18,8 +18,6 @@ handleChange = event => {
     this.setState({
         [name]: value
     });
-    console.log(value)
-    console.log(this.state.password2)
 };
 
 onClickSaveUser = (username, email, password, password2) => {
