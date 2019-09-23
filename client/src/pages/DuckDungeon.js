@@ -8,6 +8,7 @@ class DuckDungeon extends Component {
     
     };
 
+<<<<<<< HEAD
     componentDidMount() {
         //add user info to state plz
         var size; //how many blocks there will be. the grid's dimensions will be size * size
@@ -1105,16 +1106,22 @@ setGame(0, 0);
 countdown();
 
     };
+=======
+    // componentDidMount() {
+    //     //add user info to state plz
+        
+    // };
+>>>>>>> 4cde7cc9214c1e5e393af694c5c5bbc0ef5060dd
 
-    render() {
-        return (
-            <div id="dungeonContainer" className="container">
-                <div className="jumbotron">
-                    <h1 style={{color: "red"}}>Game starting in: <span className="duckCountdown"></span></h1>
-                </div>
-            </div>
-        )
-    }
+    // render() {
+    //     return (
+    //         <div id="dungeonContainer" className="container">
+    //             <div className="jumbotron">
+    //                 <h1 style={{color: "red"}}>Game starting in: <span className="duckCountdown"></span></h1>
+    //             </div>
+    //         </div>
+    //     )
+    // }
 }
 
 export default DuckDungeon;

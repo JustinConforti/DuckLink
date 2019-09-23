@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./style.css";
+import { Link } from "react-router-dom";
 //import { Container, Col, Card, CardBody, Row } from "react-bootstrap/";
 //import FormGroup from "react-bootstrap/FormGroup";
 //import FormLabel from "react-bootstrap/FormLabel";
@@ -30,24 +31,46 @@ class Login extends Component {
 
                     <div classNames="col-10">
                         <div className="card">
-                            <div className="card-body card-body-window">
+                            <div className="card-body card-body-window" style={{borderColor: " #ff899f"}}>
+
                                     <img id = "logoImg" src="assets/images/duck.png" alt="..." height= "400 px" width= "400 px"></img>
-                                    <h1 className="display-4" id = "titleTextStyling">LogIn</h1>
-                                        <form className = "mx-auto">
+                                    <h1 className="display-4 mx-auto" id = "titleTextStyling">LOG IN</h1>
+                                        <form className = "mx-auto fontPusher">
                                             <div className="form-group">
-                                                <input type="username" className="form-control" id="exampleInputuserName" aria-describedby="usernameHelp" placeholder="Enter username" />
+                                              <input type="username"
+                                                  name="username" 
+                                                  className="form-control" 
+                                                  id="exampleInputUsername1" 
+                                                  aria-describedby="emailHelp" 
+                                                  placeholder="Enter username"
+                                                  onChange={this.handleChange}
+                                                  value={this.state.username} />
                                             </div>
                                             <div className="form-group">
-                                                <input type="password" className="form-control" id="InputPassword" placeholder="Password" />
+                                              <input type="username"
+                                                  name="username" 
+                                                  className="form-control" 
+                                                  id="exampleInputUsername1" 
+                                                  aria-describedby="emailHelp" 
+                                                  placeholder="Enter username"
+                                                  onChange={this.handleChange}
+                                                  value={this.state.username} />
                                             </div>
+
                                             <div className="form-group">
-                                                <button type="button" className="btn btn-outline-primary" id="button1" >Duck Duck Go</button>
+                                                <button type="button" 
+                                                  className="btn btn-primary" 
+                                                  id="buttonStyle" 
+                                                  onClick={() => this.onClickSaveUser(this.state.email, this.state.username, this.state.password)}>DUCK DUCK GO!!!</button>
                                             </div>
+
                                             <div className="form-group">
-                                                <button type="button" className="btn btn-outline-primary" id="button2" >Quake?</button>
+                                                <button type="button" 
+                                                  className="btn btn-primary" 
+                                                  id="buttonStyle" 
+                                                  onClick={() => this.onClickSaveUser(this.state.email, this.state.username, this.state.password)}>REGISTER</button>
                                             </div>
                                         </form>
-                                  
                             </div>
                         </div>                               
                     </div>

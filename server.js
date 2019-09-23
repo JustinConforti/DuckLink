@@ -15,7 +15,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 
-// MiddlewareF
+// Middleware
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 // Serve up static assets (usually on heroku)
