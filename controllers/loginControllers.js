@@ -2,17 +2,21 @@ const db = require("../models");
 
 module.exports = {
 
-userLogin: function(username, password, done) {
-		console.log(req.body)
-		const { username, password } = req.body
+userLogin: function(req, res, err) {
+	if (err) {
+		console.log(err);
+	}
+			 const { username, password } = req.body
+			 console.log("username:" +username);
+			 console.log("password:" + password);
 	  
 		// if user didn't send a username/password
 		if (!username || !password) {
 		  return res.status(400)
 		}
 	  
-		db.collection('users')
-		  .findOne({ username })
+		db.User
+		  .findOne({ username: username })
 		  .then(data => {
 			// if user doesn't exist, kick out
 			if (!data) return res.status(401).json({err:"invalid user/password"})
@@ -35,4 +39,4 @@ userLogin: function(username, password, done) {
 			return res.status(500).json(err)
 		  })
 	  }
-	}
+};

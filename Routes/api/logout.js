@@ -1,8 +1,9 @@
 
 const router = require("express").Router();
-const loginControllers = require("./../../controllers/loginControllers");
+const logoutControllers = require("./../../controllers/loginControllers");
 
 // Matches with "/api/register"
 router.route("/")
-  .post(loginControllers.userLogin)
+  .post(logoutControllers);
+
 module.exports = router

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./style.css";
-import API from "../utils/ExampleUtil";
+import API from "../utils/API";
 import Swal from "sweetalert2";
 
 class Register extends Component {

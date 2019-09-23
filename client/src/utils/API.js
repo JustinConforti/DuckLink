@@ -10,12 +10,16 @@ export default {
         return axios.get(`/api/users/${id}`); 
     },
 
-    loginUser: userData => {
+    loginUser: (userData) => {
         return axios.post('/api/login', userData)
     },
 
     registerUser: userData => { 
         return axios.post(`/api/register`, userData);
+    },
+
+    logoutUser: () => {
+        return axios.post('/api/logout')
     }
 
 }

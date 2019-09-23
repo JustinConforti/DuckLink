@@ -1,7 +1,7 @@
 const express = require("express");
 const path = require("path");
 const routes = require('./Routes')
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 5000;
 const app = express();
 const mongoose = require('mongoose')
 const bcrypt = require('bcrypt')
@@ -14,7 +14,7 @@ const client = new MongoClient("mongodb://localhost/Ducks", {
   useUnifiedTopology: true
 })
 // const apiRoutes = require("./routes/apiRoutes");
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/Ducks", { useNewUrlParser: true });
+// mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/Ducks", { useNewUrlParser: true });
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -37,21 +37,19 @@ app.use(session({
 function connectToMongo() {
   return new Promise((resolve, reject) => {
     client.connect(err => {
-      console.log(err)
       if (err) return reject(err)
-
+      app.listen(PORT, function() {
+        console.log(`🌎 ==> API server now on port ${PORT}!`);
+      });
       db = client.db("Ducks")
 
 
-      
+      console.log("connected to mango")
       return resolve(client)
     })
   })
 }
 
-app.listen(PORT, function() {
-  console.log(`🌎 ==> API server now on port ${PORT}!`);
-});
 
 
 // Routes

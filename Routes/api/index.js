@@ -7,5 +7,6 @@ const loginRoutes = require("./login")
 router.use("/users", usersRoutes);
 router.use("/register", registerRoutes);
 router.use("/login", loginRoutes );
+router.use("/logout", loginRoutes);
 
 module.exports = router;
