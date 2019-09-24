@@ -10,16 +10,17 @@
 }
 
 @font-face {
-  font-family: 'Pixel-Art Regular';
+  font-family: 'Pixel Berry 08/84 Ltd.Edition';
   font-style: normal;
   font-weight: normal;
-  src: local('Pixel-Art Regular'), url('assets/fonts/pixelart.woff') format('woff');
+  src: local('Pixel Berry 08/84 Ltd.Edition'), url('assets/fonts/Pixel_Berry_08_84_Ltd.Edition.woff') format('woff');
   }
       
 
 
 body {
   padding: 0;
-  background: url(assets/images/bluebg.png);
-  font-family: "Pixel-Art Regular"    
+  background: url(assets/images/water.gif);
+  /* background: url(assets/images/bluebg.png); */
+  font-family: 'Pixel Berry 08/84 Ltd.Edition';  
 }

@@ -1,50 +1,101 @@
 import React, { Component } from "react";
-import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
-import Col from 'react-bootstrap/Col';
-import Image from 'react-bootstrap/Image';
 import "./style.css";
-import Row from 'react-bootstrap/Row';
+import axios from 'axios';
+import Nav from "../components/Nav";
+
 // import API from "../utils/API";
 // import { throws } from "assert";
+import API from "../utils/API";
 
 class Homepage extends Component {
     state = {
-
+   level: "",
+   headgear: '',
+   eyes: '',
+   eyegear: '',
+   wing: '',
+   item: '',
+   beak: '',
+   username: ''
     };
 
 
- componentDidMount() {
-    
+ componentWillMount() {
+    console.log("loading component")
+   API.myData ({})
+   .then(res => {
+     console.log("response in component:")
+     console.log(res.data)
+     let data = res.data
+     data.username = data.username.toUpperCase()
+      this.setState({
+         level: data.level,
+         headgear: data.headgear,
+         eyes: data.eyes,
+         eyegear: data.eyegear,
+         wing: data.wing,
+         item: data.item,
+         beak: data.beak,
+         username: data.username
+      })
+      console.log(this.state.username)
+   })
  }
 
-render() {
-    return (
-<div>
+    
 
-	{/* We will have the duck loudout on the top of the duck information, and the Placeholder
-	whill go away when site is deployed. */}
-	{/* <div className ="screen my-2">
-			<div className="duck-loadout">
 
-			</div>
-	</div> */}
-	
-  <Card className ="wrapping-card mt-2" id="loudOut">
-   <Row className="d-flex justify-content-center">   
-				{/* Placeholder image */}
-        <Image className ="thumbnail my-3" src="assets/images/duck.png" alt="duckLogo" roundedCircle />
-   </Row>
-      
-      <Card border="warning" body className ="home-cards">Username</Card>
-      <Card border="warning" body className ="home-cards">Ranking: 00</Card>
-      <Card border="warning" body className ="home-cards">DuckCoin: 00</Card>
-      <Button className ="home-cards">View Shop</Button>
-  </Card>
 
-</div>
-    );
-}
-}
+ render() {
+   return (
+
+       <div className = "container">
+
+           <div className = "row">
+
+               <div className="col">
+               </div>
+
+                   <div classNames="col-10">
+                       <div className="card">
+                           <div className="card-body card-body-window mx-auto">
+                                    <h1 className="display-4 mx-auto" id = "titleTextStyling">DuckLink!</h1>
+                                   <img id = "logoImg" src="assets/images/duck.png" alt="..." height= "300 px" width= "300 px"></img>
+                                   <br/>
+                                   <br/>
+                                   <form className = "mx-auto fontPusher">
+                                       <div className="form-group">
+                                          <button id = "buttonStyleHome" type="button" class="btn btn-secondary btn-lg btn-block">Duck Name: {this.state.username} </button>
+                                       </div>
+                                       <div className="form-group">
+                                          <button id = "buttonStyleHome" type="button" class="btn btn-secondary btn-lg btn-block">
+                                             <span id = "duckRanking">Duck </span>
+                                             RANKING: 
+                                             <span id = "duckRanking" className = "animated infinite pulse"> 00</span> 
+                                          </button>                                      
+                                       </div>
+                                       <div className="form-group">
+                                          <button id = "buttonStyleHome" type="button" class="btn btn-secondary btn-lg btn-block animated infinite pulse">
+                                             <span id = "greyPlayButton">play </span>
+                                             <span className = "rainbow-text">GAMES</span></button>                                       
+                                       </div>
+                                       <div className="form-group">
+                                          <button id = "buttonStyleHome" type="button" class="btn btn-secondary btn-lg btn-block">
+                                             <span id = "duckRanking">DuckLink! </span>STORE</button>                                       
+                                       </div>
+                                    </form>
+                                   
+                                       
+                           </div>
+                       </div>                               
+                   </div>                               
+               <div className="col">
+               </div>
+           </div>
+    <Nav />
+
+     </div>                               
+   )}
+  }
 
 export default Homepage;
