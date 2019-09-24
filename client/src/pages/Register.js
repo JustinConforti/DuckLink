@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./style.css";
-import API from "../utils/ExampleUtil";
+import API from "../utils/API";
 import Swal from "sweetalert2";
 
 class Register extends Component {
@@ -23,7 +23,7 @@ handleChange = event => {
 };
 
 onClickSaveUser = (username, email, password, password2) => {
-    if(this.state.password!=this.state.password2) {
+    if(this.state.password!==this.state.password2) {
 		Swal.fire({
 			type: 'error',
 			title: 'Error',
@@ -47,15 +47,12 @@ onClickSaveUser = (username, email, password, password2) => {
         });
     }
 };
-
 render() {
     return (
         <div className = "container">
             <div className = "row">
-
                 <div className="col">
                 </div>
-
                     <div classNames="col-10">
                         <div className="card">
                             <div className="card-body card-body-window">
