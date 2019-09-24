@@ -1,5 +1,9 @@
 import React, { Component } from "react";
 import "./style.css";
+import API from "../utils/API"
+import Nav from "../components/Nav";
+import  { Redirect } from 'react-router-dom'
+
 import { Link } from "react-router-dom";
 //import { Container, Col, Card, CardBody, Row } from "react-bootstrap/";
 //import FormGroup from "react-bootstrap/FormGroup";
@@ -9,16 +13,40 @@ import { Link } from "react-router-dom";
 
 class Login extends Component {
   state = {
-    email: "",
+    username: "",
     password: ""
   };
 
-  componentDidMount() {}
+  componentDidMount() {
+
+  }
+
+
   handleChange = event => {
     const { name, value } = event.target;
     this.setState({
       [name]: value
     });
+  };
+  onClickLogout = () => {
+    API.logoutUser({})
+    .then (res=> {
+      alert("You have been logged out!")
+      console.log(res)
+    })
+   };
+
+  onClickLogin = (username, password) => {
+    console.log("request is going")
+    API.loginUser({
+      username,
+      password
+    })
+      .then(res => {
+        console.log("response is back")
+      alert("Login Completed!")
+      console.log(res.data.s)
+    })
   };
 
   render() {
@@ -47,47 +75,37 @@ class Login extends Component {
                                                   value={this.state.username} />
                                             </div>
                                             <div className="form-group">
-                                              <input type="username"
-                                                  name="username" 
+                                              <input type="password"
+                                                  name="password" 
                                                   className="form-control" 
-                                                  id="exampleInputUsername1" 
-                                                  aria-describedby="emailHelp" 
-                                                  placeholder="Enter username"
+                                                  id="exampleInputPassword1" 
+                                                  aria-describedby="passwordHelp" 
+                                                  placeholder="Enter password"
                                                   onChange={this.handleChange}
-                                                  value={this.state.username} />
+                                                  value={this.state.password} />
                                             </div>
 
                                             <div className="form-group">
                                                 <button type="button" 
                                                   className="btn btn-primary" 
                                                   id="buttonStyle" 
-                                                  onClick={() => this.onClickSaveUser(this.state.email, this.state.username, this.state.password)}>DUCK DUCK GO!!!</button>
+                                                  onClick={() => this.onClickLogin(this.state.username, this.state.password)}>DUCK DUCK GO!!!</button>
                                             </div>
 
                                             <div className="form-group">
                                                 <button type="button" 
                                                   className="btn btn-primary" 
                                                   id="buttonStyle" 
-                                                  onClick={() => this.onClickSaveUser(this.state.email, this.state.username, this.state.password)}>REGISTER</button>
+                                                  onClick={() => this.onClickLogout()}>REGISTER</button>
                                             </div>
                                         </form>
                             </div>
                         </div>                               
                     </div>
 
-                <div className="col">
-                </div>
-
              </div>
-        </div>
-
-       ///<div className ="screen">
-      
-
-     // </div>
-    
-
-    
+    <Nav />
+  </div>
     );
   }
 }
