@@ -15,7 +15,7 @@ const client = new MongoClient("mongodb://localhost/Ducks", {
   useUnifiedTopology: true
 })
 // const apiRoutes = require("./routes/apiRoutes");
-// mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/Ducks", { useNewUrlParser: true });
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/Ducks", { useNewUrlParser: true });
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());

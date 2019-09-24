@@ -22,4 +22,4 @@ export default {
         return axios.post('/api/logout')
     }
 
-}
+};

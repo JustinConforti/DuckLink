@@ -1,4 +1,5 @@
 const db = require("../models");
+const bcrypt = require('bcrypt')
 
 module.exports = {
 
@@ -20,7 +21,7 @@ userLogin: function(req, res, err) {
 			  }
 			  console.log(user)
 			// if user doesn't exist, kick out
-			if (!data) return res.status(401).json({err:"invalid user/password"})
+			if (!user) return res.status(401).json({err:"invalid user/password"})
 	  
 			// check if passwords match
 			if (bcrypt.compareSync(password, user.password)) {
@@ -28,8 +29,9 @@ userLogin: function(req, res, err) {
 			  req.session.user = user
 			  console.log(req.session.user)
 			  return res.json({
-				s: "Logged in"
+				s: req.session.user
 			  })
+			  
 			} else {
 			  // kick user out, since passwords don't match
 			  return res.status(401).json({err:"invalid user/password"})
