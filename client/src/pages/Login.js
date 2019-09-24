@@ -35,11 +35,13 @@ class Login extends Component {
    };
 
   onClickLogin = (username, password) => {
+    console.log("request is going")
     API.loginUser({
       username,
       password
     })
       .then(res => {
+        console.log("response is back")
       alert("Login Completed!")
       console.log(res)
     })

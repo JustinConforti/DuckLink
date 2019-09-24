@@ -23,7 +23,7 @@ handleChange = event => {
 };
 
 onClickSaveUser = (username, email, password, password2) => {
-    if(this.state.password!=this.state.password2) {
+    if(this.state.password!==this.state.password2) {
 		Swal.fire({
 			type: 'error',
 			title: 'Error',
