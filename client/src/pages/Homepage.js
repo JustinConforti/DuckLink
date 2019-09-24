@@ -1,10 +1,5 @@
 import React, { Component } from "react";
-import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
-import Col from 'react-bootstrap/Col';
-import Image from 'react-bootstrap/Image';
 import "./style.css";
-import Row from 'react-bootstrap/Row';
 import axios from 'axios';
 import Nav from "../components/Nav";
 

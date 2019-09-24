@@ -10,7 +10,7 @@ export default {
         return axios.get(`/api/users/${id}`); 
     },
 
-    loginUser: (userData) => {
+    loginUser: userData => {
         return axios.post('/api/login', userData)
     },
 

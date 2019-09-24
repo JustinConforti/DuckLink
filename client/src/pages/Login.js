@@ -3,6 +3,7 @@ import "./style.css";
 import API from "../utils/API"
 import Nav from "../components/Nav";
 import  { Redirect } from 'react-router-dom'
+
 import { Link } from "react-router-dom";
 //import { Container, Col, Card, CardBody, Row } from "react-bootstrap/";
 //import FormGroup from "react-bootstrap/FormGroup";
@@ -42,13 +43,9 @@ class Login extends Component {
       password
     })
       .then(res => {
-        console.log(res.status)
-      if (!res) {
-        alert("incorrect")
-      } else {
-      this.props.history.push('/home')
+        console.log("response is back")
+      alert("Login Completed!")
       console.log(res.data.s)
-      }
     })
   };
 
