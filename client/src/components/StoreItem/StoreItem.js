@@ -17,7 +17,7 @@ function StoreItem() {
                 </div>
 
                 <div className = "col-4">
-                    <img id = "" src="assets/images/duck.png" alt="..." height= "80 px" width= "80 px"></img>
+                    <img id = "" src="assets/images/duck.png" alt="..." height= "80 px" width= "80 px"></img>   
                 </div>
 
                 <div className = "col-4">

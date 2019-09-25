@@ -141,6 +141,8 @@ class Login extends Component {
                         </div>                               
                     </div>
 
+                    <div className="col">
+                </div>
              </div>
     <Nav />
   </div>
