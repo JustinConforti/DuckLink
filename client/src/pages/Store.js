@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import StoreItem from "../components/StoreItem/StoreItem.js";
+import Nav from "../components/Nav/index";
 // import Jumbotron from "../components/Jumbotron"
 // import Button from "../components/Button"
 // import { Col, Row, Container } from "../components/Grid";
@@ -40,7 +41,7 @@ class Store extends Component {
                                 <StoreItem />
                                 <StoreItem />
                                 <StoreItem />
-                                <StoreItem />
+                               
                                 
                             </div>
                         </div>                               
@@ -48,8 +49,9 @@ class Store extends Component {
 
                 <div className="col">
                 </div>
-
+               
              </div>
+             <Nav />
         </div>
         
 
