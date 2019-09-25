@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./style.css";
 import axios from 'axios';
 import Nav from "../components/Nav";
-const images = importAll(require.context('../assets/images', false, /\.(png|jpe?g|svg)$/));
+
 
 // import API from "../utils/API";
 // import { throws } from "assert";
