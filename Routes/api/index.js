@@ -4,12 +4,17 @@ const registerRoutes = require("./register");
 const loginRoutes = require("./login")
 const logoutRoutes = require("./logout")
 const userData = require("./myData");
-
+const insertUsers = require("./insertUsers")
+const insertRandom = require("./insertUsers")
 
 router.use("/users", usersRoutes);
+router.use("/users/:id", usersRoutes)
 router.use("/register", registerRoutes);
 router.use("/login", loginRoutes );
 router.use("/logout", logoutRoutes);
-router.use("/myData", userData)
+router.use("/myData", userData);
+router.use("/insertUsers", insertUsers)
+router.use("/insertUsers/random", insertRandom)
+
 
 module.exports = router;

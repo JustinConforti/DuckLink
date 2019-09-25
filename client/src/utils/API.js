@@ -20,6 +20,14 @@ export default {
 
     logoutUser: () => {
         return axios.post('/api/logout')
+    },
+
+    randomUsers: () => {
+        return axios.post('/api/insertUsers/random')
+    },
+
+    duckUpdate: (data) => {
+        return axios.put(`/api/users/${data}`)
     }
 
 };
