@@ -7,7 +7,8 @@ import Button from "../Button"
 export function StoreItem({
     id,
     image,
-    onClick
+    onClick,
+    name
 })   {
     return (
         <div className = "fontPusher" >

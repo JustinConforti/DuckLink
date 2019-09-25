@@ -22,4 +22,12 @@ module.exports = {
 		.then(dbModel => res.json(dbModel))
 		.catch(err => res.status(422).json(err));
 	},
+
+	updateReq: function(req, res) {
+		db.User
+		.findOneAndUpdate(req.session.user, res)
+		.then(dbModel => res.json(dbModel))
+		.catch(err => res.status(422).json(err));
+
+	}
 }

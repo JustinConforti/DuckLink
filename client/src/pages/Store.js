@@ -10,7 +10,8 @@ import API from "../utils/API.js";
 class Store extends Component {
     state = {
         level: "",
-        items: []
+        items: [],
+        image: ""
     };
 
 
@@ -37,11 +38,19 @@ class Store extends Component {
        })
      }
 
+
      updateUserDuck = storeItem => API.duckUpdate(storeItem.target.className)
-     .then(res => console.log(res.data.imageURL),
-          
-        API.ownDuckUpdate(res.data.imageURL).then(res => console.log(res)))
-     .catch(err => console.log(err.response.data));
+     .then(res => {
+         this.setState({
+             image: res.data.imageURL
+         })
+         API.ownDuckUpdate(this.state.image).then(res => console.log(res))
+         .catch(err => console.log(err.response.data))
+                })
+        .catch(err => console.log(err.response.data))
+
+
+     
 
  render() {
     return (
@@ -57,6 +66,7 @@ class Store extends Component {
                             <h1 className="display-4 mx-auto" id = "StoreTitleStyling">DuckLink! STORE FRONT</h1>
                                 {this.state.items.map((item, index) => (
                                     <StoreItem
+                                    name={item.Properties.bodypart}
                                     key={index} 
                                     id={item._id}
                                     image={item.imageURL}
@@ -83,5 +93,6 @@ class Store extends Component {
     );
     }
 }
+
 
 export default Store;

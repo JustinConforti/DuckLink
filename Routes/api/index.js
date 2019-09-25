@@ -6,7 +6,7 @@ const logoutRoutes = require("./logout")
 const userData = require("./myData");
 const insertUsers = require("./insertUsers")
 const insertRandom = require("./insertUsers")
-
+const duckUpdate = require("./duckUpdate")
 router.use("/users", usersRoutes);
 router.use("/users/:id", usersRoutes)
 router.use("/register", registerRoutes);
@@ -15,6 +15,7 @@ router.use("/logout", logoutRoutes);
 router.use("/myData", userData);
 router.use("/insertUsers", insertUsers)
 router.use("/insertUsers/random", insertRandom)
+router.use("/duckUpdate", duckUpdate)
 
 
 module.exports = router;

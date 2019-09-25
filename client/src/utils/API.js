@@ -28,6 +28,10 @@ export default {
 
     duckUpdate: (data) => {
         return axios.put(`/api/users/${data}`)
+    },
+
+    ownDuckUpdate: (imageURL) => {
+        return axios.post('/api/duckUpdate', imageURL)
     }
 
 };
