@@ -8,7 +8,6 @@ class DuckDungeon extends Component {
     
     };
 
-<<<<<<< HEAD
     componentDidMount() {
         //add user info to state plz
         var size; //how many blocks there will be. the grid's dimensions will be size * size
@@ -111,16 +110,16 @@ var duckPartner = {
         var doodle = settedPicture.getContext("2d");
         var duckRatio = 150/603;
         var duckBody = new Image();
-        duckBody.src = "assets/images/ducksprites/duckbody/akatsuki.png"; //original size 603 x 446
+        duckBody.src = "assets/images/ducksprites/duckbody/blue.png"; //original size 603 x 446
         duckBody.onload = function() {
             doodle.drawImage(duckBody, 10, 20, 150, 446 * duckRatio);
             var duckEye = new Image();
-            duckEye.src = "assets/images/ducksprites/duckeye/blue.png"; //original size 80 x 87
+            duckEye.src = "assets/images/ducksprites/duckeye/red.png"; //original size 80 x 87
             duckEye.onload = function() {
                 doodle.drawImage(duckEye, 105, 30, 80 * duckRatio, 87 * duckRatio);
             }
             var duckWing = new Image();
-            duckWing.src = "assets/images/ducksprites/duckwing/clearWhite.png"; //original size 203 x 152
+            duckWing.src = "assets/images/ducksprites/duckwing/blueredheart.png"; //original size 203 x 152
             duckWing.onload = function() {
                 doodle.drawImage(duckWing, 50, 75, 203 * duckRatio, 152 * duckRatio);
             }
@@ -157,16 +156,16 @@ var duckPartner = {
         doodle.translate(settedPicture.width, 0);
         doodle.scale(-1, 1);
         var duckBody = new Image();
-        duckBody.src = "assets/images/ducksprites/duckbody/akatsuki.png"; //original size 603 x 446
+        duckBody.src = "assets/images/ducksprites/duckbody/blue.png"; //original size 603 x 446
         duckBody.onload = function() {
             doodle.drawImage(duckBody, 10, 20, 150, 446 * duckRatio);
             var duckEye = new Image();
-            duckEye.src = "assets/images/ducksprites/duckeye/blue.png"; //original size 80 x 87
+            duckEye.src = "assets/images/ducksprites/duckeye/red.png"; //original size 80 x 87
             duckEye.onload = function() {
                 doodle.drawImage(duckEye, 105, 30, 80 * duckRatio, 87 * duckRatio);
             }
             var duckWing = new Image();
-            duckWing.src = "assets/images/ducksprites/duckwing/clearWhite.png"; //original size 203 x 152
+            duckWing.src = "assets/images/ducksprites/duckwing/blueredheart.png"; //original size 203 x 152
             duckWing.onload = function() {
                 doodle.drawImage(duckWing, 50, 75, 203 * duckRatio, 152 * duckRatio);
             }
@@ -1106,22 +1105,17 @@ setGame(0, 0);
 countdown();
 
     };
-=======
-    // componentDidMount() {
-    //     //add user info to state plz
-        
-    // };
->>>>>>> 4cde7cc9214c1e5e393af694c5c5bbc0ef5060dd
 
-    // render() {
-    //     return (
-    //         <div id="dungeonContainer" className="container">
-    //             <div className="jumbotron">
-    //                 <h1 style={{color: "red"}}>Game starting in: <span className="duckCountdown"></span></h1>
-    //             </div>
-    //         </div>
-    //     )
-    // }
+
+    render() {
+        return (
+            <div id="dungeonContainer" className="container">
+                <div className="jumbotron">
+                    <h1 style={{color: "red"}}>Game starting in: <span className="duckCountdown"></span></h1>
+                </div>
+            </div>
+        )
+    }
 }
 
 export default DuckDungeon;

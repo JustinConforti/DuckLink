@@ -17,7 +17,7 @@ class MiniGames extends Component {
             },
             {
                 text: "Duck Minesweeper",
-                link: "#",
+                link: "minesweeper",
                 id: "game3"
             }
         ]

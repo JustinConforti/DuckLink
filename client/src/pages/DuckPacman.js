@@ -13,9 +13,11 @@ class DuckPacman extends Component {
 var numberOfPellets = 0;
 var intervalArray = [];
 var chaseReturn;
+var picDirection = "left";
 function MovableObject(name, x_Coordinate, y_Coordinate) {
     this.name = name.toLowerCase();
     this.direction = undefined;
+    this.eatingstate = "base";
     if(this.name === "pacman"){
         this.direction = "left";
     }
@@ -24,22 +26,58 @@ function MovableObject(name, x_Coordinate, y_Coordinate) {
     this.picture = undefined;
     this.setPicture = function() {
         if(this.name === "pacman") {
-            var settedPicture = document.createElement("canvas");
-            settedPicture.width = document.getElementById("0-0").getBoundingClientRect().height + 25;
-            settedPicture.height = document.getElementById("0-0").getBoundingClientRect().height;
-            settedPicture.id = "duckPartner";
-            var doodle = settedPicture.getContext("2d");
-            var testPicture = new Image();
-            testPicture.onload=function() {
-                doodle.drawImage(testPicture, 0, 0, settedPicture.width, settedPicture.height);
+            // var settedPicture = document.createElement("canvas");
+            // settedPicture.width = document.getElementById("0-0").getBoundingClientRect().height + 25;
+            // settedPicture.height = document.getElementById("0-0").getBoundingClientRect().height;
+            // settedPicture.id = "duckPartner";
+            // var doodle = settedPicture.getContext("2d");
+            // var testPicture = new Image();
+            // testPicture.onload=function() {
+            //     doodle.drawImage(testPicture, 0, 0, settedPicture.width, settedPicture.height);
+            // }
+            // testPicture.src = "https://www.freepngimg.com/thumb/donald_duck/30606-8-donald-duck-clipart.png";
+            // var saiyanhair = new Image();
+            // saiyanhair.onload=function() {
+            //     doodle.drawImage(saiyanhair, 0, (-1)*(settedPicture.height/10), settedPicture.width, (settedPicture.height/2));
+            // }
+            // saiyanhair.src = "https://123pngdownload.com/wp-content/uploads/2018/12/super-saiyan-3-hair-png-300x300.png";
+            // this.picture = settedPicture;
+        var ducky = this;
+        var settedPicture = document.createElement("canvas");
+        settedPicture.width = document.getElementById("0-0").getBoundingClientRect().height + 25;
+        settedPicture.height = document.getElementById("0-0").getBoundingClientRect().height;
+        settedPicture.id = "duckPartner";
+        var doodle = settedPicture.getContext("2d");
+        var duckRatio = 150/603;
+        var duckBody = new Image();
+        duckBody.src = "assets/images/ducksprites/duckbody/akatsuki.png"; //original size 603 x 446
+        duckBody.onload = function() {
+            doodle.drawImage(duckBody, (10*0.5)-10, 20*0.5, 150*0.5, 446 * duckRatio*0.5);
+            var duckEye = new Image();
+            duckEye.src = "assets/images/ducksprites/duckeye/blue.png"; //original size 80 x 87
+            duckEye.onload = function() {
+                doodle.drawImage(duckEye, (105*0.5)-10, 30*0.5, 80 * duckRatio*0.5, 87 * duckRatio*0.5);
             }
-            testPicture.src = "https://www.freepngimg.com/thumb/donald_duck/30606-8-donald-duck-clipart.png";
-            var saiyanhair = new Image();
-            saiyanhair.onload=function() {
-                doodle.drawImage(saiyanhair, 0, (-1)*(settedPicture.height/10), settedPicture.width, (settedPicture.height/2));
+            var duckWing = new Image();
+            duckWing.src = "assets/images/ducksprites/duckwing/clearWhite.png"; //original size 203 x 152
+            duckWing.onload = function() {
+                doodle.drawImage(duckWing, (50*0.5)-10, 75*0.5, 203 * duckRatio*0.5, 152 * duckRatio*0.5);
             }
-            saiyanhair.src = "https://123pngdownload.com/wp-content/uploads/2018/12/super-saiyan-3-hair-png-300x300.png";
-            this.picture = settedPicture;
+            var duckHat = new Image();
+            duckHat.src = "assets/images/ducksprites/duckhead/purple_hat.png"; //original size 241 x 193
+            duckHat.onload = function() {
+                if(ducky.eatingstate === "power"){
+                    doodle.drawImage(duckHat, (80*0.5)-10, -6*0.5, 241 * duckRatio*0.5, 193 * duckRatio*0.5);
+                }
+            }
+        }
+        var duckBeak = new Image();
+        duckBeak.src = "assets/images/ducksprites/duckbeak/orange.png"; //original size 108 x 93
+        duckBeak.onload = function() {
+            doodle.drawImage(duckBeak, (128.5*0.5)-10, 40*0.5, 108 * duckRatio*0.5, 93 * duckRatio*0.5);
+        }
+        
+        this.picture = settedPicture;
         } else {
             console.log("blinky is here");
             this.picture = $("<img>", {id: name.toLowerCase()});
@@ -47,17 +85,57 @@ function MovableObject(name, x_Coordinate, y_Coordinate) {
             this.picture.css({"height":"100%", "width":"100%"});
         }
     }
+    this.flipMyPic = function() {
+        var ducky = this;
+        var settedPicture = document.createElement("canvas");
+        settedPicture.width = document.getElementById("0-0").getBoundingClientRect().height + 25;
+        settedPicture.height = document.getElementById("0-0").getBoundingClientRect().height;
+        settedPicture.id = "duckPartner";
+        var doodle = settedPicture.getContext("2d");
+        var duckRatio = 150/603;
+        doodle.translate(settedPicture.width, 0);
+        doodle.scale(-1, 1);
+        var duckBody = new Image();
+        duckBody.src = "assets/images/ducksprites/duckbody/akatsuki.png"; //original size 603 x 446
+        duckBody.onload = function() {
+            doodle.drawImage(duckBody, (10*0.5)+15, 20*0.5, 150*0.5, 446 * duckRatio*0.5);
+            var duckEye = new Image();
+            duckEye.src = "assets/images/ducksprites/duckeye/blue.png"; //original size 80 x 87
+            duckEye.onload = function() {
+                doodle.drawImage(duckEye, (105*0.5)+15, 30*0.5, 80 * duckRatio*0.5, 87 * duckRatio*0.5);
+            }
+            var duckWing = new Image();
+            duckWing.src = "assets/images/ducksprites/duckwing/clearWhite.png"; //original size 203 x 152
+            duckWing.onload = function() {
+                doodle.drawImage(duckWing, (50*0.5)+15, 75*0.5, 203 * duckRatio*0.5, 152 * duckRatio*0.5);
+            }
+            var duckHat = new Image();
+            duckHat.src = "assets/images/ducksprites/duckhead/purple_hat.png"; //original size 241 x 193
+            duckHat.onload = function() {
+                if(ducky.eatingstate === "power"){
+                    doodle.drawImage(duckHat, (80*0.5)+15, -6*0.5, 241 * duckRatio*0.5, 193 * duckRatio*0.5);
+                }
+            }
+        }
+        var duckBeak = new Image();
+        duckBeak.src = "assets/images/ducksprites/duckbeak/orange.png"; //original size 108 x 93
+        duckBeak.onload = function() {
+            doodle.drawImage(duckBeak, (128.5*0.5)+15, 40*0.5, 108 * duckRatio*0.5, 93 * duckRatio*0.5);
+        }
+        this.picture = settedPicture;
+    }
     this.moveInterval = undefined;
     this.moveUp = function() {
         if($("#" + this.x_Coordinate + "-" + (this.y_Coordinate - 1)).attr("status") != "free"){
             return;
         } else {
         this.y_Coordinate--;
-        if(this.name === "pacman") {
-            this.picture.style.transform = "rotate(270deg)";
-        } else {
-            this.direction = "up";
-        }
+        // if(this.name === "pacman") {
+        //     this.picture.style.transform = "rotate(270deg)";
+        // } else {
+        //     this.direction = "up";
+        // }
+        this.direction = "up";
     }
     }
     this.moveDown = function() {
@@ -65,11 +143,12 @@ function MovableObject(name, x_Coordinate, y_Coordinate) {
             return;
         } else {
         this.y_Coordinate++;
-        if(this.name === "pacman"){
-            this.picture.style.transform = "rotate(90deg)";
-        } else {
-            this.direction = "down";
-        }
+        // if(this.name === "pacman"){
+        //     this.picture.style.transform = "rotate(90deg)";
+        // } else {
+        //     this.direction = "down";
+        // }
+        this.direction = "down"
     }
     }
     this.moveLeft = function() {
@@ -81,11 +160,7 @@ function MovableObject(name, x_Coordinate, y_Coordinate) {
         } else {
             this.x_Coordinate--;
         }
-        if(this.name === "pacman"){
-            this.picture.style.transform = "rotate(180deg)";
-        } else {
-            this.direction = "left";
-        }
+        this.direction = "left";
     }
     }
     this.moveRight = function() {
@@ -97,11 +172,12 @@ function MovableObject(name, x_Coordinate, y_Coordinate) {
         } else {
             this.x_Coordinate++;
         }
-        if(this.name === "pacman"){
-            this.picture.style.transform = "rotate(0deg)";
-        } else {
-            this.direction = "right";
-        }
+        // if(this.name === "pacman"){
+        //     this.picture.style.transform = "rotate(0deg)";
+        // } else {
+        //     this.direction = "right";
+        // }
+        this.direction = "right";
     }
     }
     this.setPicture();
@@ -177,6 +253,8 @@ function startLevel() {
     }
     var pacman = new MovableObject("Pacman", 5, 8);
     place(pacman, true);
+    pacman.flipMyPic();
+    pacman.picDirection = "left";
     pacman.moveInterval = setInterval(function() {
         switch(pacman.direction) {
             case "up":
@@ -262,6 +340,10 @@ function startLevel() {
             switch(event.which){
                 case 37: //left
                     if($("#" + (pacman.x_Coordinate - 1) + "-" + pacman.y_Coordinate).attr("status") === "free"){
+                        if(pacman.picDirection === "right"){
+                            pacman.flipMyPic();
+                        }
+                        pacman.picDirection = "left";
                         pacman.direction = "left";
                     }
                     break;
@@ -272,6 +354,10 @@ function startLevel() {
                     break;
                 case 39: //right
                     if($("#" + (pacman.x_Coordinate + 1) + "-" + pacman.y_Coordinate).attr("status") === "free"){
+                        if(pacman.picDirection === "left"){
+                            pacman.setPicture();
+                        }
+                        pacman.picDirection = "right";
                         pacman.direction = "right";
                     }
                     break;
@@ -293,7 +379,7 @@ function startLevel() {
         }
     }
     function lose(){
-        $("#status").text("YOU HAVE BEEN CAPTURED. RED GHOST AI IS THE SUPERIOR INTELLIGENCE (click \"Start Game\" to try again)");
+        $("#status").text("Oh no! Your duck has been captured! (click \"Start Game\" to try again)");
         clearInterval(blinky.moveInterval);
         removeObject(blinky);
         clearInterval(pacman.moveInterval);
@@ -312,16 +398,28 @@ function startLevel() {
         }
     }
     function win() {
-        $("#status").text("Great job! You collected all the pellets all without losing a single life! Unless you did lose a life and clicked Start Game to restart... Hmm... I gotta add a life counter");
+        $("#status").text("Great job! You collected all the pellets! Click \"Start Game\" to play again!");
         clearInterval(blinky.moveInterval);
         removeObject(blinky);
         clearInterval(pacman.moveInterval);
+        var startOverBtn = $("<button>Start Game</button>");
+        startOverBtn.attr("id", "startOver");
+        $("#info").append(startOverBtn);
         game = false;
+        $("#startOver").click(function() {
+            startLevel();
+        });
     }
     function blinkyChase() {
         clearInterval(blinky.moveInterval);
         blinky.mode = "chase";
         blinky.picture.css("filter", "none");
+        pacman.eatingstate = "base";
+        if(pacman.picDirection === "left"){
+            pacman.flipMyPic();
+        } else {
+            pacman.setPicture();
+        }
         switch(blinky.direction){
             case "up":
                 blinky.moveDown();
@@ -443,7 +541,13 @@ function startLevel() {
         clearTimeout(chaseReturn);
         blinky.mode = "frightened";
         blinky.picture.css("filter", "hue-rotate(90deg)");
-        $("#status").text("Oh snap son you got a Power Pellet! Now you can eat this guy!");
+        $("#status").text("Oh snap your duck got a Power Pellet! Now you can eat this guy! And your hat is here!");
+        pacman.eatingstate = "power";
+        if(pacman.picDirection === "left"){
+            pacman.flipMyPic();
+        } else {
+            pacman.setPicture();
+        }
         switch(blinky.direction){
             case "up":
                 blinky.moveDown();
@@ -561,7 +665,7 @@ function startLevel() {
         }, 450);
         chaseReturn = setTimeout(function() {
             if((blinky.mode === "frightened") && (game === true)){
-                $("#status").text("Oh, the Power Pellet's worn off. Now he's pissed.");
+                $("#status").text("Oh, the Power Pellet's worn off. Now he's mad. And your hat's gone...");
                 blinkyChase();
             }
         }, 6000);
@@ -571,7 +675,7 @@ function startLevel() {
         clearInterval(blinky.moveInterval);
         blinky.mode = "eaten";
         blinky.picture.css("filter", "grayscale(100%)");
-        $("#status").text("Good job! You ate him! Now he'll be back with a vengence! Vengeance? Dang it I forgot how to spell the word.... Screw it, now he wants revenge!");
+        $("#status").text("Good job! You ate him! Now he'll be back for revenge!");
         switch(pacman.direction){
             case "up":
                 blinky.moveUp();
