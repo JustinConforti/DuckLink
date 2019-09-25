@@ -7,6 +7,7 @@ const userData = require("./myData");
 const insertUsers = require("./insertUsers")
 const insertRandom = require("./insertUsers")
 const duckUpdate = require("./duckUpdate")
+
 router.use("/users", usersRoutes);
 router.use("/users/:id", usersRoutes)
 router.use("/register", registerRoutes);

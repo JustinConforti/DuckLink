@@ -5,23 +5,23 @@ module.exports = {
  insertUsers: function(req, res) {
     db.Inventory.insertMany([
    {
-        imageURL: "./client/public/assets/images/duckbody/red.png",
+        imageURL: "./assets/images/duckbody/red.png",
         Properties: {
-         bodypart: "duckBody",
+         bodypart: "duckbody",
          color: "red"
        }
      },
      {
-        imageURL: "./client/public/assets/images/duckhead/purple_hat.png",
+        imageURL: "./assets/images/duckhead/purple_hat.png",
         Properties: {
          bodypart: "duckhead",
          color: "purple"
        }
      },
      {
-        imageURL: "./client/public/assets/images/duckbeak/blue.png",
+        imageURL: "./assets/images/duckbeak/blue.png",
         Properties: {
-         bodypart: "duckbeak",
+         bodypart: "beak",
          color: "blue"
        }
      }

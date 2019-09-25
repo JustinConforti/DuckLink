@@ -24,8 +24,16 @@ module.exports = {
 	},
 
 	updateReq: function(req, res) {
+		console.log("within controller:");
+		console.log(req.body.image)
+		let bodypart = String(req.body.bodypart)
+		let image = String(req.body.image)
+		var query = {};
+		query["username"] = req.session.user.username;
+		query[bodypart] = image;
+		console.log(req.session.user)
 		db.User
-		.findOneAndUpdate(req.session.user, res)
+		.findOneAndUpdate(query)
 		.then(dbModel => res.json(dbModel))
 		.catch(err => res.status(422).json(err));
 

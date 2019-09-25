@@ -27,6 +27,7 @@ export function StoreItem({
                 <Button
             onClick={onClick}
             type="success"
+            bodypart={name}
             className={id}
              >
               Add

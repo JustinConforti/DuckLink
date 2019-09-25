@@ -11,7 +11,8 @@ class Store extends Component {
     state = {
         level: "",
         items: [],
-        image: ""
+        image: "",
+        bodypart: ""
     };
 
 
@@ -42,9 +43,14 @@ class Store extends Component {
      updateUserDuck = storeItem => API.duckUpdate(storeItem.target.className)
      .then(res => {
          this.setState({
-             image: res.data.imageURL
+             image: res.data.imageURL,
+             bodypart: res.data.Properties[0].bodypart
          })
-         API.ownDuckUpdate(this.state.image).then(res => console.log(res))
+         console.log(this.state.image)
+         console.log(this.state.bodypart)
+         API.ownDuckUpdate({
+             image: this.state.image, 
+             bodypart: this.state.bodypart}).then(res => console.log(res))
          .catch(err => console.log(err.response.data))
                 })
         .catch(err => console.log(err.response.data))
