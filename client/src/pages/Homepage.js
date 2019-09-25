@@ -3,12 +3,14 @@ import "./style.css";
 import axios from 'axios';
 import Nav from "../components/Nav";
 
+
 // import API from "../utils/API";
 // import { throws } from "assert";
 import API from "../utils/API";
 
 class Homepage extends Component {
     state = {
+   body: "",
    level: "",
    headgear: '',
    eyes: '',
@@ -29,6 +31,7 @@ class Homepage extends Component {
      let data = res.data
      data.username = data.username.toUpperCase()
       this.setState({
+         body: data.body,
          level: data.level,
          headgear: data.headgear,
          eyes: data.eyes,
@@ -41,6 +44,11 @@ class Homepage extends Component {
       console.log(this.state.username)
    })
  }
+
+
+ 
+ 
+ 
 
     
 
