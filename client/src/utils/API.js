@@ -16,6 +16,10 @@ export default {
 
     registerUser: userData => { 
         return axios.post(`/api/register`, userData);
+    },
+
+    logoutUser: () => {
+        return axios.post('/api/logout')
     }
 
-}
+};

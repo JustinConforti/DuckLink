@@ -1,5 +1,4 @@
 const db = require("../models");
-
 // match with api/users
 module.exports = {
 registerUser:function (req, res) {

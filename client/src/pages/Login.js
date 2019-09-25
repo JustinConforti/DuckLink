@@ -1,5 +1,9 @@
 import React, { Component } from "react";
 import "./style.css";
+import API from "../utils/API"
+import Nav from "../components/Nav";
+import  { Redirect } from 'react-router-dom'
+
 import { Link } from "react-router-dom";
 import API from "../utils/API"
 
@@ -16,14 +20,35 @@ class Login extends Component {
   };
 
   componentDidMount() {
-    console.log(this.state.username)
+
   }
-  
+
+
   handleChange = event => {
     const { name, value } = event.target;
     this.setState({
       [name]: value
     });
+  };
+  onClickLogout = () => {
+    API.logoutUser({})
+    .then (res=> {
+      alert("You have been logged out!")
+      console.log(res)
+    })
+   };
+
+  onClickLogin = (username, password) => {
+    console.log("request is going")
+    API.loginUser({
+      username,
+      password
+    })
+      .then(res => {
+        console.log("response is back")
+      alert("Login Completed!")
+      console.log(res.data.s)
+    })
   };
 
   onClickLogin = (username, password) => {
@@ -66,9 +91,16 @@ class Login extends Component {
                                             <div className="form-group">
                                               <input type="password"
                                                   name="password" 
+<<<<<<< HEAD
                                                   className="form-control"                                         
                                                   aria-describedby="usernameInput" 
                                                   placeholder="Password"
+=======
+                                                  className="form-control" 
+                                                  id="exampleInputPassword1" 
+                                                  aria-describedby="passwordHelp" 
+                                                  placeholder="Enter password"
+>>>>>>> cdb6a81e32390e911df6f1c6baa0b882a3bee397
                                                   onChange={this.handleChange}
                                                   value={this.state.password} />
                                             </div>
@@ -76,19 +108,31 @@ class Login extends Component {
                                             <div className="form-group">
                                                 <button type="button" 
                                                   className="btn btn-primary" 
+<<<<<<< HEAD
                                                   id="buttonStyle"
                                                   onClick={() => this.onClickLogin(this.state.username, this.state.password)} 
                                                   >DUCK DUCK GO!!!
                                                 </button>
+=======
+                                                  id="buttonStyle" 
+                                                  onClick={() => this.onClickLogin(this.state.username, this.state.password)}>DUCK DUCK GO!!!</button>
+>>>>>>> cdb6a81e32390e911df6f1c6baa0b882a3bee397
                                             </div>
 
                                             <Link to={"/registration"}>
                                             <div className="form-group">
+<<<<<<< HEAD
                                               <button type="button" 
                                                 className="btn btn-primary" 
                                                 id="buttonStyle" 
                                                 >REGISTER
                                               </button>
+=======
+                                                <button type="button" 
+                                                  className="btn btn-primary" 
+                                                  id="buttonStyle" 
+                                                  onClick={() => this.onClickLogout()}>REGISTER</button>
+>>>>>>> cdb6a81e32390e911df6f1c6baa0b882a3bee397
                                             </div>
                                             </Link>
 
@@ -97,19 +141,9 @@ class Login extends Component {
                         </div>                               
                     </div>
 
-                <div className="col">
-                </div>
-
              </div>
-        </div>
-
-       ///<div className ="screen">
-      
-
-     // </div>
-    
-
-    
+    <Nav />
+  </div>
     );
   }
 }

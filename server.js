@@ -1,10 +1,10 @@
 const express = require("express");
 const path = require("path");
 const routes = require('./Routes')
-const PORT = process.env.PORT || 3001;
+// const PORT = process.env.PORT || 7300;
+const PORT = 7300
 const app = express();
 const mongoose = require('mongoose')
-const bcrypt = require('bcrypt')
 const session = require('express-session')
 const MongoStore = require('connect-mongo')(session)
 const MongoClient = require('mongodb').MongoClient
@@ -23,7 +23,6 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
-
 app.use(session({
   secret: 'secret',
   resave: false,
@@ -37,22 +36,18 @@ app.use(session({
 function connectToMongo() {
   return new Promise((resolve, reject) => {
     client.connect(err => {
-      console.log(err)
       if (err) return reject(err)
-
+      app.listen(PORT, function() {
+        console.log(`🌎 ==> API server now on port ${PORT}!`);
+      });
       db = client.db("Ducks")
 
 
-      
+      console.log("connected to mango")
       return resolve(client)
     })
   })
 }
-
-app.listen(PORT, function() {
-  console.log(`🌎 ==> API server now on port ${PORT}!`);
-});
-
 
 // Routes
  app.use(routes)
@@ -62,3 +57,5 @@ app.listen(PORT, function() {
  app.get("*", function(req, res) {
    res.sendFile(path.join(__dirname, "./client/build/index.html"));
  });
+
+

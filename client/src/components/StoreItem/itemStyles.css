@@ -1,0 +1,22 @@
+.scroll {
+    max-height: 100px;
+   
+}
+
+.itemCardAdd {
+    
+    
+}
+
+.itemCardRemove {
+
+
+}
+
+#StoreTitleStyling {
+    font-size:3vw;
+    font-family: 'Pixel Berry 08/84 Ltd.Edition';
+    color: white;
+    text-shadow: 3px 2px grey; 
+    text-align: center;
+}
