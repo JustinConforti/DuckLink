@@ -14,11 +14,12 @@ function Nav() {
     <div class="overlay"></div>
     <div class="menu">
         <ul>
-            <li><a href="/login">Login</a></li>
-            <li><a href="#">Store</a></li>
-            <li><a href="#">Your Quackfile</a></li>
-            <li><a href="/home">Home</a></li>
-            <li><a href="minigames">Mini-Games</a></li>
+            
+            <li><a href="/home">Quack! page</a></li>
+            <li><a href="/store">Store</a></li>
+            <li><a href="/minigames">Mini-Games</a></li>
+            <li><a href="/login">Log Out</a></li>
+
         </ul>
     </div>
     </label>

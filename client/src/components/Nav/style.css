@@ -9,7 +9,7 @@ input#menu-toggle-input {
 }
 input#menu-toggle-input:checked + label .menu-toggle::before {
     transform: rotate(405deg);
-    background-color: #ffb3ba;
+    background-color: transparent;
 }
 label .menu-toggle {
     position: fixed;
@@ -18,15 +18,15 @@ label .menu-toggle {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background-color: #000;
+    background-color: transparent;
     cursor: pointer;
     z-index: 10;
 }
 label .menu-toggle:before {
-    content: '+';
+    content: '*';
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 9px;
+    left: 4px;
     font-size: 50px;
     width: 100%;
     height: 100%;
@@ -34,8 +34,9 @@ label .menu-toggle:before {
     text-align: center;
     line-height: 50px;
     border-radius: 50%;
-    background-color: #000000;
+    background-color: transparent;
     font-weight: bold;
+    font-family:'Pixel Berry 08/84 Ltd.Edition';
     transition: 0.5s;
 }
 .overlay {
@@ -45,7 +46,7 @@ label .menu-toggle:before {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background-color: #ffb3ba;
+    background-color: rgba(128,128,128, 0.75);
     transition: transform 0.5s;
     z-index: 7;
 }
@@ -85,6 +86,7 @@ label .menu-toggle +
     margin: 20px 0;
     display: block;
     font-weight: bold;
+    font-family:'Pixel Berry 08/84 Ltd.Edition';
     text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
     z-index: 9;
 }
@@ -102,5 +104,12 @@ label .menu-toggle +
     transition: transform 0.5s;
 }
 .menu ul li a:hover::before {
-    transform: scaleX(1);
-}    
+    
+} 
+
+@font-face {
+    font-family: 'Pixel Berry 08/84 Ltd.Edition';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Pixel Berry 08/84 Ltd.Edition'), url('../../assets/fonts/Pixel_Berry_08_84_Ltd.Edition.woff') format('woff');
+    }

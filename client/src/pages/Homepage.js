@@ -1,27 +1,64 @@
 import React, { Component } from "react";
-import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
-import Col from 'react-bootstrap/Col';
-import Image from 'react-bootstrap/Image';
 import "./style.css";
-import Row from 'react-bootstrap/Row';
+import axios from 'axios';
+import Nav from "../components/Nav";
+
+
 // import API from "../utils/API";
 // import { throws } from "assert";
+import API from "../utils/API";
 
 class Homepage extends Component {
     state = {
-
+   body: "",
+   level: "",
+   headgear: '',
+   eyes: '',
+   eyegear: '',
+   wing: '',
+   item: '',
+   beak: '',
+   username: ''
     };
 
 
- componentDidMount() {
-    
+ componentWillMount() {
+    console.log("loading component")
+   API.myData ({})
+   .then(res => {
+     console.log("response in component:")
+     console.log(res.data)
+     let data = res.data
+     data.username = data.username.toUpperCase()
+      this.setState({
+         body: data.body,
+         level: data.level,
+         headgear: data.headgear,
+         eyes: data.eyes,
+         eyegear: data.eyegear,
+         wing: data.wing,
+         item: data.item,
+         beak: data.beak,
+         username: data.username
+      })
+      console.log(this.state.username)
+   })
  }
+
+
+ 
+ 
+ 
+
+    
+
 
 
  render() {
    return (
+
        <div className = "container">
+
            <div className = "row">
 
                <div className="col">
@@ -36,7 +73,7 @@ class Homepage extends Component {
                                    <br/>
                                    <form className = "mx-auto fontPusher">
                                        <div className="form-group">
-                                          <button id = "buttonStyleHome" type="button" class="btn btn-secondary btn-lg btn-block">USERNAME</button>
+                                          <button id = "buttonStyleHome" type="button" class="btn btn-secondary btn-lg btn-block">Duck Name: {this.state.username} </button>
                                        </div>
                                        <div className="form-group">
                                           <button id = "buttonStyleHome" type="button" class="btn btn-secondary btn-lg btn-block">
@@ -63,6 +100,8 @@ class Homepage extends Component {
                <div className="col">
                </div>
            </div>
+    <Nav />
+
      </div>                               
    )}
   }

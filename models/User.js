@@ -1,8 +1,6 @@
 const mongoose = require("mongoose");
 const bcrypt = require("bcryptjs");
-
 const schema = mongoose.Schema;
-
 const userSchema = new schema({
 
 	email: {
@@ -68,21 +66,16 @@ const userSchema = new schema({
 // This will check if an unhashed password entered by the user can be compared to the hashed password stored in our database
 
 userSchema.methods.comparePassword = function(passw, cb) {
-	bcrypt.compare(passw, this.password, function(err, isMatch) {
-	  if (err) {
-		return cb(err, false);
-	  }
-	  return cb(null, isMatch);
-	});
-  };
-
+    bcrypt.compare(passw, this.password, function(err, isMatch) {
+      if (err) {
+        return cb(err, false);
+      }
+      return cb(null, isMatch);
+    });
+ };
 userSchema.pre("save", function(next) {
-	this.password = bcrypt.hashSync(this.password, bcrypt.genSaltSync(10), null);
-	next();
+    this.password = bcrypt.hashSync(this.password, bcrypt.genSaltSync(10), null);
+    next();
 });
-
 const User = mongoose.model("users", userSchema);
-
 module.exports = User;
-
-
