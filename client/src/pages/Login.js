@@ -2,9 +2,11 @@ import React, { Component } from "react";
 import "./style.css";
 import API from "../utils/API"
 import Nav from "../components/Nav";
+import Swal from "sweetalert2";
 import  { Redirect } from 'react-router-dom'
 
 import { Link } from "react-router-dom";
+<<<<<<< Updated upstream
 import API from "../utils/API"
 
 //import { Container, Col, Card, CardBody, Row } from "react-bootstrap/";
@@ -12,6 +14,9 @@ import API from "../utils/API"
 //import FormLabel from "react-bootstrap/FormLabel";
 //import FormControl from "react-bootstrap/FormControl";
 //import Button from "react-bootstrap/Button";
+=======
+
+>>>>>>> Stashed changes
 
 class Login extends Component {
   state = {
@@ -30,6 +35,7 @@ class Login extends Component {
       [name]: value
     });
   };
+
   onClickLogout = () => {
     API.logoutUser({})
     .then (res=> {
@@ -46,8 +52,11 @@ class Login extends Component {
     })
       .then(res => {
         console.log("response is back")
-      alert("Login Completed!")
-      console.log(res.data.s)
+        Swal.fire(
+          'success'
+        )
+        console.log(res.data.s)
+        this.props.history.push('/login')
     })
   };
 
@@ -131,8 +140,13 @@ class Login extends Component {
                                                 <button type="button" 
                                                   className="btn btn-primary" 
                                                   id="buttonStyle" 
+<<<<<<< Updated upstream
                                                   onClick={() => this.onClickLogout()}>REGISTER</button>
 >>>>>>> cdb6a81e32390e911df6f1c6baa0b882a3bee397
+=======
+                                                  >
+                                                  Register</button>
+>>>>>>> Stashed changes
                                             </div>
                                             </Link>
 
