@@ -61,12 +61,7 @@ class DuckMinesweeper extends Component {
             infoColumn.append(highScoreHeader);
             moreMinesButton.on("click", function() {
                 var totalSize = (12 * 12);
-                // swal("Write something here:", {
-                //     content: "input",
-                //   })
-                //   .then((value) => {
-                //     swal(`You typed: ${value}`);
-                //   });
+
                 swal("Enter the amount of mines you would like. (Please enter a number greater than 0 and less than " + totalSize + ".)", {
                     content: "input",
                 })
@@ -270,7 +265,11 @@ class DuckMinesweeper extends Component {
                 }
             $("#infoButton").text("Try Again!");
             $("#infoButton").on("click", startGame);
-            setTimeout(function() {alert("Game Over! Click the \"Try Again!\" button to try again!");}, 40)
+            swal({
+                title: "Game Over!",
+                text: "Click the \"Try Again!\" button to try again!",
+                icon: "error",
+            });
         }
     
         function youWin(){
@@ -283,9 +282,11 @@ class DuckMinesweeper extends Component {
                 highScore = timer;
                 localStorage.setItem("highScore", highScore);
             }
-            setTimeout(function() {
-                alert("You win! Click the \"Play Again!\" button to play again!");
-            }, 35)
+            swal({
+                title: "Victory!",
+                text: "You win! Click the \"Play Again!\" button to play again!",
+                icon: "success",
+            });
         }
     
         function openSurrounding(x, y){

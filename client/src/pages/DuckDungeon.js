@@ -118,10 +118,15 @@ var duckPartner = {
             duckEye.onload = function() {
                 doodle.drawImage(duckEye, 105, 30, 80 * duckRatio, 87 * duckRatio);
             }
-            var duckWing = new Image();
-            duckWing.src = "assets/images/ducksprites/duckwing/blueredheart.png"; //original size 203 x 152
-            duckWing.onload = function() {
-                doodle.drawImage(duckWing, 50, 75, 203 * duckRatio, 152 * duckRatio);
+            var duckItem = new Image();
+            duckItem.src = "assets/images/ducksprites/duckitem/red_balloon.png"; //original size 314 x 410
+            duckItem.onload = function() {
+                doodle.drawImage(duckItem, 25, 0, 314 * duckRatio, 410 * duckRatio);
+                var duckWing = new Image();
+                duckWing.src = "assets/images/ducksprites/duckwing/blueredheart.png"; //original size 203 x 152
+                duckWing.onload = function() {
+                    doodle.drawImage(duckWing, 35, 75, 203 * duckRatio, 152 * duckRatio);
+                }
             }
             var duckHat = new Image();
             duckHat.src = "assets/images/ducksprites/duckhead/purple_hat.png"; //original size 241 x 193
@@ -155,6 +160,10 @@ var duckPartner = {
         var duckRatio = 150/603;
         doodle.translate(settedPicture.width, 0);
         doodle.scale(-1, 1);
+        var duckItem = new Image();
+        duckItem.src = "assets/images/ducksprites/duckitem/red_balloon.png"; //original size 314 x 410
+        duckItem.onload = function() {
+        doodle.drawImage(duckItem, 25, 0, 314 * duckRatio, 410 * duckRatio);
         var duckBody = new Image();
         duckBody.src = "assets/images/ducksprites/duckbody/blue.png"; //original size 603 x 446
         duckBody.onload = function() {
@@ -181,6 +190,7 @@ var duckPartner = {
         duckBeak.src = "assets/images/ducksprites/duckbeak/orange.png"; //original size 108 x 93
         duckBeak.onload = function() {
             doodle.drawImage(duckBeak, 128.5, 40, 108 * duckRatio, 93 * duckRatio);
+        }
         }
         this.picture = settedPicture;
         this.picture.style.filter = usedHue;
@@ -1020,10 +1030,6 @@ function gotCake() {
                 continue: {
                     text: "Next Level",
                     value: "continue",
-                },
-                finish: {
-                    text: "I'm Done",
-                    value: "finished",
                 }
             },
         })
@@ -1032,10 +1038,6 @@ function gotCake() {
                 case "continue":
                     duckPartner.picture.style.filter = "none";
                     setGame(0,0);
-                    break;
-
-                case "finished":
-                    $("#dungeonContainer").html("Thank you for playing!");
                     break;
 
                 default:
@@ -1072,10 +1074,6 @@ function youLose() {
             continue: {
                 text: "Try Again",
                 value: "continue",
-            },
-            finish: {
-                text: "I'm Done",
-                value: "finished",
             }
         }
     })
@@ -1085,10 +1083,6 @@ function youLose() {
                 game.level--;
                 duckPartner.picture.style.filter = "none";
                 setGame(0,0);
-                break;
-
-            case "finished":
-                $("#dungeonContainer").html("Thank you for playing!");
                 break;
 
             default:
