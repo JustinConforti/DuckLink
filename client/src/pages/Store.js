@@ -73,8 +73,9 @@ class Store extends Component {
                             <h1 className="display-4 mx-auto" id = "StoreTitleStyling">DuckLink! STORE FRONT</h1>
                                 {this.state.items.map((item, index) => (
                                     <StoreItem
-                                    value={item.Properties.color}
-                                    name={item.Properties.bodypart}
+                                    name={item.Properties[0].bodypart.toUpperCase()}
+                                    color={item.Properties[0].color.toUpperCase()}
+                                    level={item.Properties[0].level}
                                     key={index} 
                                     id={item._id}
                                     image={item.imageURL}

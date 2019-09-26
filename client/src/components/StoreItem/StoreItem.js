@@ -9,32 +9,34 @@ export function StoreItem({
     image,
     onClick,
     name,
-    value
-})
-{
+    color,
+    level
+})   {
     return (
         <div className = "fontPusher" >
             <div className ="card border-info mb-3">
           
             <div className ="card-body text-info">
                 <div className  ="row">
-                <div className = "col-4">
-                    <div>{value}</div>
-                </div>
+                    <div className = "col-4">
+                        <h5>Duck Part: {name}</h5>
+                        <h5>Color: {color}</h5>
+                    </div>
 
                 <div className = "col-4">
                     <img id = "" src={image} alt="..." height= "80 px" width= "80 px"></img>   
                 </div>
 
                 <div className = "col-4">
-                <Button
-            onClick={onClick}
-            type="success"
-            bodypart={name}
-            className={id}
-             >
-              {id}
-          </Button>
+                        <Button
+                            onClick={onClick}
+                            type="success"
+                            bodypart={name}
+                            className={id}
+                            >
+                            Add
+                        </Button>
+                            <h5 className="mt-4">Level: {level}</h5>
                      </div>
                 </div>
             </div>
