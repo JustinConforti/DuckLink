@@ -20,9 +20,11 @@ export function StoreItem({
                     <button type="button" class="btn btn-outline-warning">Remove</button>
                     
                 </div>
+
                 <div className = "col-4">
                     <img id = "" src={image} alt="..." height= "80 px" width= "80 px"></img>   
                 </div>
+
                 <div className = "col-4">
                 <Button
             onClick={onClick}
