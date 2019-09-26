@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import $ from "jquery";
+import "../pages/style.css";
 
 class MiniGames extends Component {
     state = {
@@ -57,11 +58,11 @@ class MiniGames extends Component {
                     </div>
                 </div>
                 {this.state.games.map(game => (
-                    <div className="row gameLink">
+                    <div className="row gameLink fontPusher">
                         <div className="col-md-3">
                             <img src="assets/images/ducksprites/duck_body_full.png" id={game.id} alt="full_duck" style={{width:"100%", height: "auto", opacity: "0.0"}}/>
                         </div>
-                        <div className="col-md-9 jumbotron">
+                        <div className="col-md-9 jumbotron" id = "gamesButton">
                             <a href={game.link}><h2 picValue={game.id}>{game.text}</h2></a>
                         </div>
                     </div>

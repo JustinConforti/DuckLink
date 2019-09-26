@@ -27,8 +27,8 @@ const userSchema = new schema({
 	},
 
 	level: {
-		type: Number,
-		default: 1
+		type: String,
+		default: "1"
 	},
 
 	duckhead: {
@@ -61,6 +61,11 @@ const userSchema = new schema({
 	},
 
 	beak: {
+		type: String,
+		default: "default"
+	},
+
+	body: {
 		type: String,
 		default: "default"
 	}
