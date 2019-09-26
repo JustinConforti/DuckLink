@@ -31,7 +31,7 @@ export function StoreItem({
             bodypart={name}
             className={id}
              >
-              Add
+              {id}
           </Button>
                      </div>
                 </div>
