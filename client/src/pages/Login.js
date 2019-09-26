@@ -2,14 +2,10 @@ import React, { Component } from "react";
 import "./style.css";
 import API from "../utils/API"
 import Nav from "../components/Nav";
+import Swal from "sweetalert2";
 import  { Redirect } from 'react-router-dom'
 
 import { Link } from "react-router-dom";
-//import { Container, Col, Card, CardBody, Row } from "react-bootstrap/";
-//import FormGroup from "react-bootstrap/FormGroup";
-//import FormLabel from "react-bootstrap/FormLabel";
-//import FormControl from "react-bootstrap/FormControl";
-//import Button from "react-bootstrap/Button";
 
 class Login extends Component {
   state = {
@@ -28,6 +24,7 @@ class Login extends Component {
       [name]: value
     });
   };
+
   onClickLogout = () => {
     API.logoutUser({})
     .then (res=> {
@@ -44,8 +41,13 @@ class Login extends Component {
     })
       .then(res => {
         console.log("response is back")
-      alert("Login Completed!")
-      console.log(res.data.s)
+        Swal.fire(
+          '',
+          '',
+          'success'
+        )
+        console.log(res.data.s)
+        this.props.history.push('/home')
     })
   };
 
@@ -64,16 +66,17 @@ class Login extends Component {
                                     <img id = "logoImg" src="assets/images/duck.png" alt="..." height= "400 px" width= "400 px"></img>
                                     <h1 className="display-4 mx-auto" id = "titleTextStyling">LOG IN</h1>
                                         <form className = "mx-auto fontPusher">
+
                                             <div className="form-group">
                                               <input type="username"
                                                   name="username" 
                                                   className="form-control" 
-                                                  id="exampleInputUsername1" 
-                                                  aria-describedby="emailHelp" 
+                                                  aria-describedby="usernameInput" 
                                                   placeholder="Enter username"
                                                   onChange={this.handleChange}
                                                   value={this.state.username} />
                                             </div>
+
                                             <div className="form-group">
                                               <input type="password"
                                                   name="password" 
@@ -92,22 +95,27 @@ class Login extends Component {
                                                   onClick={() => this.onClickLogin(this.state.username, this.state.password)}>DUCK DUCK GO!!!</button>
                                             </div>
 
-                                            <div className="form-group">
+                                            <Link to={"/registration"}>
+                                              <div className="form-group">
                                                 <button type="button" 
                                                   className="btn btn-primary" 
                                                   id="buttonStyle" 
-                                                  onClick={() => this.onClickLogout()}>REGISTER</button>
-                                            </div>
-                                        </form>
-                            </div>
-                        </div>                               
-                    </div>
+                                                  >REGISTER
+                                                </button>
+                                              </div>
+                                            </Link>
 
-                    <div className="col">
+                                          </form>
+
+                                    </div>
+                                </div>                               
+                            </div>
+
+                        <div className="col">
+                    </div>
                 </div>
-             </div>
-    <Nav />
-  </div>
+            <Nav />
+        </div>
     );
   }
 }

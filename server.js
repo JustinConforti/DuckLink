@@ -5,7 +5,6 @@ const routes = require('./Routes')
 const PORT = 7300
 const app = express();
 const mongoose = require('mongoose')
-const bcrypt = require('bcrypt')
 const session = require('express-session')
 const MongoStore = require('connect-mongo')(session)
 const MongoClient = require('mongodb').MongoClient
@@ -23,7 +22,6 @@ app.use(express.json());
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
-
 
 app.use(session({
   secret: 'secret',
@@ -50,8 +48,6 @@ function connectToMongo() {
     })
   })
 }
-
-
 
 // Routes
  app.use(routes)
