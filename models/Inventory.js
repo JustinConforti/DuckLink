@@ -8,6 +8,7 @@ const inventorySchema = new schema({
 	},
     Properties:[
         {
+            level: String,
             bodypart : String,
             color: String,
 

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./style.css";
 import API from "../utils/API";
 import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 
 class Register extends Component {
 
@@ -18,8 +19,6 @@ handleChange = event => {
     this.setState({
         [name]: value
     });
-    console.log(value)
-    console.log(this.state.password2)
 };
 
 onClickSaveUser = (username, email, password, password2) => {
@@ -42,7 +41,7 @@ onClickSaveUser = (username, email, password, password2) => {
 					'You have been redirected to Login',
 					'success'
 			)
-            console.log(res)
+            // console.log(res)
             this.props.history.push('/login')
         });
     }
@@ -105,6 +104,16 @@ render() {
                                                   id="buttonStyle" 
                                                   onClick={() => this.onClickSaveUser(this.state.username, this.state.email, this.state.password, this.state.password2)}>QUACK!!!</button>
                                             </div>
+
+                                            <Link to={"/login"}>
+                                            <div className="form-group">
+                                                <button type="button" 
+                                                  className="btn btn-primary" 
+                                                  id="buttonStyle" 
+                                                  >
+                                                  Login</button>
+                                            </div>
+                                            </Link>
 
                                         </form>
                                   

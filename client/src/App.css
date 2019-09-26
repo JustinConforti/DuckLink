@@ -20,7 +20,8 @@
 
 body {
   padding: 0;
-  background: url(assets/images/water.gif);
+  background: url(./assets/images/park.gif);
+background-size: 125%;
   /* background: url(assets/images/bluebg.png); */
   font-family: 'Pixel Berry 08/84 Ltd.Edition';  
 }
