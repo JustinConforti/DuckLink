@@ -6,17 +6,6 @@ import Swal from "sweetalert2";
 import  { Redirect } from 'react-router-dom'
 
 import { Link } from "react-router-dom";
-<<<<<<< Updated upstream
-import API from "../utils/API"
-
-//import { Container, Col, Card, CardBody, Row } from "react-bootstrap/";
-//import FormGroup from "react-bootstrap/FormGroup";
-//import FormLabel from "react-bootstrap/FormLabel";
-//import FormControl from "react-bootstrap/FormControl";
-//import Button from "react-bootstrap/Button";
-=======
-
->>>>>>> Stashed changes
 
 class Login extends Component {
   state = {
@@ -53,21 +42,12 @@ class Login extends Component {
       .then(res => {
         console.log("response is back")
         Swal.fire(
+          '',
+          '',
           'success'
         )
         console.log(res.data.s)
-        this.props.history.push('/login')
-    })
-  };
-
-  onClickLogin = (username, password) => {
-    API.loginUser({
-      username,
-      password,
-    })
-      .then(res => {
-      alert("Login Completed!")
-      console.log(res)
+        this.props.history.push('/home')
     })
   };
 
@@ -100,16 +80,10 @@ class Login extends Component {
                                             <div className="form-group">
                                               <input type="password"
                                                   name="password" 
-<<<<<<< HEAD
-                                                  className="form-control"                                         
-                                                  aria-describedby="usernameInput" 
-                                                  placeholder="Password"
-=======
                                                   className="form-control" 
                                                   id="exampleInputPassword1" 
                                                   aria-describedby="passwordHelp" 
                                                   placeholder="Enter password"
->>>>>>> cdb6a81e32390e911df6f1c6baa0b882a3bee397
                                                   onChange={this.handleChange}
                                                   value={this.state.password} />
                                             </div>
@@ -117,49 +91,31 @@ class Login extends Component {
                                             <div className="form-group">
                                                 <button type="button" 
                                                   className="btn btn-primary" 
-<<<<<<< HEAD
-                                                  id="buttonStyle"
-                                                  onClick={() => this.onClickLogin(this.state.username, this.state.password)} 
-                                                  >DUCK DUCK GO!!!
-                                                </button>
-=======
                                                   id="buttonStyle" 
                                                   onClick={() => this.onClickLogin(this.state.username, this.state.password)}>DUCK DUCK GO!!!</button>
->>>>>>> cdb6a81e32390e911df6f1c6baa0b882a3bee397
                                             </div>
 
                                             <Link to={"/registration"}>
-                                            <div className="form-group">
-<<<<<<< HEAD
-                                              <button type="button" 
-                                                className="btn btn-primary" 
-                                                id="buttonStyle" 
-                                                >REGISTER
-                                              </button>
-=======
+                                              <div className="form-group">
                                                 <button type="button" 
                                                   className="btn btn-primary" 
                                                   id="buttonStyle" 
-<<<<<<< Updated upstream
-                                                  onClick={() => this.onClickLogout()}>REGISTER</button>
->>>>>>> cdb6a81e32390e911df6f1c6baa0b882a3bee397
-=======
-                                                  >
-                                                  Register</button>
->>>>>>> Stashed changes
-                                            </div>
+                                                  >REGISTER
+                                                </button>
+                                              </div>
                                             </Link>
 
-                                        </form>
-                            </div>
-                        </div>                               
-                    </div>
+                                          </form>
 
-                    <div className="col">
+                                    </div>
+                                </div>                               
+                            </div>
+
+                        <div className="col">
+                    </div>
                 </div>
-             </div>
-    <Nav />
-  </div>
+            <Nav />
+        </div>
     );
   }
 }

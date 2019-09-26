@@ -6,7 +6,6 @@ const duckController = require("../../controllers/duckControllers");
 router.route("/")
   .post(duckController.create)
   .get(duckController.findById)
-  
 
 // Matches with "/api/users/:id"
 router.route("/:id")

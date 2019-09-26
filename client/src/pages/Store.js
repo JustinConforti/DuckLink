@@ -1,28 +1,62 @@
 import React, { Component } from "react";
 import StoreItem from "../components/StoreItem/StoreItem.js";
 import Nav from "../components/Nav/index";
-// import Jumbotron from "../components/Jumbotron"
-// import Button from "../components/Button"
-// import { Col, Row, Container } from "../components/Grid";
-// import { Input, TextArea, FormBtn } from "../components/Form";
-// import { List, ListItem } from "../components/List";
 // import { Link } from "react-router-dom";
 import "./style.css";
 import "../components/StoreItem/itemStyles.css"
-// import API from "../utils/API";
+import API from "../utils/API.js";
 // import { throws } from "assert";
 
 class Store extends Component {
     state = {
-
+        level: "",
+        items: [],
+        image: "",
+        bodypart: ""
     };
 
 
- componentDidMount() {
+    componentWillMount() {
+        console.log("loading component")
+       API.myData ({})
+       .then(res => {
+         console.log("response in component:")
+         console.log(res.data)
+         let data = res.data
+          this.setState({
+             level: data.level
+          })
 
-    
- }
+          API.randomUsers({})
+          .then(res => {
+              this.setState({
+                  items: res.data.data
+              })
 
+              console.log(this.state.items)
+
+          })
+       })
+     }
+
+
+     updateUserDuck = storeItem => API.duckUpdate(storeItem.target.className)
+     .then(res => {
+         this.setState({
+             image: res.data.imageURL,
+             bodypart: res.data.Properties[0].bodypart
+         })
+         console.log(this.state.image)
+         console.log(this.state.bodypart)
+         API.ownDuckUpdate({
+             image: this.state.image, 
+             bodypart: this.state.bodypart}).then(res => console.log(res))
+         .catch(err => console.log(err.response.data))
+                })
+        .catch(err => console.log(err.response.data))
+
+
+     
 
  render() {
     return (
@@ -36,11 +70,16 @@ class Store extends Component {
                         <div className="card">
                             <div className="card-body card-body-window">
                             <h1 className="display-4 mx-auto" id = "StoreTitleStyling">DuckLink! STORE FRONT</h1>
-                                
-								<StoreItem />
-                                <StoreItem />
-                                <StoreItem />
-                                <StoreItem />
+                                {this.state.items.map((item, index) => (
+                                    <StoreItem
+                                    name={item.Properties.bodypart}
+                                    key={index} 
+                                    id={item._id}
+                                    image={item.imageURL}
+                                    onClick={this.updateUserDuck}
+                                    />
+
+                                ))}
                                
                                 
                             </div>
@@ -60,5 +99,6 @@ class Store extends Component {
     );
     }
 }
+
 
 export default Store;

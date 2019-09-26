@@ -1,10 +1,15 @@
 import React from "react";
 import "./itemStyles.css";
 import "../../pages/style.css";
+import Button from "../Button"
 
 
-
-function StoreItem() {
+export function StoreItem({
+    id,
+    image,
+    onClick,
+    name
+})   {
     return (
         <div className = "fontPusher" >
             <div className ="card border-info mb-3">
@@ -17,13 +22,19 @@ function StoreItem() {
                 </div>
 
                 <div className = "col-4">
-                    <img id = "" src="assets/images/duck.png" alt="..." height= "80 px" width= "80 px"></img>   
+                    <img id = "" src={image} alt="..." height= "80 px" width= "80 px"></img>   
                 </div>
 
                 <div className = "col-4">
-                    <button type="button" class="btn btn-outline-success">Add</button>
-                </div>
-                
+                <Button
+            onClick={onClick}
+            type="success"
+            bodypart={name}
+            className={id}
+             >
+              Add
+          </Button>
+                     </div>
                 </div>
             </div>
             </div>

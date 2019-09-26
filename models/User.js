@@ -31,12 +31,16 @@ const userSchema = new schema({
 		default: "1"
 	},
 
-	headgear: {
+	duckhead: {
 		type: String,
 		default: "default"
 	},
 
 	eyes: {
+		type: String,
+		default: "default"
+	},
+	duckbody: {
 		type: String,
 		default: "default"
 	},

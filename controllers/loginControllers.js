@@ -38,13 +38,5 @@ userLogin: function(req, res, err) {
 			}
 		  })
 		  // in case something breaks
-<<<<<<< HEAD
-		  .catch(err => {
-			return res.status(500).json(err)
-		  })
-	  }
-	}
-=======
 	  }
 };
->>>>>>> cdb6a81e32390e911df6f1c6baa0b882a3bee397
