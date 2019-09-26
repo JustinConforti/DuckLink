@@ -12,7 +12,7 @@ class Store extends Component {
         level: "",
         items: [],
         image: "",
-        bodypart: ""
+        bodypart: "",
     };
 
 
@@ -24,13 +24,13 @@ class Store extends Component {
          console.log(res.data)
          let data = res.data
           this.setState({
-             level: data.level
+             level: data.level,
           })
 
           API.randomUsers({})
           .then(res => {
               this.setState({
-                  items: res.data.data
+                  items: res.data.data,
               })
 
               console.log(this.state.items)
@@ -41,10 +41,11 @@ class Store extends Component {
 
 
      updateUserDuck = storeItem => API.duckUpdate(storeItem.target.className)
-     .then(res => {
+     .then(res => { 
+         console.log(res)
          this.setState({
              image: res.data.imageURL,
-             bodypart: res.data.Properties[0].bodypart
+             bodypart: res.data.Properties[0].bodypart,
          })
          console.log(this.state.image)
          console.log(this.state.bodypart)
@@ -72,6 +73,7 @@ class Store extends Component {
                             <h1 className="display-4 mx-auto" id = "StoreTitleStyling">DuckLink! STORE FRONT</h1>
                                 {this.state.items.map((item, index) => (
                                     <StoreItem
+                                    value={item.Properties.color}
                                     name={item.Properties.bodypart}
                                     key={index} 
                                     id={item._id}

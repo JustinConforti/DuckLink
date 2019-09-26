@@ -8,8 +8,10 @@ export function StoreItem({
     id,
     image,
     onClick,
-    name
-})   {
+    name,
+    value
+})
+{
     return (
         <div className = "fontPusher" >
             <div className ="card border-info mb-3">
@@ -17,8 +19,7 @@ export function StoreItem({
             <div className ="card-body text-info">
                 <div className  ="row">
                 <div className = "col-4">
-                    <button type="button" class="btn btn-outline-warning">Remove</button>
-                    
+                    <div>{value}</div>
                 </div>
                 <div className = "col-4">
                     <img id = "" src={image} alt="..." height= "80 px" width= "80 px"></img>   
