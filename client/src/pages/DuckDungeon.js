@@ -22,7 +22,7 @@ class DuckDungeon extends Component {
         .then(res => {
           console.log("response in component:")
           console.log(res.data)
-          let data = res.data
+          let data = res.data;
           data.username = data.username.toUpperCase()
            this.setState({
               body: data.body,
@@ -40,6 +40,7 @@ class DuckDungeon extends Component {
         var size; //how many blocks there will be. the grid's dimensions will be size * size
 var blockHeight; //height attributed to each block. directly corresponds to the size to ensure the overall grid can fit without scrolling
 var alt = 0;
+var points = 0;
 var alwaysWhite = 0;
 var alwaysBlack = 1;
 var gridPattern = 2;
@@ -108,6 +109,7 @@ var game = {
     },
     enemyDefeated: function() {
         this.enemiesDefeated++;
+        points++;
         $("#" + getLocation(cake)).attr("status", "free");
     }
 }
@@ -600,6 +602,7 @@ function setGame(x, y){
 function beginGame(x, y){
     game.startUp();
     game.moveUp();
+    points = 0;
     duckPartner.resetDucky();
     setLocation(duckPartner, x, y);
     cake.setLocation();
@@ -873,6 +876,7 @@ function keyPress(event) {
             if($("#" + getLocation(duckPartner)).attr("status") != "free"){
                 duckPartner.x_Coordinate++;
                 atSide(duckPartner);
+                place(duckPartner, true);
                 break;
             } else {
                 moveYourDuck();
@@ -913,6 +917,7 @@ function keyPress(event) {
             if($("#" + getLocation(duckPartner)).attr("status") != "free"){
                 duckPartner.x_Coordinate--;
                 atSide(duckPartner);
+                place(duckPartner, true);
                 break;
             } else {
                 moveYourDuck();
