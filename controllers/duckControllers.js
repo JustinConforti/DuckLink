@@ -17,8 +17,21 @@ module.exports = {
 	},
 	
 	update: function(req, res) {
-	  db.Inventory
-		.findOneAndUpdate({ _id: req.params.id }, req.body)
+		console.log("within controller:");
+		console.log(req.body.image)
+		console.log(req.body.bodypart);
+		console.log(req.session.user);
+		let bodypart = String(req.body.bodypart)
+		console.log(bodypart);
+		let image = String(req.body.image);
+		var query = {};
+		query[bodypart] = image;
+		console.log("you changed it");
+	  db.User
+		.updateOne(
+			{"username": req.session.user.username},
+			{"level": image}
+		)
 		.then(dbModel => res.json(dbModel))
 		.catch(err => res.status(422).json(err));
 	},
@@ -26,6 +39,7 @@ module.exports = {
 	updateReq: function(req, res) {
 		console.log("within controller:");
 		console.log(req.body.image)
+		console.log(req.body.bodypart);
 		let bodypart = String(req.body.bodypart)
 		let image = String(req.body.image)
 		var query = {};
