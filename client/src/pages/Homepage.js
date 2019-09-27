@@ -2,11 +2,8 @@ import React, { Component } from "react";
 import "./style.css";
 import axios from 'axios';
 import Nav from "../components/Nav";
-<<<<<<< HEAD
-=======
 import $ from "jquery";
 import { Link } from "react-router-dom";
->>>>>>> 788a9e8... bug fixes and added links.
 
 
 // import API from "../utils/API";
