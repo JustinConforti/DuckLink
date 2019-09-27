@@ -1,7 +1,7 @@
 const express = require("express");
 const path = require("path");
 const routes = require('./Routes')
- const PORT = process.env.PORT || 7300;
+const PORT = process.env.PORT || 7300;
 // const PORT = 7300
 const app = express();
 const mongoose = require('mongoose')
@@ -38,7 +38,7 @@ function connectToMongo() {
     client.connect(err => {
       if (err) return reject(err)
       app.listen(PORT, function() {
-        console.log(`🌎 ==> API server now on port ${PORT}!`);
+      
       });
       db = client.db("Ducks")
 
@@ -51,6 +51,9 @@ function connectToMongo() {
 
 // Routes
  app.use(routes)
+ app.listen(PORT, function() {
+  console.log(`🌎 ==> API server now on port ${PORT}!`);
+});
 
 // Send every request to the React app
 // Define any API routes before this runs
