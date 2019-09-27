@@ -7,12 +7,12 @@ const app = express();
 const mongoose = require('mongoose')
 const session = require('express-session')
 const MongoStore = require('connect-mongo')(session)
-const MongoClient = require('mongodb').MongoClient
-// my mongo connection/database
-const client = new MongoClient("mongodb://localhost/Ducks", { 
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-})
+// const MongoClient = require('mongodb').MongoClient
+// // my mongo connection/database
+// const client = new MongoClient("mongodb://localhost/Ducks", { 
+//   useNewUrlParser: true,
+//   useUnifiedTopology: true
+// })
 // const apiRoutes = require("./routes/apiRoutes");
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/Ducks", { useNewUrlParser: true });
 
