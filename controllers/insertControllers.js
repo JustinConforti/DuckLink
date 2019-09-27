@@ -329,15 +329,6 @@ module.exports = {
 },
 
 {
-  imageURL: "./assets/images/ducksprites/duckitem/pinklightgreenstar_balloon.png",
-  Properties: {
-  level: "8",
-  bodypart: "item",
-  color: "pink"
-  }
-},
-
-{
   imageURL: "./assets/images/ducksprites/duckitem/pinkyellowheartballoon.png",
   Properties: {
   level: "9",

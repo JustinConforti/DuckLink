@@ -5,6 +5,7 @@ import Nav from "../components/Nav/index";
 import "./style.css";
 import "../components/StoreItem/itemStyles.css"
 import API from "../utils/API.js";
+import Swal from "sweetalert2";
 // import { throws } from "assert";
 
 class Store extends Component {
@@ -51,9 +52,15 @@ class Store extends Component {
          console.log(this.state.bodypart)
          API.ownDuckUpdate({
              image: this.state.image, 
-             bodypart: this.state.bodypart}).then(res => console.log(res))
-         .catch(err => console.log(err.response.data))
-                })
+             bodypart: this.state.bodypart})
+             .then(res => {
+                 console.log(res)
+                 Swal.fire(
+					'Duck Updated!'
+		    	    )
+                 })
+                .catch(err => console.log(err.response.data))
+            })
         .catch(err => console.log(err.response.data))
 
 
