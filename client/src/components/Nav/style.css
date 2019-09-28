@@ -1,4 +1,7 @@
 
+#buttonWacker {
+    width: 720 px;
+}
 input#menu-toggle-input {
     position: fixed;
     top: 30px;

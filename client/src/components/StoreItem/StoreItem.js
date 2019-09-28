@@ -13,7 +13,7 @@ export function StoreItem({
     level
 })   {
     return (
-        <div className = "fontPusher" >
+        <div className = "fontPusher" id = "buttonWacker">
             <div className ="card border-info mb-3">
           
             <div className ="card-body text-info">
