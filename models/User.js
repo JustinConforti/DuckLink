@@ -16,6 +16,7 @@ const userSchema = new schema({
 
 	password: {
 		type: String,
+		required: true,
 		minlength: 6,
 	},
 
@@ -38,7 +39,7 @@ const userSchema = new schema({
 		type: String,
 		default: "./assets/images/ducksprites/duckeye/yellow.png"
 	},
-
+	
 	duckbody: {
 		type: String,
 		default: "./assets/images/ducksprites/duckbody/yellow.png"

@@ -55,7 +55,20 @@ module.exports = {
 		console.log(req.session.user)
 		db.User
 		.findOneAndUpdate(query)
-		.then(dbModel => res.json(dbModel))
+		.then(() => {
+			db.User.findOne({ 'username': req.session.user.username }, function(err, user) {
+				console.log("data from updated user found!");
+				if(err) {
+					console.log(err);
+				}
+				console.log(user);
+				if (!user) return res.status(401).json({err:"user doesn't exist!"});
+				req.session.user = user;
+				return res.json({
+					s: req.session.user
+				})
+			})
+		})
 		.catch(err => res.status(422).json(err));
 
 	}

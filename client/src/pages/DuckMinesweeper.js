@@ -3,6 +3,7 @@ import $ from "jquery";
 import swal from "sweetalert";
 import "./minesweeperStyle.css";
 import { parse } from "querystring";
+import API from "../utils/API";
 
 class DuckMinesweeper extends Component {
     state = {
@@ -10,6 +11,25 @@ class DuckMinesweeper extends Component {
     };
 
     componentDidMount() {
+        console.log("loading component")
+        API.myData ({})
+        .then(res => {
+          console.log("response in component:")
+          console.log(res.data)
+          let data = res.data;
+          data.username = data.username.toUpperCase()
+           this.setState({
+              body: data.body,
+              level: data.level,
+              headgear: data.headgear,
+              eyes: data.eyes,
+              eyegear: data.eyegear,
+              wing: data.wing,
+              item: data.item,
+              beak: data.beak,
+              username: data.username
+           })
+           console.log(this.state.username);
         var bombArray; //array of all the coordinates with bombs
         var safeArray;
         var size = 12;
@@ -17,6 +37,10 @@ class DuckMinesweeper extends Component {
         var numberOfBombs = 12;
         var gameOver;
         var bombsRemaining;
+        var updatedLevel = parseInt(res.data.level);
+        if(isNaN(updatedLevel)){
+            updatedLevel = 1;
+        }
         var timer;
         var timerInterval;
         var timerStart = false;
@@ -282,11 +306,19 @@ class DuckMinesweeper extends Component {
                 highScore = timer;
                 localStorage.setItem("highScore", highScore);
             }
-            swal({
-                title: "Victory!",
-                text: "You win! Click the \"Play Again!\" button to play again!",
-                icon: "success",
-            });
+            updatedLevel += numberOfBombs;
+            var newLevelString = updatedLevel.toString();
+            API.ownDuckUpdate({
+                image: newLevelString, 
+                bodypart: "level"})
+                .then(() => {
+                    swal({
+                        title: "Victory!",
+                        text: "You win! Your level is now " + updatedLevel + "! Click the \"Play Again!\" button to play again!",
+                        icon: "success",
+                    });
+                    })
+                .catch(err => console.log(err.response.data))
         }
     
         function openSurrounding(x, y){
@@ -390,9 +422,8 @@ class DuckMinesweeper extends Component {
     
         $("#startBtn").on("click", function(){
             startGame();
-        })
-    
-     
+        });
+    });
     
     };
 
