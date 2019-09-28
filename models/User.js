@@ -32,12 +32,16 @@ const userSchema = new schema({
 
 	duckhead: {
 		type: String,
-		default: "default"
+		default: "./assets/images/ducksprites/duckhead/default.png"
 	},
 
 	eyes: {
 		type: String,
+<<<<<<< Updated upstream
 		default: "default"
+=======
+		default: "./assets/images/ducksprites/duckeye/blue.png"
+>>>>>>> Stashed changes
 	},
 	duckbody: {
 		type: String,
@@ -56,7 +60,7 @@ const userSchema = new schema({
 
 	item: {
 		type: String,
-		default: "default"
+		default: "./assets/images/ducksprites/duckitem/default.png"
 	},
 
 	beak: {
