@@ -9,7 +9,7 @@ const MongoStore = require('connect-mongo')(session)
 const MongoClient = require('mongodb').MongoClient
 
 // my mongo connection/database
-const client = new MongoClient("mongodb://localhost/Ducks", { 
+const client = new MongoClient("mongodb://Justin:justin9@ds157571.mlab.com:57571/heroku_prx5zcwg", { 
   useNewUrlParser: true,
   useUnifiedTopology: true
 })
@@ -23,7 +23,7 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
-const MONGODB_URI = process.env.MONGODB_URI || "mongodb://user1:user01@ds019633.mlab.com:19633/heroku_x66lscn0";
+const MONGODB_URI = process.env.MONGODB_URI || "mongodb://Justin:justin9@ds157571.mlab.com:57571/heroku_prx5zcwg";
 
 app.use(session({
   secret: 'secret',
