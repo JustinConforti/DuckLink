@@ -8,7 +8,11 @@
     border-style: solid;
     border-color:  #ff899f;
     text-align: center;
-    margin-left:-15%;
+    margin-left:-25%;
+}
+
+.card-body {
+  margin-left: -25%;
 }
 
 #logoImg {
