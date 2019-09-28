@@ -47,16 +47,16 @@ app.use(session({
   return new Promise((resolve, reject) => {
     client.connect(err => {
       if (err) return reject(err)
-      app.listen(PORT, function() {
-        console.log(`🌎 ==> API server now on port ${PORT}!`);
-      });
+     
       db = client.db("Ducks")
       console.log("connected to mango")
       return resolve(client)
     })
   })
 }
-
+ app.listen(PORT, function() {
+        console.log(`🌎 ==> API server now on port ${PORT}!`);
+      });
 // Routes
 app.use(routes)
 
