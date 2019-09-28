@@ -33,7 +33,10 @@ class DuckPacman extends Component {
 var numberOfPellets = 0;
 var intervalArray = [];
 var chaseReturn;
-var picDirection = "left";
+var updatedLevel = parseInt(res.data.level);
+if(isNaN(updatedLevel)){
+    updatedLevel = 1;
+}
 function MovableObject(name, x_Coordinate, y_Coordinate) {
     this.name = name.toLowerCase();
     this.direction = undefined;
@@ -428,17 +431,25 @@ function startLevel() {
         }
     }
     function win() {
-        $("#status").text("Great job! You collected all the pellets! Click \"Start Game\" to play again!");
         clearInterval(blinky.moveInterval);
         removeObject(blinky);
         clearInterval(pacman.moveInterval);
-        var startOverBtn = $("<button>Start Game</button>");
-        startOverBtn.attr("id", "startOver");
-        $("#info").append(startOverBtn);
+        updatedLevel += 10;
+        var newLevelString = updatedLevel.toString();
         game = false;
-        $("#startOver").click(function() {
-            startLevel();
-        });
+        API.ownDuckUpdate({
+            image: newLevelString, 
+            bodypart: "level"})
+            .then(() => {
+                $("#status").text("Great job! You collected all the pellets! Your level is now " + updatedLevel + "! Click \"Start Game\" to play again!");
+                var startOverBtn = $("<button>Start Game</button>");
+                startOverBtn.attr("id", "startOver");
+                $("#info").append(startOverBtn);
+                $("#startOver").click(function() {
+                    startLevel();
+                });
+                })
+               .catch(err => console.log(err.response.data))
     }
     function blinkyChase() {
         clearInterval(blinky.moveInterval);
@@ -705,7 +716,8 @@ function startLevel() {
         clearInterval(blinky.moveInterval);
         blinky.mode = "eaten";
         blinky.picture.css("filter", "grayscale(100%)");
-        $("#status").text("Good job! You ate him! Now he'll be back for revenge!");
+        $("#status").text("Good job! You ate him! Now he'll be back for revenge! (also you gained two levels!)");
+        updatedLevel += 2;
         switch(pacman.direction){
             case "up":
                 blinky.moveUp();
