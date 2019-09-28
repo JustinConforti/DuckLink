@@ -99,7 +99,7 @@ class Homepage extends Component {
                <div className="col">
                </div>
 
-                   <div classNames="col-5">
+                   <div classNames="col-10">
                        <div className="card">
                            <div className="card-body card-body-window mx-auto">
                                     <h1 className="display-4 mx-auto" id = "titleTextStyling">DuckLink!</h1>

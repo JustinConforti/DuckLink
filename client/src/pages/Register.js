@@ -52,7 +52,7 @@ render() {
             <div className = "row">
                 <div className="col">
                 </div>
-                    <div classNames="col-3">
+                    <div classNames="col-10">
                         <div className="card">
                             <div className="card-body card-body-window">
                                     <img id = "logoImg" src="assets/images/duck.png" alt="..." height= "375 px" width= "375 px"></img>
