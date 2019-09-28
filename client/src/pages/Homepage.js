@@ -116,8 +116,8 @@ class Homepage extends Component {
                                        <div className="form-group">
                                           <button id = "buttonStyleHome" type="button" class="btn btn-secondary btn-lg btn-block">
                                              <span id = "duckRanking">Duck </span>
-                                             RANKING: 
-                                             <span id = "duckRanking" className = "animated infinite pulse"> 00</span> 
+                                             LEVEL: {this.state.level} 
+                                             <span id = "duckRanking" className = "animated infinite pulse"></span> 
                                           </button>                                      
                                        </div>
 
