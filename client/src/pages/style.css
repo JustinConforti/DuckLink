@@ -6,9 +6,9 @@
     background-color: rgba(255, 179, 186, 0.75); 
     border-width: 10px;
     border-style: solid;
-    margin-right:20%;
     border-color:  #ff899f;
-    text-align: center
+    text-align: center;
+    margin-left:-15%;
 }
 
 #logoImg {
