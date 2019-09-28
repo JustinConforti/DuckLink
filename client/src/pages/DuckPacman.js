@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import $ from "jquery";
 import swal from "sweetalert";
+import Nav from "../components/Nav/index";
 import API from "../utils/API";
 
 class DuckPacman extends Component {
@@ -870,19 +871,22 @@ countdown();
 
     render() {
         return (
-            <div className="container">
-                <div className="row">
-                    <div className="col-md-10">
-                        <div className="row">
-                            <div className="col-md-12" id="maze">
-
+            <div>
+                <div className="container">
+                    <div className="row">
+                        <div className="col-md-10">
+                            <div className="row">
+                                <div className="col-md-12" id="maze">
+    
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div className="col-md-2" id="info">
-                        <h4 id="status" className="jumbotron"></h4>
+                        <div className="col-md-2" id="info">
+                            <h4 id="status" className="jumbotron"></h4>
+                        </div>
                     </div>
                 </div>
+                <Nav />
             </div>
         )
     }

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import $ from "jquery";
 import swal from "sweetalert";
+import Nav from "../components/Nav/index";
 import API from "../utils/API";
 
 class DuckDungeon extends Component {
@@ -1146,10 +1147,13 @@ countdown();
 
     render() {
         return (
-            <div id="dungeonContainer" className="container">
-                <div className="jumbotron">
-                    <h1 style={{color: "red"}}>Game starting in: <span className="duckCountdown"></span></h1>
+            <div>
+                <div id="dungeonContainer" className="container">
+                    <div className="jumbotron">
+                        <h1 style={{color: "red"}}>Game starting in: <span className="duckCountdown"></span></h1>
+                    </div>
                 </div>
+                <Nav />
             </div>
         )
     }

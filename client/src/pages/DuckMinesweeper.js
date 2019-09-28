@@ -3,6 +3,7 @@ import $ from "jquery";
 import swal from "sweetalert";
 import "./minesweeperStyle.css";
 import { parse } from "querystring";
+import Nav from "../components/Nav/index";
 import API from "../utils/API";
 
 class DuckMinesweeper extends Component {
@@ -429,14 +430,17 @@ class DuckMinesweeper extends Component {
 
     render() {
         return (
-            <div className="container" id="mineZone">
-                <div className="row">
-                    <div className="col-md-6">
-                        <button id="startBtn">
-                            Click Me to Play Some Minesweeper!
-                        </button>
+            <div>
+                <div className="container" id="mineZone">
+                    <div className="row">
+                        <div className="col-md-6">
+                            <button id="startBtn">
+                                Click Me to Play Some Minesweeper!
+                            </button>
+                        </div>
                     </div>
                 </div>
+                <Nav />
             </div>
         )
     }
