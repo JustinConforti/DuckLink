@@ -2,6 +2,7 @@ const router = require("express").Router();
 const duckControllers = require("../../controllers/duckControllers");
 
 router.route("/")
-  .post(duckControllers.update)
+  .post(duckControllers.quickUpdate)
+
   
   module.exports = router

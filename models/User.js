@@ -16,7 +16,6 @@ const userSchema = new schema({
 
 	password: {
 		type: String,
-		required: true,
 		minlength: 6,
 	},
 
@@ -37,15 +36,16 @@ const userSchema = new schema({
 
 	eyes: {
 		type: String,
-<<<<<<< Updated upstream
 		default: "default"
 =======
 		default: "./assets/images/ducksprites/duckeye/blue.png"
->>>>>>> Stashed changes
+=======
+		default: "./assets/images/ducksprites/duckeye/yellow.png"
 	},
+
 	duckbody: {
 		type: String,
-		default: "default"
+		default: "./assets/images/ducksprites/duckbody/yellow.png"
 	},
 
 	eyegear: {
@@ -55,7 +55,7 @@ const userSchema = new schema({
 
 	wing: {
 		type: String,
-		default: "default"
+		default: "./assets/images/ducksprites/duckwing/yellow.png"
 	},
 
 	item: {
@@ -65,12 +65,7 @@ const userSchema = new schema({
 
 	beak: {
 		type: String,
-		default: "default"
-	},
-
-	body: {
-		type: String,
-		default: "default"
+		default: "./assets/images/ducksprites/duckbeak/orange.png"
 	}
 })
 
