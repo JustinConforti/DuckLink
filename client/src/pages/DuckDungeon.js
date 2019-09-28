@@ -1,18 +1,46 @@
 import React, { Component } from "react";
 import $ from "jquery";
 import swal from "sweetalert";
+import API from "../utils/API";
 
 class DuckDungeon extends Component {
     state = {
-        //add user info plz
-    
+        body: "",
+        level: "",
+        headgear: '',
+        eyes: '',
+        eyegear: '',
+        wing: '',
+        item: '',
+        beak: '',
+        username: ''
     };
 
     componentDidMount() {
+        console.log("loading component")
+        API.myData ({})
+        .then(res => {
+          console.log("response in component:")
+          console.log(res.data)
+          let data = res.data;
+          data.username = data.username.toUpperCase()
+           this.setState({
+              body: data.body,
+              level: data.level,
+              headgear: data.headgear,
+              eyes: data.eyes,
+              eyegear: data.eyegear,
+              wing: data.wing,
+              item: data.item,
+              beak: data.beak,
+              username: data.username
+           })
+           console.log(this.state.username);
         //add user info to state plz
         var size; //how many blocks there will be. the grid's dimensions will be size * size
 var blockHeight; //height attributed to each block. directly corresponds to the size to ensure the overall grid can fit without scrolling
 var alt = 0;
+var points = 0;
 var alwaysWhite = 0;
 var alwaysBlack = 1;
 var gridPattern = 2;
@@ -81,6 +109,7 @@ var game = {
     },
     enemyDefeated: function() {
         this.enemiesDefeated++;
+        points++;
         $("#" + getLocation(cake)).attr("status", "free");
     }
 }
@@ -110,26 +139,26 @@ var duckPartner = {
         var doodle = settedPicture.getContext("2d");
         var duckRatio = 150/603;
         var duckBody = new Image();
-        duckBody.src = "assets/images/ducksprites/duckbody/blue.png"; //original size 603 x 446
+        duckBody.src = res.data.duckbody; //original size 603 x 446
         duckBody.onload = function() {
             doodle.drawImage(duckBody, 10, 20, 150, 446 * duckRatio);
             var duckEye = new Image();
-            duckEye.src = "assets/images/ducksprites/duckeye/red.png"; //original size 80 x 87
+            duckEye.src = res.data.eyes; //original size 80 x 87
             duckEye.onload = function() {
                 doodle.drawImage(duckEye, 105, 30, 80 * duckRatio, 87 * duckRatio);
             }
             var duckItem = new Image();
-            duckItem.src = "assets/images/ducksprites/duckitem/red_balloon.png"; //original size 314 x 410
+            duckItem.src = res.data.item; //original size 314 x 410
             duckItem.onload = function() {
                 doodle.drawImage(duckItem, 25, 0, 314 * duckRatio, 410 * duckRatio);
                 var duckWing = new Image();
-                duckWing.src = "assets/images/ducksprites/duckwing/blueredheart.png"; //original size 203 x 152
+                duckWing.src = res.data.wing; //original size 203 x 152
                 duckWing.onload = function() {
                     doodle.drawImage(duckWing, 35, 75, 203 * duckRatio, 152 * duckRatio);
                 }
             }
             var duckHat = new Image();
-            duckHat.src = "assets/images/ducksprites/duckhead/purple_hat.png"; //original size 241 x 193
+            duckHat.src = res.data.duckhead; //original size 241 x 193
             duckHat.onload = function() {
                 if(duckPartner.state === "attack"){
                     doodle.drawImage(duckHat, 80, -6, 241 * duckRatio, 193 * duckRatio);
@@ -137,7 +166,7 @@ var duckPartner = {
             }
         }
         var duckBeak = new Image();
-        duckBeak.src = "assets/images/ducksprites/duckbeak/orange.png"; //original size 108 x 93
+        duckBeak.src = res.data.beak; //original size 108 x 93
         duckBeak.onload = function() {
             doodle.drawImage(duckBeak, 128.5, 40, 108 * duckRatio, 93 * duckRatio);
         }
@@ -161,25 +190,25 @@ var duckPartner = {
         doodle.translate(settedPicture.width, 0);
         doodle.scale(-1, 1);
         var duckItem = new Image();
-        duckItem.src = "assets/images/ducksprites/duckitem/red_balloon.png"; //original size 314 x 410
+        duckItem.src = res.data.item; //original size 314 x 410
         duckItem.onload = function() {
         doodle.drawImage(duckItem, 25, 0, 314 * duckRatio, 410 * duckRatio);
         var duckBody = new Image();
-        duckBody.src = "assets/images/ducksprites/duckbody/blue.png"; //original size 603 x 446
+        duckBody.src = res.data.duckbody; //original size 603 x 446
         duckBody.onload = function() {
             doodle.drawImage(duckBody, 10, 20, 150, 446 * duckRatio);
             var duckEye = new Image();
-            duckEye.src = "assets/images/ducksprites/duckeye/red.png"; //original size 80 x 87
+            duckEye.src = res.data.eyes; //original size 80 x 87
             duckEye.onload = function() {
                 doodle.drawImage(duckEye, 105, 30, 80 * duckRatio, 87 * duckRatio);
             }
             var duckWing = new Image();
-            duckWing.src = "assets/images/ducksprites/duckwing/blueredheart.png"; //original size 203 x 152
+            duckWing.src = res.data.wing; //original size 203 x 152
             duckWing.onload = function() {
                 doodle.drawImage(duckWing, 50, 75, 203 * duckRatio, 152 * duckRatio);
             }
             var duckHat = new Image();
-            duckHat.src = "assets/images/ducksprites/duckhead/purple_hat.png"; //original size 241 x 193
+            duckHat.src = res.data.duckhead; //original size 241 x 193
             duckHat.onload = function() {
                 if(duckPartner.state === "attack"){
                     doodle.drawImage(duckHat, 80, -6, 241 * duckRatio, 193 * duckRatio);
@@ -187,7 +216,7 @@ var duckPartner = {
             }
         }
         var duckBeak = new Image();
-        duckBeak.src = "assets/images/ducksprites/duckbeak/orange.png"; //original size 108 x 93
+        duckBeak.src = res.data.beak; //original size 108 x 93
         duckBeak.onload = function() {
             doodle.drawImage(duckBeak, 128.5, 40, 108 * duckRatio, 93 * duckRatio);
         }
@@ -237,7 +266,7 @@ var duckPartner = {
         powerSphere.x_Coordinate = -90;
         powerSphere.y_Coordinate = -90;
         this.state = "attack";
-        if(this.direction === "up" || this.direction === "left"){
+        if(this.pictureDirection === "left"){
             this.flipMyPic();
         } else {
             this.setPicture();
@@ -573,6 +602,7 @@ function setGame(x, y){
 function beginGame(x, y){
     game.startUp();
     game.moveUp();
+    points = 0;
     duckPartner.resetDucky();
     setLocation(duckPartner, x, y);
     cake.setLocation();
@@ -846,6 +876,7 @@ function keyPress(event) {
             if($("#" + getLocation(duckPartner)).attr("status") != "free"){
                 duckPartner.x_Coordinate++;
                 atSide(duckPartner);
+                place(duckPartner, true);
                 break;
             } else {
                 moveYourDuck();
@@ -886,6 +917,7 @@ function keyPress(event) {
             if($("#" + getLocation(duckPartner)).attr("status") != "free"){
                 duckPartner.x_Coordinate--;
                 atSide(duckPartner);
+                place(duckPartner, true);
                 break;
             } else {
                 moveYourDuck();
@@ -1097,6 +1129,7 @@ function youLose() {
 setGame(0, 0);
 }
 countdown();
+});
 
     };
 

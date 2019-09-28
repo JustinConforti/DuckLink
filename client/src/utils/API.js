@@ -32,6 +32,10 @@ export default {
 
     ownDuckUpdate: (imageURL) => {
         return axios.post('/api/duckUpdate', imageURL)
+    },
+
+    quickUpdate: (data) => {
+        return axios.post("/api/quickUpdate", data)
     }
 
 };

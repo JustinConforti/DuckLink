@@ -46,6 +46,7 @@ module.exports = {
 	updateReq: function(req, res) {
 		console.log("within controller:");
 		console.log(req.body.image)
+		console.log(req.body.bodypart);
 		let bodypart = String(req.body.bodypart)
 		let image = String(req.body.image)
 		var query = {};

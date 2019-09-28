@@ -30,7 +30,7 @@ class DuckMinesweeper extends Component {
         function startGame() {
             swal({
                 title: "Welcome to Minesweeper!",
-                text: "Click a block to open it! Right-click a block to flag it! Don't hit a mine!",
+                text: "Click a block to open it! Right-click a block to flag it! Don't hit a mine (oh, well, goose...)!",
                 icon: "info",
                 button: "OK"
             });
@@ -62,7 +62,7 @@ class DuckMinesweeper extends Component {
             moreMinesButton.on("click", function() {
                 var totalSize = (12 * 12);
 
-                swal("Enter the amount of mines you would like. (Please enter a number greater than 0 and less than " + totalSize + ".)", {
+                swal("Enter the amount of mines (geese) you would like. (Please enter a number greater than 0 and less than " + totalSize + ".)", {
                     content: "input",
                 })
                 .then((value) => {
