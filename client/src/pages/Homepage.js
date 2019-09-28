@@ -4,6 +4,9 @@ import axios from 'axios';
 import Nav from "../components/Nav";
 import $ from "jquery";
 
+import { Link } from "react-router-dom";
+
+
 
 // import API from "../utils/API";
 // import { throws } from "assert";
@@ -103,26 +106,36 @@ class Homepage extends Component {
                                    <div id="duckAvatar" style={{width: "600px", height: "300px"}}></div>
                                    <br/>
                                    <br/>
+
                                    <form className = "mx-auto fontPusher">
+
                                        <div className="form-group">
                                           <button id = "buttonStyleHome" type="button" class="btn btn-secondary btn-lg btn-block">Duck Name: {this.state.username} </button>
                                        </div>
+
                                        <div className="form-group">
                                           <button id = "buttonStyleHome" type="button" class="btn btn-secondary btn-lg btn-block">
                                              <span id = "duckRanking">Duck </span>
-                                             RANKING: 
-                                             <span id = "duckRanking" className = "animated infinite pulse"> 00</span> 
+                                             LEVEL: {this.state.level} 
+                                             <span id = "duckRanking" className = "animated infinite pulse"></span> 
                                           </button>                                      
                                        </div>
-                                       <div className="form-group">
-                                          <button id = "buttonStyleHome" type="button" class="btn btn-secondary btn-lg btn-block animated infinite pulse">
-                                             <span id = "greyPlayButton">play </span>
-                                             <span className = "rainbow-text">GAMES</span></button>                                       
-                                       </div>
-                                       <div className="form-group">
-                                          <button id = "buttonStyleHome" type="button" class="btn btn-secondary btn-lg btn-block">
-                                             <span id = "duckRanking">DuckLink! </span>STORE</button>                                       
-                                       </div>
+
+                                        <Link to={"/minigames"}>
+                                            <div className="form-group">
+                                                <button id = "buttonStyleHome" type="button" class="btn btn-secondary btn-lg btn-block animated infinite pulse">
+                                                    <span id = "greyPlayButton">play </span>
+                                                    <span className = "rainbow-text">GAMES</span></button>                                       
+                                            </div>
+                                       </Link>
+
+                                       <Link to={"/store"}>
+                                            <div className="form-group">
+                                                <button id = "buttonStyleHome" type="button" class="btn btn-secondary btn-lg btn-block">
+                                                    <span id = "duckRanking">DuckLink! </span>STORE</button>                                       
+                                            </div>
+                                       </Link>
+
                                     </form>
                                    
                                        

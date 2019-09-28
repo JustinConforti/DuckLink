@@ -15,8 +15,15 @@ module.exports = {
 		.then(dbModel => res.json(dbModel))
 		.catch(err => res.status(422).json(err));
 	},
-	
+
 	update: function(req, res) {
+		db.Inventory
+		  .findOneAndUpdate({ _id: req.params.id }, req.body)
+		  .then(dbModel => res.json(dbModel))
+		  .catch(err => res.status(422).json(err));
+	  },
+	
+	quickUpdate: function(req, res) {
 		console.log("within controller:");
 		console.log(req.body.image)
 		console.log(req.body.bodypart);
