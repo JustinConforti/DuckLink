@@ -13,7 +13,7 @@ export function StoreItem({
     level
 })   {
     return (
-        <div className = "fontPusher" id = "buttonWacker">
+        <div className = "fontPusher">
             <div className ="card border-info mb-3">
           
             <div className ="card-body text-info">
@@ -33,6 +33,7 @@ export function StoreItem({
                             type="success"
                             bodypart={name}
                             className={id}
+                            id = "buttonWacker"
                             >
                             Add
                         </Button>
