@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import $ from "jquery";
 import "../pages/style.css";
+import Nav from "../components/Nav/index";
 import API from "../utils/API";
 
 class MiniGames extends Component {
@@ -109,6 +110,7 @@ class MiniGames extends Component {
 
     render() {
         return (
+            <div>
             <div className="container">
                 <div className="row">
                     <div className="col-md-3">
@@ -129,6 +131,8 @@ class MiniGames extends Component {
                     </div>
                 ))}
             </div> 
+            <Nav />
+            </div>
         )
     }
 }
