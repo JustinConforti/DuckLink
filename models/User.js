@@ -31,11 +31,15 @@ const userSchema = new schema({
 
 	duckhead: {
 		type: String,
-		default: "default"
+		default: "./assets/images/ducksprites/duckhead/default.png"
 	},
 
 	eyes: {
 		type: String,
+		default: "default"
+=======
+		default: "./assets/images/ducksprites/duckeye/blue.png"
+=======
 		default: "./assets/images/ducksprites/duckeye/yellow.png"
 	},
 
@@ -56,7 +60,7 @@ const userSchema = new schema({
 
 	item: {
 		type: String,
-		default: "default"
+		default: "./assets/images/ducksprites/duckitem/default.png"
 	},
 
 	beak: {
