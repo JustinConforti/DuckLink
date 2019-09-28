@@ -33,7 +33,7 @@ export function StoreItem({
                             type="success"
                             bodypart={name}
                             className={id}
-                            id = "buttonWacker"
+                            className = "buttonWacker"
                             >
                             Add
                         </Button>
