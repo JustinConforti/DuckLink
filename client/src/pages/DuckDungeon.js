@@ -40,7 +40,10 @@ class DuckDungeon extends Component {
         var size; //how many blocks there will be. the grid's dimensions will be size * size
 var blockHeight; //height attributed to each block. directly corresponds to the size to ensure the overall grid can fit without scrolling
 var alt = 0;
-var points = 0;
+var updatedLevel = parseInt(res.data.level);
+if(isNaN(updatedLevel)){
+    updatedLevel = 1;
+}
 var alwaysWhite = 0;
 var alwaysBlack = 1;
 var gridPattern = 2;
@@ -109,7 +112,7 @@ var game = {
     },
     enemyDefeated: function() {
         this.enemiesDefeated++;
-        points++;
+        updatedLevel++;
         $("#" + getLocation(cake)).attr("status", "free");
     }
 }
@@ -602,7 +605,6 @@ function setGame(x, y){
 function beginGame(x, y){
     game.startUp();
     game.moveUp();
-    points = 0;
     duckPartner.resetDucky();
     setLocation(duckPartner, x, y);
     cake.setLocation();
@@ -1053,32 +1055,40 @@ function gotCake() {
         victoryCynda.attr("src", "assets/images/happy-cynda.gif");
         victoryCynda.attr("style", "width:100%; height:100%");
         $("#" + getLocation(duckPartner)).append(victoryCynda);
+        updatedLevel += 2;
+        var newLevelString = updatedLevel.toString();
         game.end();
-        swal({
-            title: "Victory!",
-            text: "You got the cake! Click the \"Next Level\" button (or click outside this window) to continue!",
-            icon: "success",
-            buttons: {
-                continue: {
-                    text: "Next Level",
-                    value: "continue",
-                }
-            },
-        })
-        .then((choice) => {
-            switch(choice) {
-                case "continue":
-                    duckPartner.picture.style.filter = "none";
-                    setGame(0,0);
-                    break;
-
-                default:
-                    duckPartner.picture.style.filter = "none";
-                    setGame(0,0);
-                    break;
-
-            }
-        });
+        API.ownDuckUpdate({
+            image: newLevelString, 
+            bodypart: "level"})
+            .then(() => {
+                swal({
+                    title: "Victory!",
+                    text: "You got the cake! Your level is now " + updatedLevel + "! Click the \"Next Level\" button (or click outside this window) to continue!",
+                    icon: "success",
+                    buttons: {
+                        continue: {
+                            text: "Next Level",
+                            value: "continue",
+                        }
+                    },
+                })
+                .then((choice) => {
+                    switch(choice) {
+                        case "continue":
+                            duckPartner.picture.style.filter = "none";
+                            setGame(0,0);
+                            break;
+        
+                        default:
+                            duckPartner.picture.style.filter = "none";
+                            setGame(0,0);
+                            break;
+        
+                    }
+                });
+                })
+               .catch(err => console.log(err.response.data))
 
         /*$("#victoryCynda").on("mousedown", function() {
             setGame(0, 0);
