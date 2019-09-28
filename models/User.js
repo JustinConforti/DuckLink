@@ -39,6 +39,7 @@ const userSchema = new schema({
 		type: String,
 		default: "./assets/images/ducksprites/duckeye/blue.png"
 	},
+	
 	duckbody: {
 		type: String,
 		default: "./assets/images/ducksprites/duckbody/yellow.png"
