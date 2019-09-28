@@ -53,7 +53,7 @@ render() {
                 <div className="col">
                 </div>
                     <div classNames="col-10">
-                        <div className="card-body">
+                        <div className="card">
                             <div className="card-body card-body-window">
                                     <img id = "logoImg" src="assets/images/duck.png" alt="..." height= "375 px" width= "375 px"></img>
                                     <h1 className="display-4 mx-auto" id = "titleTextStyling">REGISTER</h1>

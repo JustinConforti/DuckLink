@@ -75,7 +75,6 @@ class Store extends Component {
                 </div>
 
                     <div classNames="col-10">
-                        <div className="card">
                             <div className="card-body card-body-window">
                             <h1 className="display-4 mx-auto" id = "StoreTitleStyling">DuckLink! STORE FRONT</h1>
                                 {this.state.items.map((item, index) => (
@@ -99,7 +98,6 @@ class Store extends Component {
                 <div className="col">
                 </div>
                
-             </div>
              <Nav />
         </div>
         
