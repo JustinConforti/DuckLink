@@ -36,10 +36,6 @@ const userSchema = new schema({
 
 	eyes: {
 		type: String,
-		default: "default"
-=======
-		default: "./assets/images/ducksprites/duckeye/blue.png"
-=======
 		default: "./assets/images/ducksprites/duckeye/yellow.png"
 	},
 

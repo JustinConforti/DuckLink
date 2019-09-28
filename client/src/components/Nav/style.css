@@ -24,7 +24,6 @@ label .menu-toggle {
 }
 label .menu-toggle:before {
     content: '*';
-    position: absolute;
     top: 9px;
     left: 4px;
     font-size: 50px;
@@ -103,9 +102,6 @@ label .menu-toggle +
     transform-origin: left;
     transition: transform 0.5s;
 }
-.menu ul li a:hover::before {
-    
-} 
 
 @font-face {
     font-family: 'Pixel Berry 08/84 Ltd.Edition';
