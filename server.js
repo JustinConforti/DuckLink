@@ -1,27 +1,31 @@
 const express = require("express");
 const path = require("path");
 const routes = require('./Routes')
-// const PORT = process.env.PORT || 7300;
-const PORT = 7300
+const PORT = process.env.PORT || 7300;
 const app = express();
 const mongoose = require('mongoose')
 const session = require('express-session')
 const MongoStore = require('connect-mongo')(session)
 const MongoClient = require('mongodb').MongoClient
+
+const MONGODB_URI = process.env.MONGODB_URI || "mongodb://user1:user01@ds227808.mlab.com:27808/heroku_vkxh79x4";
+
 // my mongo connection/database
-const client = new MongoClient("mongodb://localhost/Ducks", { 
+const client = new MongoClient( MONGODB_URI || "mongodb://localhost/Ducks", { 
   useNewUrlParser: true,
   useUnifiedTopology: true
 })
 // const apiRoutes = require("./routes/apiRoutes");
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/Ducks", { useNewUrlParser: true });
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
+
+
 
 app.use(session({
   secret: 'secret',
@@ -33,7 +37,17 @@ app.use(session({
   store: new MongoStore({ clientPromise: connectToMongo() })
 }))
 
-function connectToMongo() {
+// mongoose.connect(
+//   MONGODB_URI,
+//   {useMongoClient: true});
+
+  // mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
+
+//  mongoose.connect(MONGODB_URI || "mongodb://localhost/Ducks", { useNewUrlParser: true });
+
+ mongoose.connect(MONGODB_URI || "mongodb://localhost/Ducks", { useNewUrlParser: true });
+
+ function connectToMongo() {
   return new Promise((resolve, reject) => {
     client.connect(err => {
       if (err) return reject(err)
@@ -41,8 +55,6 @@ function connectToMongo() {
         console.log(`🌎 ==> API server now on port ${PORT}!`);
       });
       db = client.db("Ducks")
-
-
       console.log("connected to mango")
       return resolve(client)
     })
@@ -50,12 +62,10 @@ function connectToMongo() {
 }
 
 // Routes
- app.use(routes)
+app.use(routes)
 
 // Send every request to the React app
 // Define any API routes before this runs
  app.get("*", function(req, res) {
    res.sendFile(path.join(__dirname, "./client/build/index.html"));
  });
-
-
