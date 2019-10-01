@@ -9,7 +9,7 @@ import DuckMinesweeper from "./pages/DuckMinesweeper";
 import MiniGames from "./pages/MiniGames";
 import DuckPacman from "./pages/DuckPacman";
 import "./App.css";
-import "bootstrap/dist/css/bootstrap.min.css";
+//import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   return (
