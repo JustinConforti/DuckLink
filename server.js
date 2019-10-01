@@ -8,8 +8,10 @@ const session = require('express-session')
 const MongoStore = require('connect-mongo')(session)
 const MongoClient = require('mongodb').MongoClient
 
+const MONGODB_URI = process.env.MONGODB_URI || "mongodb://user1:user01@ds227808.mlab.com:27808/heroku_vkxh79x4";
+
 // my mongo connection/database
-const client = new MongoClient("mongodb://localhost/Ducks", { 
+const client = new MongoClient( MONGODB_URI || "mongodb://localhost/Ducks", { 
   useNewUrlParser: true,
   useUnifiedTopology: true
 })
@@ -23,7 +25,7 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
-const MONGODB_URI = process.env.MONGODB_URI || "mongodb://user1:user01@ds019633.mlab.com:19633/heroku_x66lscn0";
+
 
 app.use(session({
   secret: 'secret',
@@ -40,6 +42,8 @@ app.use(session({
 //   {useMongoClient: true});
 
   // mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
+
+//  mongoose.connect(MONGODB_URI || "mongodb://localhost/Ducks", { useNewUrlParser: true });
 
  mongoose.connect(MONGODB_URI || "mongodb://localhost/Ducks", { useNewUrlParser: true });
 
@@ -65,5 +69,3 @@ app.use(routes)
  app.get("*", function(req, res) {
    res.sendFile(path.join(__dirname, "./client/build/index.html"));
  });
-
-
