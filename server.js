@@ -8,7 +8,7 @@ const session = require('express-session')
 const MongoStore = require('connect-mongo')(session)
 const MongoClient = require('mongodb').MongoClient
 
-const MONGODB_URI = process.env.MONGODB_URI || "mongodb://user1:user01@ds227808.mlab.com:27808/heroku_vkxh79x4";
+const MONGODB_URI = process.env.MONGODB_URI || "mongodb://Justin9:Justin9@ds157571.mlab.com:57571/heroku_prx5zcwg";
 
 // my mongo connection/database
 const client = new MongoClient( MONGODB_URI || "mongodb://localhost/Ducks", { 
